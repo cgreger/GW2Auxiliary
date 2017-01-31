@@ -2,7 +2,12 @@
 
 | Date | Task | Hours | Notes|
 |------|------|-------|------|
-| 1/14/16| Course set up on Windows| 2 | |
-| 1/18/16| Set up project repository, write problem statement, time log, technologies used| 2 | |
-| 1/19/16 | Exercise for week 1  | 1  |   | 
-| 1/22/16 | Readings for week 1 and 2| 2.5 | |
+| 1/15/17 | Course set up on VM (later switched to laptop) | |
+| 1/18/17| Set up project repository | .5 | |
+| 1/18/17 | Exercise for week 1  | 2 |   | 
+| 1/20/17| Course set up on Ubuntu Laptop| 3.5 | |
+| 1/23/17 | Readings for week 1 and 2| 2 | |
+| 1/26/17 | Worked on week 2 exercise | 1 | |
+| 1/29/17 | Worked on project plan | .5 | |
+| 1/30/17 | Wrote problem statement and figured out project technologies/techniques | 3 | |
+| 1/31/17 | Worked on drawn project screen design | 1 | |

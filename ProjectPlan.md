@@ -9,10 +9,10 @@
 - [X] Begin project plan
 
 ### Week 2
-- [X] Complete screen design (on paper)
+- [ ] Complete screen design (on paper)
 - [X] Add project to repository
 - [X] Time log entries
-- [X] Complete project plan. Based on the design should be able to lay out 
+- [ ] Complete project plan. Based on the design should be able to lay out 
 more detail.
 
 ### Week 3
@@ -20,6 +20,7 @@ more detail.
 - [ ] Create project structure in IntelliJ
 - [ ] Complete database design
 - [ ] Begin creating JSPs
+- [ ] Create the Item class
 - [ ] Deploy application to AWS
 
 ### Week 4

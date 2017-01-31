@@ -9,7 +9,7 @@
 - [X] Begin project plan
 
 ### Week 2
-- [ ] Complete screen design (on paper)
+- [X] Complete screen design (on paper)
 - [X] Add project to repository
 - [X] Time log entries
 - [ ] Complete project plan. Based on the design should be able to lay out 

@@ -1,7 +1,6 @@
 # GW2 Auxiliary
 
 ### Background
-==============
 
 Guild Wars 2 is a massively multiplayer online role-playing game that lets users create and play customizable, levelable, characters in the fantasy world of Tyria. The game's main features are centered around real-time events where players collectively complete achievements, quests, and defeat powerful enemies. 
 
@@ -10,12 +9,10 @@ GW2 has it's own economy through the game's Trading Post where the player can bu
 The crafting system in Guild Wars 2 can be visualized as each item having it's own item hierarchy. Many of the low tier (basic or fine) items are built from materials that can be harvested from landscapes or looted from enemies, but rarer items such as top tier (ascended or legendary) weapons and armor may be built from many more items. Each of these items may consist of even more items or materials.
 
 ### Issue
-=========
 
 Crafting in GW2 is almost impossible without first researching item recipes. The most popular place to find item recipes is on the [Guild Wars 2 Wiki](https://wiki.guildwars2.com/wiki/Main_Page). It is a good resource when a player wants quick background information about a single item, but it is quite limited when trying to find out exactly which items and materials are needed to craft a high quality or rarer item. It often takes opening more than 10 browser tabs to figure out the full recipe of one single weapon/armor piece.
 
 ### Solution
-============
 
 GW2 Auxiliary will make crafting recipes easy to view and track. Keeping to a smaller scope it will feature:
 * An intuitive recipe viewer with hierarchical dropdowns.

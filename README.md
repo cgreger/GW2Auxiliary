@@ -4,9 +4,9 @@
 
 Guild Wars 2 is a massively multiplayer online role-playing game that lets users create and play customizable, levelable, characters in the fantasy world of Tyria. The game's main features are centered around real-time events where players collectively complete achievements, quests, and defeat powerful enemies. 
 
-GW2 has it's own economy through the game's Trading Post where the player can buy, instantly sell (for a lower return), or list items at their own price. While some players like to buy their items quickly, others prefer to use GW2's extensive crafting system.
+GW2 has its own economy through the game's Trading Post where the player can buy, list items at their own price, or instantly sell (for a lower return). While some players like to buy their items quickly, others prefer to use GW2's extensive crafting system.
 
-The crafting system in Guild Wars 2 can be visualized as each item having it's own item hierarchy. Many of the low tier (basic or fine) items are built from materials that can be harvested from landscapes or looted from enemies, but rarer items such as top tier (ascended or legendary) weapons and armor may be built from many more items. Each of these items may consist of even more items or materials.
+The crafting system in Guild Wars 2 can be visualized as each item having its own item hierarchy. Many of the low tier (basic or fine) items are built from materials that can be harvested from landscapes or looted from enemies, but rarer items such as top tier (ascended or legendary) weapons and armor may be built from many more items. Each of these items may consist of even more items or materials.
 
 ### Issue
 
@@ -19,7 +19,7 @@ GW2 Auxiliary will make crafting recipes easy to view and track. Keeping to a sm
 * Easy to view item details.
 * User accounts to track item completion based on the user's current game inventory.
 
-I have many more feature I want to add, but this project will be focused on the 3 goals listed above.
+I have many more features I want to add, but this project will be focused on the 3 goals listed above.
 
 In the future I would like GW2 Auxiliary to serve as a go-to gameplay supplement/resource for more than just crafting.
 
@@ -27,7 +27,7 @@ In the future I would like GW2 Auxiliary to serve as a go-to gameplay supplement
 
 * Security/Authentication
   * All: Anyone can view item details and item recipes
-  * User Role: Anyone with a GW2 API Key (generated through the user's [ArenaNet](https://www.arena.net/) account) will be able to create an acocunt & log in
+  * User Role: Anyone with a GW2 API Key (generated through the user's [ArenaNet](https://www.arena.net/) account) will be able to create an acocunt & log in, allowing them to track item builds
 * Database (MySQL and Hibernate)
   * Store users and roles
   * Store item details

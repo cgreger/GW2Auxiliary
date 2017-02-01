@@ -11,3 +11,5 @@
 | 1/29/17 | Worked on project plan | .5 | |
 | 1/30/17 | Wrote problem statement and figured out project technologies/techniques | 3 | |
 | 1/31/17 | Worked on drawn project screen design | 1 | |
+| 1/31/17 | | | |
+| 2/01/17 | | | |

@@ -54,8 +54,7 @@
 - [ ] Deploy application to AWS
 - [ ] Time log entries
 
-# Adding more tasks below once database design and class docs finished
----
+## Adding more tasks below once database design and class docs finished
 
 ### Week 7
 - [ ] Make sure logging is complete in current code

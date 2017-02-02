@@ -16,7 +16,8 @@
 
 
 ### Week 3
-- [ ] Create project structure in IntelliJ
+- [X] Create project structure in IntelliJ
+- [X] Configure Maven
 - [ ] Set up Log4j
 - [ ] Complete database design
 - [ ] Begin creating JSPs
@@ -43,6 +44,7 @@
 - [ ] Create the Item class
 - [ ] Create User class
 - [ ] Implement week 5 exercise
+- [ ] Deploy application to AWS
 - [ ] Make sure logging is complete in current code
 - [ ] Time log entries
 
@@ -52,7 +54,6 @@
 - [ ] Make sure at least 1 JSP displays data from database
 - [ ] Write some tests
 - [ ] Work on CSS
-- [ ] Deploy application to AWS
 - [ ] Time log entries
 
 ## Adding more tasks below once database design and class docs finished

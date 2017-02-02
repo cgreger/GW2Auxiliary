@@ -50,6 +50,7 @@
 - [ ] Create ItemSearch class
 - [ ] Make sure logging is complete in current code
 - [ ] Make sure at least 1 JSP displays data from database
+- [ ] Write some tests
 - [ ] Work on CSS
 - [ ] Deploy application to AWS
 - [ ] Time log entries
@@ -59,11 +60,13 @@
 ### Week 7
 - [ ] Make sure logging is complete in current code
 - [ ] Work on CSS
+- [ ] Write some tests
 - [ ] Time log entries
 
 ### Week 8
 - [ ] Make sure logging is complete in current code
 - [ ] Work on CSS
+- [ ] Write some tests
 - [ ] Time log entries
 
 ### Week 9
@@ -80,12 +83,14 @@
 ### Week 11
 - [ ] Revise java doc
 - [ ] Work on CSS
+- [ ] Write some tests
 - [ ] Make sure logging is complete in current code
 - [ ] Time log entries
 
 ### Week 12
 - [ ] Revise java doc
 - [ ] Work on CSS
+- [ ] Write some tests
 - [ ] Make sure logging is complete in current code
 - [ ] Time log entries
 
@@ -99,6 +104,7 @@
 - [ ] Final javadoc rivision
 - [ ] All logging complete
 - [ ] CSS complete
+- [ ] Tests complete: 80% code coverage
 - [ ] Time log entries
 - [ ] Create final presentation
 

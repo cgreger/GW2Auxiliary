@@ -13,5 +13,7 @@
 | 1/31/17 | Worked on drawn project screen design | 1 | |
 | 2/1/17 | Finished drawn screen design| 4 | |
 | 2/1/17 | Finished project plan | 1 | Adding more to week 7+ as soon as database design and class docs complete |
-| 2/1/17 | Finished week 2 exercise | 1 | |
+| 2/2/17 | Finished week 2 exercise | 1 | |
 | 2/2/17 | Uploaded screen design to github | .5 | Included the time to take pictures/crop pictures |
+| 2/2/17 | Worked on database design | 1 | |
+| 2/4/17 | | | |

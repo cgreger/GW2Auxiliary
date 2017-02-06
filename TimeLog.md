@@ -17,5 +17,5 @@
 | 2/2/17 | Uploaded screen design to github | .5 | Included the time to take pictures/crop pictures |
 | 2/2/17 | Worked on database design (on paper) | 1 | |
 | 2/4/17 | Worked on database design (on paper) | 1 | |
-| 2/6/17 | Worked on database and class design (on paper) | 1.5 | Creating diagrams in visio next |
+| 2/6/17 | Finished database and class design (on paper) | 1.5 | Creating diagrams in visio next |
 | 2/6/17 | | |

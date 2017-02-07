@@ -45,7 +45,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to add new User (id" + userId + ").\n" + e.getStackTrace());
+            logger.error("Failed to add new User (id" + userId + ").\n", e);
 
         } finally {
 
@@ -69,7 +69,7 @@ public class UserDAO {
             logger.info("----- Listing All Users -----");
 
             tr = session.beginTransaction();
-            List users = session.createQuery("FROM user").list();
+            List users = session.createQuery("FROM User").list();
 
             for (Iterator iterator = users.iterator(); iterator.hasNext();) {
 
@@ -94,7 +94,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to list all Users.\n" + e.getStackTrace());
+            logger.error("Failed to list all Users.\n", e);
 
         } finally {
 
@@ -130,7 +130,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to update User's (id" + userId + ") email.\n" +  e.getStackTrace());
+            logger.error("Failed to update User's (id" + userId + ") email.\n", e);
 
         } finally {
 
@@ -168,7 +168,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to delete User(id" + userId + ")\n" + e.getStackTrace());
+            logger.error("Failed to delete User(id" + userId + ")\n", e);
 
         } finally {
 

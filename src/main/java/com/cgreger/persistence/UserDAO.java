@@ -12,7 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by katana on 2/7/17.
+ * Created by cgreger on 2/7/17.
  */
 public class UserDAO {
 

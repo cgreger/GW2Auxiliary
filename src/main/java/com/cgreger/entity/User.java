@@ -1,6 +1,7 @@
 package com.cgreger.entity;
 
-import org.hibernate.annotations.Table;
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -14,7 +15,8 @@ import java.util.ArrayList;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "id")
     private int id;
 
@@ -100,4 +102,17 @@ public class User {
     public void setTrackedItems(ArrayList<Integer> trackedItems) {
         this.trackedItems = trackedItems;
     }*/
+
+    @Override
+    public String toString() {
+
+        return "User { " +
+                "id='" + id + "'" +
+                ", email='" + email + "'" +
+                ", password='" + password + "'" +
+                ", salt='" + salt + "'" +
+                ", joinDate='" + joinDate +
+                "' }";
+
+    }
 }

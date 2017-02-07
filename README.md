@@ -9,7 +9,7 @@ GW2 has its own economy through the game's Trading Post where the player can buy
 The crafting system in Guild Wars 2 can be visualized as each item having its own item hierarchy. Many of the low tier (basic or fine) items are built from materials that can be harvested from landscapes or looted from enemies, but rarer items such as top tier (ascended or legendary) weapons and armor may be built from many more items. Each of these items may consist of even more items or materials.
 
 Here is a hierarchial visual of the items needed to make an Ascended Greatsword:
-![Item Hierarchy Example](https://github.com/cgreger/GW2Auxiliary/blob/master/DesignDocuments/Images/example-item-hierarchy.jpg)
+![Item Hierarchy Example](https://github.com/cgreger/GW2Auxiliary/blob/master/images/example-item-hierarchy.jpg)
 
 ### Issue
 

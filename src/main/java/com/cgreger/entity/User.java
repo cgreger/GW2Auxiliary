@@ -1,31 +1,47 @@
 package com.cgreger.entity;
 
+import org.hibernate.annotations.Table;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
  * Created by cgreger on 2/6/17.
  */
+@Entity
+@Table(name = "user")
 public class User {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
     private int id;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "salt")
     private String salt;
+
+    @Column(name = "join_date")
     private LocalDate joinDate;
-    private String apiKey;
-    private ArrayList<Integer> trackedItems;
+    /*private ArrayList<String> apiKeys;
+    private ArrayList<Integer> trackedItems;*/
 
     public User() { }
 
-    public User(String email, String password, String salt, LocalDate joinDate, String apiKey, ArrayList<Integer> trackedItems) {
+    public User(String email, String password, String salt, LocalDate joinDate/*, ArrayList<String> apiKeys, ArrayList<Integer> trackedItems*/) {
 
         this.email = email;
         this.password = password;
         this.salt = salt;
         this.joinDate = joinDate;
-        this.apiKey = apiKey;
-        this.trackedItems = trackedItems;
+        /*this.apiKeys = new ArrayList<String>(apiKeys);
+        this.trackedItems = new ArrayList<Integer>(trackedItems);*/
 
     }
 
@@ -69,12 +85,12 @@ public class User {
         this.joinDate = joinDate;
     }
 
-    public String getApiKey() {
-        return apiKey;
+    /*public ArrayList<String> getApiKeys() {
+        return apiKeys;
     }
 
-    public void setApiKey(String apiKey) {
-        this.apiKey = apiKey;
+    public void setApiKeys(ArrayList<String> apiKeys) {
+        this.apiKeys = apiKeys;
     }
 
     public ArrayList<Integer> getTrackedItems() {
@@ -83,5 +99,5 @@ public class User {
 
     public void setTrackedItems(ArrayList<Integer> trackedItems) {
         this.trackedItems = trackedItems;
-    }
+    }*/
 }

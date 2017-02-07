@@ -49,7 +49,7 @@ In the future I would like GW2 Auxiliary to serve as a go-to gameplay supplement
 
 * [Screen Design](DesignDocuments/Screens.md)
 * [Application Flow](DesignDocuments/applicationFlow.md)
-* [Database Design](DesignDocuments/databaseDiagram.png)
+* [Database Design](DesignDocuments/gw2-auxiliary-database-design-v1.png)
 
 ### [Project Plan](ProjectPlan.md)
 

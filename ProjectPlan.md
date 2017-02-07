@@ -18,14 +18,15 @@
 ### Week 3
 - [X] Create project structure in IntelliJ
 - [X] Configure Maven
-- [ ] Set up Log4j
-- [ ] Complete database design
-- [ ] Begin creating JSPs
+- [X] Set up Log4j
+- [X] Complete database design
+- [X] Begin creating JSPs
 - [ ] Implement week 3 exercise
-- [ ] Time log entries
+- [X] Time log entries
 
 ### Week 4
 - [ ] Create database
+- [ ] Work on CSS/JSPs
 - [ ] Research Apache-Lucene
 - [ ] Configure Hibernate
 - [ ] Write at least 1 DAO
@@ -53,20 +54,20 @@
 - [ ] Make sure logging is complete in current code
 - [ ] Make sure at least 1 JSP displays data from database
 - [ ] Write some tests
-- [ ] Work on CSS
+- [ ] Work on CSS/JSPs
 - [ ] Time log entries
 
 ## Adding more tasks below once database design and class docs finished
 
 ### Week 7
 - [ ] Make sure logging is complete in current code
-- [ ] Work on CSS
+- [ ] Work on CSS/JSPs
 - [ ] Write some tests
 - [ ] Time log entries
 
 ### Week 8
 - [ ] Make sure logging is complete in current code
-- [ ] Work on CSS
+- [ ] Work on CSS/JSPs
 - [ ] Write some tests
 - [ ] Time log entries
 
@@ -83,14 +84,14 @@
 
 ### Week 11
 - [ ] Revise java doc
-- [ ] Work on CSS
+- [ ] Work on CSS/JSPs
 - [ ] Write some tests
 - [ ] Make sure logging is complete in current code
 - [ ] Time log entries
 
 ### Week 12
 - [ ] Revise java doc
-- [ ] Work on CSS
+- [ ] Work on CSS/JSPs
 - [ ] Write some tests
 - [ ] Make sure logging is complete in current code
 - [ ] Time log entries
@@ -105,9 +106,12 @@
 - [ ] Final javadoc rivision
 - [ ] All logging complete
 - [ ] CSS complete
+- [ ] JSPs complete
+- [ ] Classes Complete
+- [ ] DAOs Complete
 - [ ] Tests complete: 80% code coverage
-- [ ] Time log entries
 - [ ] Create final presentation
+- [ ] Time log entries
 
 ### Week 15
 - [ ] Final Presentation

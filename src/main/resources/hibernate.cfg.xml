@@ -21,7 +21,7 @@
         <property name="show_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="edu.matc.entity.User"/>
+        <mapping class="com.cgreger.entity.User"/>
 
     </session-factory>
 

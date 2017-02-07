@@ -49,4 +49,4 @@ crashlytics-build.properties
 fabric.properties
 
 # Database config
-hibernate.cfg.xml
+/src/main/resources/hibernate.cfg.xml

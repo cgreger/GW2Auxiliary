@@ -16,9 +16,16 @@ public class User {
     private String apiKey;
     private ArrayList<Integer> trackedItems;
 
-    public User() {
+    public User() { }
 
+    public User(String email, String password, String salt, LocalDate joinDate, String apiKey, ArrayList<Integer> trackedItems) {
 
+        this.email = email;
+        this.password = password;
+        this.salt = salt;
+        this.joinDate = joinDate;
+        this.apiKey = apiKey;
+        this.trackedItems = trackedItems;
 
     }
 

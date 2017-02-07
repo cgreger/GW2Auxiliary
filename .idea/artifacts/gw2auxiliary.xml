@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="gw2auxiliary">
-    <output-path>$PROJECT_DIR$/out/artifacts/gw2auxiliary</output-path>
-    <root id="archive" name="gw2auxiliary.war" />
-  </artifact>
-</component>

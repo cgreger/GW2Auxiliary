@@ -32,9 +32,9 @@ In the future I would like GW2 Auxiliary to serve as a go-to gameplay supplement
   * All: Anyone can view item details and item recipes
   * User Role: Anyone with a GW2 API Key (generated through the user's [ArenaNet](https://www.arena.net/) account) will be able to create an acocunt & log in, allowing them to track item builds
 * Database (MySQL and Hibernate)
-  * Store users and roles
-  * Store item details
-  * Store item recipes
+  * Store users
+  * Store api keys
+  * Store user's tracked items
 * Web Services or APIs
   * Guild Wars 2 [Official API](https://wiki.guildwars2.com/wiki/API:Main)
 * Visuals

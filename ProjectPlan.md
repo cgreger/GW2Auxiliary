@@ -21,17 +21,16 @@
 - [X] Set up Log4j
 - [X] Complete database design
 - [X] Begin creating JSPs
-- [ ] Implement week 3 exercise
+- [X] Implement week 3 exercise
 - [X] Time log entries
 
 ### Week 4
-- [ ] Create database
+- [X] Create database
 - [ ] Work on CSS/JSPs
 - [ ] Research Apache-Lucene
-- [ ] Configure Hibernate
-- [ ] Write at least 1 DAO
+- [X] Configure Hibernate
+- [X] Write at least 1 DAO
 - [ ] Create unit tests for DAOs
-- [ ] Populate item database using GW2 API
 - [ ] Document all classes needed for the application
 - [ ] Make sure logging is complete in current code
 - [ ] Implement week 4 exercise

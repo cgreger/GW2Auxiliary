@@ -1,13 +1,8 @@
 package com.cgreger.persistence;
 
 import com.cgreger.entity.User;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.hibernate.*;
+import org.junit.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -23,15 +18,8 @@ public class UserDAOTest {
     private UserDAO dao;
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
-    @Before
-    public void setUp() throws Exception {
-
-        dao = new UserDAO();
-
-    }
-
-    @After
-    public void tearDown() throws Exception {
+    @BeforeClass
+    public static void runOnceBeforeClass() throws Exception {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -39,8 +27,12 @@ public class UserDAOTest {
         try {
 
             tr = session.beginTransaction();
-
-            tr.commit();
+            session.createSQLQuery("INSERT INTO user (email, password, salt, join_date) VALUES" +
+                "('username@gmail.com', 'passwordhash', 'salthash1', NOW())," +
+                "('sally@gmail.com', 'passwordhash', 'salthash2', NOW())," +
+                "('jdoe@gmail.com', 'passwordhash', 'salthash3', NOW())," +
+                "('smith@gmail.com', 'passwordhash', 'salthash4', NOW())," +
+                "('johnny@gmail.com', 'passwordhash', 'salthash5', NOW());").executeUpdate();
 
         } catch (HibernateException e) {
 
@@ -56,6 +48,21 @@ public class UserDAOTest {
 
         }
 
+
+    }
+
+    @Before
+    public void setUp() {
+
+        dao = new UserDAO();
+
+    }
+
+    @AfterClass
+    public static void runOnceAfterClass() throws Exception {
+
+
+
     }
 
     @Test
@@ -63,7 +70,7 @@ public class UserDAOTest {
 
         int userId = dao.addUser("testuser@gmail.com", "passwordhash", "salthash");
 
-        assertEquals("Add User test failed: New id not created.", 6, userId);
+        assertEquals("Add User test failed: New id not created correctly.", 6, userId);
         assertEquals("Add User test failed: Id created but information added incorrect.",
                 "testuser@gmail.com", dao.getUser(userId).getEmail());
 
@@ -77,8 +84,13 @@ public class UserDAOTest {
 
     }
 
+
+    //TODO: Add tests for getUser() and updatePassword()
+
     @Test
     public void updateUserEmail() throws Exception {
+
+
 
     }
 

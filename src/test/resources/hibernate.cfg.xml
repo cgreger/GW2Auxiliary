@@ -22,6 +22,9 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
+        <!-- creates the tables from the entites automatically -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
         <!-- List the annotated entity class/es -->
         <mapping class="com.cgreger.entity.User"/>
 

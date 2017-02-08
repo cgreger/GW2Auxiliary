@@ -1,10 +1,15 @@
 package com.cgreger.entity;
 
 import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
-import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.*;
 
+import javax.ejb.Local;
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by cgreger on 2/6/17.
@@ -14,8 +19,7 @@ import java.util.ArrayList;
 public class User {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
 
@@ -28,8 +32,9 @@ public class User {
     @Column(name = "salt")
     private String salt;
 
-    @Column(name = "join_date")
-    private String joinDate;
+    @CreationTimestamp
+    @Column(name="join_date")
+    private Date joinDate;
     /*private ArrayList<String> apiKeys;
     private ArrayList<Integer> trackedItems;*/
 
@@ -77,11 +82,11 @@ public class User {
         this.salt = salt;
     }
 
-    public String getJoinDate() {
+    public Date getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(String joinDate) {
+    public void setJoinDate(Date joinDate) {
         this.joinDate = joinDate;
     }
 

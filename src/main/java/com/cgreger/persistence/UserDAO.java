@@ -8,19 +8,22 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import java.time.LocalDate;
-import java.util.Iterator;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.cgreger.persistence.SessionFactoryProvider.getSessionFactory;
 
 /**
  * Created by cgreger on 2/7/17.
  */
 public class UserDAO {
 
-    private final Logger logger = Logger.getLogger(this.getClass());
-    private static SessionFactory factory;
+    private final Logger log = Logger.getLogger(this.getClass());
+    private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     // CREATE
-    public Integer addUser(String email, String password, String salt, LocalDate joinDate) {
+    public int addUser(String email, String password, String salt) {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -28,14 +31,14 @@ public class UserDAO {
 
         try {
 
-            logger.info("Adding new User.");
+            log.info("Adding new User.");
 
             tr = session.beginTransaction();
-            User user = new User(email, password, salt, joinDate);
+            User user = new User(email, password, salt);
             userId = (Integer) session.save(user);
 
             tr.commit();
-            logger.info("Successfully added new User (id" + userId + ").");
+            log.info("Successfully added new User (id" + userId + ").");
 
         } catch (HibernateException e) {
 
@@ -45,7 +48,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to add new User (id" + userId + ").\n", e);
+            log.error("Failed to add new User (id" + userId + ").\n", e);
 
         } finally {
 
@@ -56,35 +59,21 @@ public class UserDAO {
         return userId;
     }
 
-    //TODO: method to get user by ID
-
-    // READ ALL
-    public void listUsers() {
+    // READ BY ID
+    public User getUser(int userId) {
 
         Session session = factory.openSession();
         Transaction tr = null;
+        User user = null;
 
         try {
 
-            logger.info("----- Listing All Users -----");
+            log.info("Getting User (id" + userId + ").");
 
             tr = session.beginTransaction();
-            List users = session.createQuery("FROM User").list();
+            user = (User) session.get(User.class, userId);
 
-            for (Iterator iterator = users.iterator(); iterator.hasNext();) {
-
-                User user = (User) iterator.next();
-
-                logger.info("Id: " + user.getId());
-                logger.info("Email: " + user.getEmail());
-                logger.info("Password Hash: " + user.getPassword());
-                logger.info("Password Salt: " + user.getSalt());
-                logger.info("Join Date: " + user.getJoinDate());
-
-            }
-
-            tr.commit();
-            logger.info("----- End Listing -----");
+            log.info("Successfully retrieved User (id" + userId + ")");
 
         } catch (HibernateException e) {
 
@@ -94,7 +83,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to list all Users.\n", e);
+            log.error("Failed to retrieve User (id" + userId + ")\n", e);
 
         } finally {
 
@@ -102,25 +91,25 @@ public class UserDAO {
 
         }
 
+        return user;
+
     }
 
-    // UPDATE EMAIL
-    public void updateUserEmail(Integer userId, String email) {
+    // READ ALL
+    public List<User> getAllUsers() {
 
         Session session = factory.openSession();
         Transaction tr = null;
+        List<User> users = new ArrayList<User>();
 
         try {
 
-            logger.info("Updating User's (id" + userId + ") email to: " + email);
+            log.info("Getting and creating List of all users.");
 
             tr = session.beginTransaction();
-            User user = (User) session.get(User.class, userId);
-            user.setEmail(email);
-            session.update(user);
+            users = session.createCriteria(User.class).list();
 
-            tr.commit();
-            logger.info("Successfully upadated User's (id" + userId + ") email to: " + email);
+            log.info("Successfully created List of all Users.");
 
         } catch (HibernateException e) {
 
@@ -130,7 +119,45 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to update User's (id" + userId + ") email.\n", e);
+            log.error("Failed to create List of all Users.\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+        return users;
+
+    }
+
+    // UPDATE EMAIL
+    public void updateUserEmail(int userId, String email) {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+
+        try {
+
+            log.info("Updating User's (id" + userId + ") email to: " + email);
+
+            tr = session.beginTransaction();
+            User user = (User) session.get(User.class, userId);
+            user.setEmail(email);
+            session.update(user);
+
+            tr.commit();
+            log.info("Successfully upadated User's (id" + userId + ") email to: " + email);
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to update User's (id" + userId + ") email.\n", e);
 
         } finally {
 
@@ -143,14 +170,14 @@ public class UserDAO {
     //TODO: add method to update password & salt
 
     // DELETE
-    public void deleteUser(Integer userId) {
+    public void deleteUser(int userId) {
 
         Session session = factory.openSession();
         Transaction tr = null;
 
         try {
 
-            logger.info("Deleting User (id" + userId + ").");
+            log.info("Deleting User (id" + userId + ").");
 
             tr = session.beginTransaction();
             User employee =
@@ -158,7 +185,7 @@ public class UserDAO {
             session.delete(employee);
 
             tr.commit();
-            logger.info("Successfully deleted User (id" + userId + ").");
+            log.info("Successfully deleted User (id" + userId + ").");
 
         } catch (HibernateException e) {
 
@@ -168,7 +195,7 @@ public class UserDAO {
 
             }
 
-            logger.error("Failed to delete User(id" + userId + ")\n", e);
+            log.error("Failed to delete User(id" + userId + ")\n", e);
 
         } finally {
 

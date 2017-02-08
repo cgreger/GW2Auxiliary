@@ -1,13 +1,9 @@
 package com.cgreger.entity;
 
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import org.hibernate.annotations.*;
-
-import javax.ejb.Local;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 

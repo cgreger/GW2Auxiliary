@@ -167,7 +167,43 @@ public class UserDAO {
 
     }
 
-    //TODO: add method to update password & salt
+    // UPDATE PASSWORD
+    public void updateUserPassword(int userId, String password, String salt) {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+
+        try {
+
+            log.info("Updating User's (id" + userId + ") password.");
+
+            tr = session.beginTransaction();
+            User user = (User) session.get(User.class, userId);
+            user.setPassword(password);
+            user.setSalt(salt);
+            session.update(user);
+
+            tr.commit();
+            log.info("Successfully upadated User's (id" + userId + ") password.");
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to update User's (id" + userId + ") password.\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+    }
+
 
     // DELETE
     public void deleteUser(int userId) {

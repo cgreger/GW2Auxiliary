@@ -3,9 +3,6 @@ package com.cgreger.persistence;
 import com.cgreger.entity.User;
 import org.hibernate.*;
 import org.junit.*;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -78,15 +75,35 @@ public class UserDAOTest {
     }
 
 
-    //TODO: Add tests for getUser() and updatePassword()
+    @Test
+    public void getUser() throws Exception {
+
+        int userId = dao.addUser("USERMAIL@gmail.com", "USERPASS", "USERSALT");
+
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(6).getPassword().equals("USERPASS"));
+
+    }
 
     @Test
     public void updateUserEmail() throws Exception {
 
         dao.updateUserEmail(1, "TESTUPDATE@gmail.com");
 
-        assertEquals("Failed to update User (id1) to 'TESTUPDATE@gmail.com'.",
+        assertEquals("Failed to update User's (id1) email to 'TESTUPDATE@gmail.com'.",
                 "TESTUPDATE@gmail.com", dao.getUser(1).getEmail());
+
+    }
+
+    @Test
+    public void updateUserPassword() throws Exception {
+
+        dao.updateUserPassword(4, "TESTPASSWORD", "TESTSALT");
+
+        assertEquals("Failed to update User's (id4) password to 'TESTPASSwORD' & 'TESTSALT'.",
+                "TESTPASSWORD", dao.getUser(4).getPassword());
+
+        assertEquals("Failed to update User's (id4) password to 'TESTPASSwORD' & 'TESTSALT'.",
+                "TESTSALT", dao.getUser(4).getSalt());
 
     }
 

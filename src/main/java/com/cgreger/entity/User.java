@@ -4,7 +4,6 @@ import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -30,18 +29,17 @@ public class User {
     private String salt;
 
     @Column(name = "join_date")
-    private LocalDate joinDate;
+    private String joinDate;
     /*private ArrayList<String> apiKeys;
     private ArrayList<Integer> trackedItems;*/
 
     public User() { }
 
-    public User(String email, String password, String salt, LocalDate joinDate/*, ArrayList<String> apiKeys, ArrayList<Integer> trackedItems*/) {
+    public User(String email, String password, String salt/*, ArrayList<String> apiKeys, ArrayList<Integer> trackedItems*/) {
 
         this.email = email;
         this.password = password;
         this.salt = salt;
-        this.joinDate = joinDate;
         /*this.apiKeys = new ArrayList<String>(apiKeys);
         this.trackedItems = new ArrayList<Integer>(trackedItems);*/
 
@@ -79,11 +77,11 @@ public class User {
         this.salt = salt;
     }
 
-    public LocalDate getJoinDate() {
+    public String getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(LocalDate joinDate) {
+    public void setJoinDate(String joinDate) {
         this.joinDate = joinDate;
     }
 

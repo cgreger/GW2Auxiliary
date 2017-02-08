@@ -56,8 +56,9 @@
     </column>
     <column id="20" parent="10" name="date_added">
       <Position>3</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <index id="21" parent="10" name="tracked_item_user_id_fk">
       <ColNames>fk_user_id</ColNames>
@@ -93,8 +94,9 @@
     </column>
     <column id="27" parent="11" name="join_date">
       <Position>5</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <index id="28" parent="11" name="user_email_uindex">
       <ColNames>email</ColNames>

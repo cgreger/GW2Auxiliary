@@ -22,6 +22,7 @@
 - [X] Complete database design
 - [X] Begin creating JSPs
 - [X] Implement week 3 exercise
+- [X] Document classes on paper
 - [X] Time log entries
 
 ### Week 4
@@ -30,10 +31,9 @@
 - [ ] Research Apache-Lucene
 - [X] Configure Hibernate
 - [X] Write at least 1 DAO
-- [ ] Create unit tests for DAOs
+- [X] Create unit tests for DAO
 - [ ] Document all classes needed for the application
 - [ ] Make sure logging is complete in current code
-- [ ] Implement week 4 exercise
 - [ ] Time log entries
 
 ### Week 5

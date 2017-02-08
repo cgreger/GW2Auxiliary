@@ -58,13 +58,6 @@ public class UserDAOTest {
 
     }
 
-    @AfterClass
-    public static void runOnceAfterClass() throws Exception {
-
-
-
-    }
-
     @Test
     public void addUser() throws Exception {
 
@@ -90,12 +83,19 @@ public class UserDAOTest {
     @Test
     public void updateUserEmail() throws Exception {
 
+        dao.updateUserEmail(1, "TESTUPDATE@gmail.com");
 
+        assertEquals("Failed to update User (id1) to 'TESTUPDATE@gmail.com'.",
+                "TESTUPDATE@gmail.com", dao.getUser(1).getEmail());
 
     }
 
     @Test
     public void deleteUser() throws Exception {
+
+        dao.deleteUser(3);
+
+        assertEquals("Failed to delete User (id3).", null, dao.getUser(3));
 
     }
 

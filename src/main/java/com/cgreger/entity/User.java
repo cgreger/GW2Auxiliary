@@ -1,11 +1,9 @@
 package com.cgreger.entity;
 
-import org.hibernate.annotations.*;
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by cgreger on 2/6/17.
@@ -28,21 +26,25 @@ public class User {
     @Column(name = "salt")
     private String salt;
 
-    @CreationTimestamp
-    @Column(name="join_date")
-    private Date joinDate;
-    /*private ArrayList<String> apiKeys;
-    private ArrayList<Integer> trackedItems;*/
+    @NotNull
+    @Column(name="join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Calendar joinDate;
+
+    @OneToMany(targetEntity = APIKey.class, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<APIKey> apiKeys;
+
+    @OneToMany(targetEntity = TrackedItem.class, mappedBy = "user", cascade = CascadeType.ALL)
+    private List<TrackedItem> trackedItems;
 
     public User() { }
 
-    public User(String email, String password, String salt/*, ArrayList<String> apiKeys, ArrayList<Integer> trackedItems*/) {
+    public User(String email, String password, String salt, List<APIKey> apiKeys, List<TrackedItem> trackedItems) {
 
         this.email = email;
         this.password = password;
         this.salt = salt;
-        /*this.apiKeys = new ArrayList<String>(apiKeys);
-        this.trackedItems = new ArrayList<Integer>(trackedItems);*/
+        this.apiKeys = apiKeys;
+        this.trackedItems = trackedItems;
 
     }
 
@@ -78,29 +80,29 @@ public class User {
         this.salt = salt;
     }
 
-    public Date getJoinDate() {
+    public Calendar getJoinDate() {
         return joinDate;
     }
 
-    public void setJoinDate(Date joinDate) {
+    public void setJoinDate(Calendar joinDate) {
         this.joinDate = joinDate;
     }
 
-    /*public ArrayList<String> getApiKeys() {
+    public List<APIKey> getApiKeys() {
         return apiKeys;
     }
 
-    public void setApiKeys(ArrayList<String> apiKeys) {
+    public void setApiKeys(List<APIKey> apiKeys) {
         this.apiKeys = apiKeys;
     }
 
-    public ArrayList<Integer> getTrackedItems() {
+    public List<TrackedItem> getTrackedItems() {
         return trackedItems;
     }
 
-    public void setTrackedItems(ArrayList<Integer> trackedItems) {
+    public void setTrackedItems(List<TrackedItem> trackedItems) {
         this.trackedItems = trackedItems;
-    }*/
+    }
 
     @Override
     public String toString() {

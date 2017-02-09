@@ -24,12 +24,12 @@ public class UserDAOTest {
         try {
 
             tr = session.beginTransaction();
-            session.createSQLQuery("INSERT INTO user (email, password, salt, join_date) VALUES" +
-                "('username@gmail.com', 'passwordhash', 'salthash1', NOW())," +
-                "('sally@gmail.com', 'passwordhash', 'salthash2', NOW())," +
-                "('jdoe@gmail.com', 'passwordhash', 'salthash3', NOW())," +
-                "('smith@gmail.com', 'passwordhash', 'salthash4', NOW())," +
-                "('johnny@gmail.com', 'passwordhash', 'salthash5', NOW());").executeUpdate();
+            session.createSQLQuery("INSERT INTO user (email, password, salt) VALUES" +
+                "('username@gmail.com', 'passwordhash', 'salthash1')," +
+                "('sally@gmail.com', 'passwordhash', 'salthash2')," +
+                "('jdoe@gmail.com', 'passwordhash', 'salthash3')," +
+                "('smith@gmail.com', 'passwordhash', 'salthash4')," +
+                "('johnny@gmail.com', 'passwordhash', 'salthash5');").executeUpdate();
 
         } catch (HibernateException e) {
 
@@ -80,7 +80,7 @@ public class UserDAOTest {
 
         int userId = dao.addUser("USERMAIL@gmail.com", "USERPASS", "USERSALT");
 
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(6).getPassword().equals("USERPASS"));
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getPassword().equals("USERPASS"));
 
     }
 

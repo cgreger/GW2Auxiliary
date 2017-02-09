@@ -1,5 +1,7 @@
 package com.cgreger.persistence;
 
+import com.cgreger.entity.APIKey;
+import com.cgreger.entity.TrackedItem;
 import com.cgreger.entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
@@ -7,8 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +34,16 @@ public class UserDAO {
             log.info("Adding new User.");
 
             tr = session.beginTransaction();
-            User user = new User(email, password, salt);
+
+            APIKey apiKey = new APIKey();
+            apiKey.setApiKey(Double.toString(Math.random()));
+
+            ArrayList<APIKey> apiKeys = new ArrayList<APIKey>();
+            apiKeys.add(apiKey);
+
+
+            //todo: figure out this apikey stuff
+            User user = new User(email, password, salt, apiKeys, new ArrayList<TrackedItem>());
             userId = (Integer) session.save(user);
 
             tr.commit();

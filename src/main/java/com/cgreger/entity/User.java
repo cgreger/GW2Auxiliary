@@ -2,6 +2,7 @@ package com.cgreger.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -38,13 +39,13 @@ public class User {
 
     public User() { }
 
-    public User(String email, String password, String salt, List<APIKey> apiKeys, List<TrackedItem> trackedItems) {
+    public User(String email, String password, String salt) {
 
         this.email = email;
         this.password = password;
         this.salt = salt;
-        this.apiKeys = apiKeys;
-        this.trackedItems = trackedItems;
+        this.apiKeys = new ArrayList<APIKey>();
+        this.trackedItems = new ArrayList<TrackedItem>();
 
     }
 

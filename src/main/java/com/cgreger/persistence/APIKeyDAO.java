@@ -4,47 +4,44 @@ import com.cgreger.entity.APIKey;
 import com.cgreger.entity.TrackedItem;
 import com.cgreger.entity.User;
 import org.apache.log4j.Logger;
-import org.hibernate.*;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
-
-import static com.cgreger.persistence.SessionFactoryProvider.getSessionFactory;
 
 /**
- * Created by cgreger on 2/7/17.
+ * Created by katana on 2/9/17.
  */
-public class UserDAO {
+public class APIKeyDAO {
 
     private final Logger log = Logger.getLogger(this.getClass());
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     // CREATE
-    public int addUser(String email, String password, String salt, APIKey apiKey) {
+    public int addAPIKey(User user, String apiKeyString) {
 
         Session session = factory.openSession();
         Transaction tr = null;
-        Integer userId = null;
+        Integer apiKeyId = null;
 
         try {
 
-            log.info("Adding new User.");
+
+            //TODO: Fix this, needs to simply add an API key to the database.
+            log.info("Adding new API key.");
 
             tr = session.beginTransaction();
 
-
+            APIKey apiKey = new APIKey(user, apiKeyString);
             //apiKey.setApiKey(Double.toString(Math.random()));
 
-
-            User user = new User(email, password, salt);
-
-            // Get this user's list of api keys (should be empty at this point), and add a the given api key to the list
-            user.getApiKeys().add(apiKey);
-            userId = (Integer) session.save(user);
+            apiKey.setId((Integer) session.save(user));
 
             tr.commit();
-            log.info("Successfully added new User (id" + userId + ").");
+            log.info("Successfully added new APIKey owned by (id" + user.getId() + ").");
 
         } catch (HibernateException e) {
 
@@ -54,7 +51,7 @@ public class UserDAO {
 
             }
 
-            log.error("Failed to add new User (id" + userId + ").\n", e);
+            log.error("Failed to add new User (id" + user.getId() + ").\n", e);
 
         } finally {
 
@@ -62,7 +59,7 @@ public class UserDAO {
 
         }
 
-        return userId;
+        return apiKeyId;
     }
 
     // READ BY ID
@@ -246,7 +243,4 @@ public class UserDAO {
         }
 
     }
-
-
-
 }

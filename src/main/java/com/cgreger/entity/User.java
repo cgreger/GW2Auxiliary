@@ -26,14 +26,14 @@ public class User {
     @Column(name = "salt")
     private String salt;
 
-    @NotNull
-    @Column(name="join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    //@NotNull
+    @Column(name="join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false)
     private Calendar joinDate;
 
-    @OneToMany(targetEntity = APIKey.class, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<APIKey> apiKeys;
 
-    @OneToMany(targetEntity = TrackedItem.class, mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
     private List<TrackedItem> trackedItems;
 
     public User() { }

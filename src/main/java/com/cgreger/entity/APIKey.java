@@ -15,7 +15,7 @@ public class APIKey {
     @Column(name = "id")
     private int id;
 
-    @ManyToOne(cascade=CascadeType.ALL) //Unsure about this...
+    @ManyToOne(fetch = FetchType.LAZY) //Unsure about this...
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 

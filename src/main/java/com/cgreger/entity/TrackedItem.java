@@ -17,15 +17,15 @@ public class TrackedItem {
     @Column(name = "id")
     private int id;
 
-    @ManyToOne(cascade=CascadeType.ALL) //Unsure about this...
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Column(name = "gw2_item_id")
     private int gw2ItemId;
 
-    @NotNull
-    @Column(name = "date_added", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    //@NotNull
+    @Column(name = "date_added", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false)
     private Calendar dateAdded;
 
     public TrackedItem() { }

@@ -23,3 +23,4 @@
 | 2/6/17 | Worked on implementing Hibernate (week 3 exercise) into project | 1.5 | |
 | 2/7/17 | Implemented 1 Hibernate class and DAO | 1.5 | |
 | 2/8/17 | Worked on UserDAO tests | 4 | [Note](https://github.com/cgreger/GW2Auxiliary/blob/master/Notes/2-8-17-note.md) |
+| 2/8/17 | Worked on more Entities | 2 | |

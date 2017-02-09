@@ -27,6 +27,8 @@
 
         <!-- List the annotated entity class/es -->
         <mapping class="com.cgreger.entity.User"/>
+        <mapping class="com.cgreger.entity.APIKey"/>
+        <mapping class="com.cgreger.entity.TrackedItem"/>
 
     </session-factory>
 

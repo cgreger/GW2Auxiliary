@@ -21,7 +21,7 @@ public class UserDAO {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     // CREATE
-    public int addUser(String email, String password, String salt, APIKey apiKey) {
+    public int addUser(String email, String password, String salt {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -33,8 +33,7 @@ public class UserDAO {
 
             tr = session.beginTransaction();
 
-
-            //apiKey.setApiKey(Double.toString(Math.random()));
+            //apiKey.setApiKey(D;
 
 
             User user = new User(email, password, salt);

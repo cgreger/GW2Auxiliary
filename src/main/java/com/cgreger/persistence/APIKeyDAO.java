@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by katana on 2/9/17.
+ * Created by cgreger on 2/9/17.
  */
 public class APIKeyDAO {
 
@@ -28,7 +28,6 @@ public class APIKeyDAO {
         Integer apiKeyId = null;
 
         try {
-
 
             //TODO: Fix this, needs to simply add an API key to the database.
             log.info("Adding new API key.");
@@ -63,7 +62,7 @@ public class APIKeyDAO {
     }
 
     // READ BY ID
-    public User getUser(int userId) {
+    public User getAPIKey(int userId) {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -99,7 +98,7 @@ public class APIKeyDAO {
     }
 
     // READ ALL
-    public List<User> getAllUsers() {
+    public List<User> getAllAPIKeys() {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -135,7 +134,7 @@ public class APIKeyDAO {
     }
 
     // UPDATE EMAIL
-    public void updateUserEmail(int userId, String email) {
+    public void updateAPIKey(int userId, String email) {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -170,46 +169,8 @@ public class APIKeyDAO {
 
     }
 
-    // UPDATE PASSWORD
-    public void updateUserPassword(int userId, String password, String salt) {
-
-        Session session = factory.openSession();
-        Transaction tr = null;
-
-        try {
-
-            log.info("Updating User's (id" + userId + ") password.");
-
-            tr = session.beginTransaction();
-            User user = (User) session.get(User.class, userId);
-            user.setPassword(password);
-            user.setSalt(salt);
-            session.update(user);
-
-            tr.commit();
-            log.info("Successfully upadated User's (id" + userId + ") password.");
-
-        } catch (HibernateException e) {
-
-            if (tr != null) {
-
-                tr.rollback();
-
-            }
-
-            log.error("Failed to update User's (id" + userId + ") password.\n", e);
-
-        } finally {
-
-            session.close();
-
-        }
-
-    }
-
-
     // DELETE
-    public void deleteUser(int userId) {
+    public void deleteAPIKey(int userId) {
 
         Session session = factory.openSession();
         Transaction tr = null;

@@ -1,5 +1,6 @@
 package com.cgreger.persistence;
 
+import com.cgreger.entity.APIKey;
 import com.cgreger.entity.User;
 import org.hibernate.*;
 import org.junit.*;
@@ -25,11 +26,18 @@ public class UserDAOTest {
 
             tr = session.beginTransaction();
             session.createSQLQuery("INSERT INTO user (email, password, salt) VALUES" +
-                "('username@gmail.com', 'passwordhash', 'salthash1')," +
-                "('sally@gmail.com', 'passwordhash', 'salthash2')," +
-                "('jdoe@gmail.com', 'passwordhash', 'salthash3')," +
-                "('smith@gmail.com', 'passwordhash', 'salthash4')," +
-                "('johnny@gmail.com', 'passwordhash', 'salthash5');").executeUpdate();
+                    "('username@gmail.com', 'passwordhash', 'salthash1')," +
+                    "('sally@gmail.com', 'passwordhash', 'salthash2')," +
+                    "('jdoe@gmail.com', 'passwordhash', 'salthash3')," +
+                    "('smith@gmail.com', 'passwordhash', 'salthash4')," +
+                    "('johnny@gmail.com', 'passwordhash', 'salthash5');").executeUpdate();
+            session.createSQLQuery("INSERT INTO gw2_api_key (user_id, api_key) VALUES" +
+                    "(1, 'APIKEY1')," +
+                    "(2, 'APIKEY2')," +
+                    "(3, 'APIKEY3')," +
+                    "(4, 'APIKEY4')," +
+                    "(5, 'APIKEY5'),").executeUpdate();
+
 
         } catch (HibernateException e) {
 
@@ -58,7 +66,7 @@ public class UserDAOTest {
     @Test
     public void addUser() throws Exception {
 
-        int userId = dao.addUser("testuser@gmail.com", "passwordhash", "salthash");
+        int userId = dao.addUser("testuser@gmail.com", "passwordhash", "salthash", new APIKey(  , Double.toString(Math.random())));
 
         assertEquals("Add User test failed: New id not created correctly.", 6, userId);
         assertEquals("Add User test failed: Id created but information added incorrect.",

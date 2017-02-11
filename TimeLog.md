@@ -24,3 +24,7 @@
 | 2/7/17 | Implemented 1 Hibernate class and DAO | 1.5 | |
 | 2/8/17 | Worked on UserDAO tests | 4 | [Note](https://github.com/cgreger/GW2Auxiliary/blob/master/Notes/2-8-17-note.md) |
 | 2/8/17 | Worked on more Entities | 2 | |
+| 2/9/17 | Created a more stable test environment | 2.5 | |
+| 2/9/17 | Worked on fixing bugs in my annotations | 2.5 | |
+| 2/9/17 | Refactored some code in my DAO's | 1 | |
+| 2/11/17 | Completed peer code review comments | 1 | |

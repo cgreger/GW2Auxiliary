@@ -66,7 +66,7 @@ public class UserDAOTest {
     @Test
     public void addUser() throws Exception {
 
-        int userId = dao.addUser("testuser@gmail.com", "passwordhash", "salthash", new APIKey(  , Double.toString(Math.random())));
+        int userId = dao.addUser("testuser@gmail.com", "passwordhash", "salthash", Double.toString(Math.random()));
 
         assertEquals("Add User test failed: New id not created correctly.", 6, userId);
         assertEquals("Add User test failed: Id created but information added incorrect.",
@@ -86,9 +86,15 @@ public class UserDAOTest {
     @Test
     public void getUser() throws Exception {
 
-        int userId = dao.addUser("USERMAIL@gmail.com", "USERPASS", "USERSALT");
+        int userId = dao.addUser("USERMAIL@gmail.com", "USERPASS", "USERSALT", "USERAPIKEY");
 
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getEmail().equals("USERMAIL@gmail.com"));
         assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getPassword().equals("USERPASS"));
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getSalt().equals("USERSALT"));
+
+        //Not sure how to check this yet.
+        //assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getApiKeys().equals("USERAPIKEY"));
+
 
     }
 

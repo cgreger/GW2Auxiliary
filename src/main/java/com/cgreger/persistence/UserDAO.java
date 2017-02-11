@@ -21,11 +21,12 @@ public class UserDAO {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     // CREATE
-    public int addUser(String email, String password, String salt {
+    public int addUser(String email, String password, String salt, String apiKey) {
 
         Session session = factory.openSession();
         Transaction tr = null;
         Integer userId = null;
+        APIKeyDAO apiKeyDAO = new APIKeyDAO();
 
         try {
 
@@ -33,13 +34,10 @@ public class UserDAO {
 
             tr = session.beginTransaction();
 
-            //apiKey.setApiKey(D;
-
-
             User user = new User(email, password, salt);
 
-            // Get this user's list of api keys (should be empty at this point), and add a the given api key to the list
-            user.getApiKeys().add(apiKey);
+            apiKeyDAO.addAPIKey(user, apiKey);
+
             userId = (Integer) session.save(user);
 
             tr.commit();

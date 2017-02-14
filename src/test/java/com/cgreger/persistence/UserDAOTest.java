@@ -67,6 +67,9 @@ public class UserDAOTest {
     public void addUser() throws Exception {
 
         User user = new User("testuser@gmail.com", "passwordhash", "salthash");
+        APIKey apiKey = new APIKey(user, "apikey");
+
+        user.getApiKeys().add(apiKey);
 
         dao.addUser(user);
 

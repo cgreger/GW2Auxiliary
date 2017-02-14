@@ -34,10 +34,10 @@ public class User {
     private Calendar joinDate;
 
     @OneToMany(targetEntity = APIKey.class, mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<APIKey> apiKeys;
+    private List<APIKey> apiKeys = new ArrayList<APIKey>();
 
     @OneToMany(targetEntity = TrackedItem.class, mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<TrackedItem> trackedItems;
+    private List<TrackedItem> trackedItems = new ArrayList<TrackedItem>();
 
     public User() { }
 
@@ -46,8 +46,6 @@ public class User {
         this.email = email;
         this.password = password;
         this.salt = salt;
-        this.apiKeys = new ArrayList<APIKey>();
-        this.trackedItems = new ArrayList<TrackedItem>();
 
     }
 

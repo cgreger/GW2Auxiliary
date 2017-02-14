@@ -24,10 +24,10 @@ public class APIKey {
 
     public APIKey() { }
 
-    public APIKey(User user, String apiKey) {
+    public APIKey(User user, String apiKeyString) {
 
         this.user = user;
-        this.apiKey = apiKey;
+        this.apiKey = apiKeyString;
 
     }
 

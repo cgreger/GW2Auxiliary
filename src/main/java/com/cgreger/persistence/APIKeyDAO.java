@@ -21,11 +21,12 @@ public class APIKeyDAO {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     // CREATE
-    public int addAPIKey(User user, String apiKeyString) {
+    public int addAPIKey(APIKey apiKey) {
 
         Session session = factory.openSession();
         Transaction tr = null;
         Integer apiKeyId = null;
+        String assocEmail = apiKey.getUser().getEmail();
 
         try {
 
@@ -33,12 +34,10 @@ public class APIKeyDAO {
 
             tr = session.beginTransaction();
 
-            APIKey apiKey = new APIKey(user, apiKeyString);
-
             apiKeyId = (Integer) session.save(apiKey);
 
             tr.commit();
-            log.info("Successfully added new APIKey owned by (id" + user.getId() + ").");
+            log.info("Successfully added new APIKey (associated w/ email " + assocEmail + ").");
 
         } catch (HibernateException e) {
 
@@ -48,7 +47,7 @@ public class APIKeyDAO {
 
             }
 
-            log.error("Failed to add new User (id" + user.getId() + ").\n", e);
+            log.error("Failed to add new APIKey (associated w/ email " + assocEmail + ").\n", e);
 
         } finally {
 
@@ -59,147 +58,145 @@ public class APIKeyDAO {
         return apiKeyId;
     }
 
-//    // READ BY ID
-//    public User getAPIKey(int userId) {
-//
-//        Session session = factory.openSession();
-//        Transaction tr = null;
-//        User user = null;
-//
-//        try {
-//
-//            log.info("Getting User (id" + userId + ").");
-//
-//            tr = session.beginTransaction();
-//            user = (User) session.get(User.class, userId);
-//
-//            log.info("Successfully retrieved User (id" + userId + ")");
-//
-//        } catch (HibernateException e) {
-//
-//            if (tr != null) {
-//
-//                tr.rollback();
-//
-//            }
-//
-//            log.error("Failed to retrieve User (id" + userId + ")\n", e);
-//
-//        } finally {
-//
-//            session.close();
-//
-//        }
-//
-//        return user;
-//
-//    }
-//
-//    // READ ALL
-//    public List<User> getAllAPIKeys() {
-//
-//        Session session = factory.openSession();
-//        Transaction tr = null;
-//        List<User> users = new ArrayList<User>();
-//
-//        try {
-//
-//            log.info("Getting and creating List of all users.");
-//
-//            tr = session.beginTransaction();
-//            users = session.createCriteria(User.class).list();
-//
-//            log.info("Successfully created List of all Users.");
-//
-//        } catch (HibernateException e) {
-//
-//            if (tr != null) {
-//
-//                tr.rollback();
-//
-//            }
-//
-//            log.error("Failed to create List of all Users.\n", e);
-//
-//        } finally {
-//
-//            session.close();
-//
-//        }
-//
-//        return users;
-//
-//    }
-//
-//    // UPDATE EMAIL
-//    public void updateAPIKey(int userId, String email) {
-//
-//        Session session = factory.openSession();
-//        Transaction tr = null;
-//
-//        try {
-//
-//            log.info("Updating User's (id" + userId + ") email to: " + email);
-//
-//            tr = session.beginTransaction();
-//            User user = (User) session.get(User.class, userId);
-//            user.setEmail(email);
-//            session.update(user);
-//
-//            tr.commit();
-//            log.info("Successfully upadated User's (id" + userId + ") email to: " + email);
-//
-//        } catch (HibernateException e) {
-//
-//            if (tr != null) {
-//
-//                tr.rollback();
-//
-//            }
-//
-//            log.error("Failed to update User's (id" + userId + ") email.\n", e);
-//
-//        } finally {
-//
-//            session.close();
-//
-//        }
-//
-//    }
-//
-//    // DELETE
-//    public void deleteAPIKey(int userId) {
-//
-//        Session session = factory.openSession();
-//        Transaction tr = null;
-//
-//        try {
-//
-//            log.info("Deleting User (id" + userId + ").");
-//
-//            tr = session.beginTransaction();
-//            User employee =
-//                    (User)session.get(User.class, userId);
-//            session.delete(employee);
-//
-//            tr.commit();
-//            log.info("Successfully deleted User (id" + userId + ").");
-//
-//        } catch (HibernateException e) {
-//
-//            if (tr!=null) {
-//
-//                tr.rollback();
-//
-//            }
-//
-//            log.error("Failed to delete User(id" + userId + ")\n", e);
-//
-//        } finally {
-//
-//            session.close();
-//
-//        }
-//
-//    }
+    public APIKey getAPIKey(int apiKeyId) {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+        APIKey apiKey = null;
+
+        try {
+
+            log.info("Getting APIKey (id" + apiKeyId + ").");
+
+            tr = session.beginTransaction();
+            apiKey = (APIKey) session.get(APIKey.class, apiKeyId);
+
+            log.info("Successfully retrieved APIKey (id" + apiKey + ")");
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to retrieve APIKey (id" + apiKey + ")\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+        return apiKey;
+
+    }
+
+    // READ ALL
+    public List<APIKey> getAllAPIKeys() {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+        List<APIKey> apiKeys = new ArrayList<APIKey>();
+
+        try {
+
+            log.info("Getting and creating List of all APIKeys.");
+
+            tr = session.beginTransaction();
+            apiKeys = session.createCriteria(APIKey.class).list();
+
+            log.info("Successfully created List of all APIKeys.");
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to create List of all APIKeys.\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+        return apiKeys;
+
+    }
+
+    // UPDATE APIKey
+    public void updateAPIKey(APIKey apiKey) {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+        String assocEmail = apiKey.getUser().getEmail();
+
+        try {
+
+            log.info("Updating APIKey (associated w/ email: " + assocEmail + ")");
+
+            tr = session.beginTransaction();
+            session.update(apiKey);
+
+            tr.commit();
+            log.info("Successfully upadated APIKey (associated w/ email " + assocEmail + ")");
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to update APIKey (associated w/ email " + assocEmail + ") email.\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+    }
+
+    // DELETE
+    public void deleteAPIKey(int apiKeyId) {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+
+        try {
+
+            log.info("Deleting APIKey (id" + apiKeyId + ").");
+
+            tr = session.beginTransaction();
+
+            APIKey apiKey = (APIKey) session.get(APIKey.class, apiKeyId);
+            session.delete(apiKey);
+
+            tr.commit();
+            log.info("Successfully deleted APIKey (id" + apiKeyId + ").");
+
+        } catch (HibernateException e) {
+
+            if (tr!=null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to delete APIKey (id" + apiKeyId + ")\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+    }
 }

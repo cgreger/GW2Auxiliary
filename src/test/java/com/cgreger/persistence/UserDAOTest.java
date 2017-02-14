@@ -36,7 +36,7 @@ public class UserDAOTest {
                     "(2, 'APIKEY2')," +
                     "(3, 'APIKEY3')," +
                     "(4, 'APIKEY4')," +
-                    "(5, 'APIKEY5'),").executeUpdate();
+                    "(5, 'APIKEY5')").executeUpdate();
 
 
         } catch (HibernateException e) {
@@ -66,11 +66,13 @@ public class UserDAOTest {
     @Test
     public void addUser() throws Exception {
 
-        int userId = dao.addUser("testuser@gmail.com", "passwordhash", "salthash", Double.toString(Math.random()));
+        User user = new User("testuser@gmail.com", "passwordhash", "salthash");
 
-        assertEquals("Add User test failed: New id not created correctly.", 6, userId);
+        dao.addUser(user);
+
+        assertEquals("Add User test failed: New id not created correctly.", 6, user.getId());
         assertEquals("Add User test failed: Id created but information added incorrect.",
-                "testuser@gmail.com", dao.getUser(userId).getEmail());
+                "testuser@gmail.com", user.getEmail());
 
     }
 
@@ -86,38 +88,39 @@ public class UserDAOTest {
     @Test
     public void getUser() throws Exception {
 
-        int userId = dao.addUser("USERMAIL@gmail.com", "USERPASS", "USERSALT", "USERAPIKEY");
-
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getEmail().equals("USERMAIL@gmail.com"));
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getPassword().equals("USERPASS"));
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getSalt().equals("USERSALT"));
-
-        //Not sure how to check this yet.
-        //assertTrue("Failed to retrieve User (id6).", dao.getUser(userId).getApiKeys().equals("USERAPIKEY"));
-
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(5).getEmail().equals("johnny@gmail.com"));
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(5).getPassword().equals("passwordhash"));
+        assertTrue("Failed to retrieve User (id6).", dao.getUser(5).getSalt().equals("salthash5"));
 
     }
 
     @Test
     public void updateUserEmail() throws Exception {
 
-        dao.updateUserEmail(1, "TESTUPDATE@gmail.com");
+        User user = dao.getUser(1);
+        user.setEmail("TESTUPDATE@gmail.com");
+
+        dao.updateUser(user);
 
         assertEquals("Failed to update User's (id1) email to 'TESTUPDATE@gmail.com'.",
-                "TESTUPDATE@gmail.com", dao.getUser(1).getEmail());
+                "TESTUPDATE@gmail.com", user.getEmail());
 
     }
 
     @Test
     public void updateUserPassword() throws Exception {
 
-        dao.updateUserPassword(4, "TESTPASSWORD", "TESTSALT");
+        User user = dao.getUser(1);
+        user.setPassword("TESTPASSWORD");
+        user.setSalt("TESTSALT");
+
+        dao.updateUser(user);
 
         assertEquals("Failed to update User's (id4) password to 'TESTPASSwORD' & 'TESTSALT'.",
-                "TESTPASSWORD", dao.getUser(4).getPassword());
+                "TESTPASSWORD", user.getPassword());
 
         assertEquals("Failed to update User's (id4) password to 'TESTPASSwORD' & 'TESTSALT'.",
-                "TESTSALT", dao.getUser(4).getSalt());
+                "TESTSALT", user.getSalt());
 
     }
 

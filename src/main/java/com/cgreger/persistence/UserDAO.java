@@ -1,16 +1,11 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.APIKey;
-import com.cgreger.entity.TrackedItem;
 import com.cgreger.entity.User;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringJoiner;
-
-import static com.cgreger.persistence.SessionFactoryProvider.getSessionFactory;
 
 /**
  * Created by cgreger on 2/7/17.
@@ -21,22 +16,17 @@ public class UserDAO {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     // CREATE
-    public int addUser(String email, String password, String salt, String apiKey) {
+    public int addUser(User user) {
 
         Session session = factory.openSession();
         Transaction tr = null;
         Integer userId = null;
-        APIKeyDAO apiKeyDAO = new APIKeyDAO();
 
         try {
 
             log.info("Adding new User.");
 
             tr = session.beginTransaction();
-
-            User user = new User(email, password, salt);
-
-            apiKeyDAO.addAPIKey(user, apiKey);
 
             userId = (Integer) session.save(user);
 
@@ -134,23 +124,21 @@ public class UserDAO {
 
     }
 
-    // UPDATE EMAIL
-    public void updateUserEmail(int userId, String email) {
+    // UPDATE USER
+    public void updateUser(User user) {
 
         Session session = factory.openSession();
         Transaction tr = null;
 
         try {
 
-            log.info("Updating User's (id" + userId + ") email to: " + email);
+            log.info("Updating User's (id" + user.getId() + ")");
 
             tr = session.beginTransaction();
-            User user = (User) session.get(User.class, userId);
-            user.setEmail(email);
             session.update(user);
 
             tr.commit();
-            log.info("Successfully upadated User's (id" + userId + ") email to: " + email);
+            log.info("Successfully upadated User (id" + user.getId() + ")");
 
         } catch (HibernateException e) {
 
@@ -160,44 +148,7 @@ public class UserDAO {
 
             }
 
-            log.error("Failed to update User's (id" + userId + ") email.\n", e);
-
-        } finally {
-
-            session.close();
-
-        }
-
-    }
-
-    // UPDATE PASSWORD
-    public void updateUserPassword(int userId, String password, String salt) {
-
-        Session session = factory.openSession();
-        Transaction tr = null;
-
-        try {
-
-            log.info("Updating User's (id" + userId + ") password.");
-
-            tr = session.beginTransaction();
-            User user = (User) session.get(User.class, userId);
-            user.setPassword(password);
-            user.setSalt(salt);
-            session.update(user);
-
-            tr.commit();
-            log.info("Successfully upadated User's (id" + userId + ") password.");
-
-        } catch (HibernateException e) {
-
-            if (tr != null) {
-
-                tr.rollback();
-
-            }
-
-            log.error("Failed to update User's (id" + userId + ") password.\n", e);
+            log.error("Failed to update User (id" + user.getId() + ")\n", e);
 
         } finally {
 
@@ -213,15 +164,16 @@ public class UserDAO {
 
         Session session = factory.openSession();
         Transaction tr = null;
+        User user = null;
 
         try {
 
             log.info("Deleting User (id" + userId + ").");
 
             tr = session.beginTransaction();
-            User employee =
-                    (User)session.get(User.class, userId);
-            session.delete(employee);
+
+            user = (User)session.get(User.class, userId);
+            session.delete(user);
 
             tr.commit();
             log.info("Successfully deleted User (id" + userId + ").");

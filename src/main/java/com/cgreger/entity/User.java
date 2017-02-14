@@ -1,5 +1,7 @@
 package com.cgreger.entity;
 
+import com.cgreger.persistence.APIKeyDAO;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -27,14 +29,14 @@ public class User {
     @Column(name = "salt")
     private String salt;
 
-    //@NotNull
-    @Column(name="join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false)
+    @NotNull
+    @Column(name="join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP") //, nullable = false)
     private Calendar joinDate;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(targetEntity = APIKey.class, mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<APIKey> apiKeys;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(targetEntity = TrackedItem.class, mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<TrackedItem> trackedItems;
 
     public User() { }

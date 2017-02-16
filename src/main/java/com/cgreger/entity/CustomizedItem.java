@@ -12,7 +12,7 @@ public class CustomizedItem extends Item {
     private InfixUpgrade infixUpgrade;
     private int suffixItemId;
     private int secondarySuffixItemId;
-    private List<String> statChoices = new ArrayList<String>();
+    private List<String> statChoices = new ArrayList<String>(); //TODO: might be array of objects? not sure..
 
     public CustomizedItem() { }
 

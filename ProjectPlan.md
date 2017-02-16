@@ -33,18 +33,18 @@
 - [X] Write at least 1 DAO
 - [X] Create unit tests for DAO
 - [ ] Document all classes needed for the application
-- [ ] Make sure logging is complete in current code
-- [ ] Time log entries
+- [X] Make sure logging is complete in current code
+- [X] Time log entries
 
 ### Week 5
 - [ ] Finish DAOs
 - [ ] Create DAO unit tests
 - [ ] Create ItemTracker class
 - [ ] Create TrackedItem class
-- [ ] Create the Item class
-- [ ] Create User class
+- [X] Create the Item class
+- [X] Create User class
 - [ ] Implement week 5 exercise
-- [ ] Deploy application to AWS
+- [X] Deploy application to AWS
 - [ ] Make sure logging is complete in current code
 - [ ] Time log entries
 

@@ -27,4 +27,7 @@
 | 2/9/17 | Created a more stable test environment | 2.5 | |
 | 2/9/17 | Worked on fixing bugs in my annotations | 2.5 | |
 | 2/9/17 | Refactored some code in my DAO's | 1 | |
-| 2/11/17 | Completed peer code review comments | 1 | |
+| 2/11/17 | Completed peer code review comments | 1 | 
+| 2/13/17 | Added more item entities | 2 ||
+| 2/14/17 | Deployed application to AWS | 2 | Figured out that I had forgotten to add a web.xml file to my project, which is why the war file was not being created correctly |
+| 2/15/17 | Completed basic pojos for all item objects | 2 |||

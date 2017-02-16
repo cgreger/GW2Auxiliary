@@ -41,7 +41,7 @@
 
     </dependencies>
     <build>
-        <finalName>gw2-auxiliary</finalName>
+        <finalName>gw2auxiliary</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -54,5 +54,3 @@
         </plugins>
     </build>
 </project>
-
-<!-- TODO: Finish configuring war file-->

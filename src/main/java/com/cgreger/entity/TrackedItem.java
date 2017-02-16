@@ -71,7 +71,11 @@ public class TrackedItem {
 
     @Override
     public String toString() {
-
-        return "";
+        return "TrackedItem{" +
+                "id=" + id +
+                ", user=" + user +
+                ", gw2ItemId=" + gw2ItemId +
+                ", dateAdded=" + dateAdded +
+                '}';
     }
 }

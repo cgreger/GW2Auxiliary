@@ -57,7 +57,10 @@ public class APIKey {
 
     @Override
     public String toString() {
-
-        return "";
+        return "APIKey{" +
+                "id=" + id +
+                ", user=" + user +
+                ", apiKey='" + apiKey + '\'' +
+                '}';
     }
 }

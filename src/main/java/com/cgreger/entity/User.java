@@ -1,7 +1,5 @@
 package com.cgreger.entity;
 
-import com.cgreger.persistence.APIKeyDAO;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -107,14 +105,14 @@ public class User {
 
     @Override
     public String toString() {
-
-        return "User { " +
-                "id='" + id + "'" +
-                ", email='" + email + "'" +
-                ", password='" + password + "'" +
-                ", salt='" + salt + "'" +
-                ", joinDate='" + joinDate +
-                "' }";
-
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", joinDate=" + joinDate +
+                ", apiKeys=" + apiKeys +
+                ", trackedItems=" + trackedItems +
+                '}';
     }
 }

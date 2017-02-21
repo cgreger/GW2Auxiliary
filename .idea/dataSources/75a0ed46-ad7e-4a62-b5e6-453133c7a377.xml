@@ -15,134 +15,174 @@
     <table id="9" parent="2" name="gw2_api_key"/>
     <table id="10" parent="2" name="tracked_item"/>
     <table id="11" parent="2" name="user"/>
-    <column id="12" parent="9" name="api_key">
+    <table id="12" parent="2" name="user_role"/>
+    <column id="13" parent="9" name="api_key">
       <Position>2</Position>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="13" parent="9" name="id">
+    <column id="14" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="14" parent="9" name="user_id">
+    <column id="15" parent="9" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="15" parent="9" name="gw2_api_key_api_key_uindex">
+    <index id="16" parent="9" name="gw2_api_key_api_key_uindex">
       <ColNames>api_key</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="16" parent="9" name="gw2_api_key_id_uindex">
+    <index id="17" parent="9" name="gw2_api_key_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="17" parent="9" name="PRIMARY">
+    <key id="18" parent="9" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="18" parent="9" name="gw2_api_key_id_uindex">
+    <key id="19" parent="9" name="gw2_api_key_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>gw2_api_key_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="19" parent="9" name="gw2_api_key_api_key_uindex">
+    <key id="20" parent="9" name="gw2_api_key_api_key_uindex">
       <ColNames>api_key</ColNames>
       <UnderlyingIndexName>gw2_api_key_api_key_uindex</UnderlyingIndexName>
     </key>
-    <column id="20" parent="10" name="gw2_item_id">
+    <column id="21" parent="10" name="gw2_item_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="21" parent="10" name="date_added">
+    <column id="22" parent="10" name="date_added">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="22" parent="10" name="id">
+    <column id="23" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="23" parent="10" name="user_id">
+    <column id="24" parent="10" name="user_id">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="10" name="column_5">
+    <column id="25" parent="10" name="column_5">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="25" parent="10" name="tracked_item_id_uindex">
+    <index id="26" parent="10" name="tracked_item_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="26" parent="10" name="PRIMARY">
+    <key id="27" parent="10" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="27" parent="10" name="tracked_item_id_uindex">
+    <key id="28" parent="10" name="tracked_item_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>tracked_item_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="28" parent="11" name="id">
+    <column id="29" parent="11" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="29" parent="11" name="email">
+    <column id="30" parent="11" name="email">
       <Position>2</Position>
       <DataType>varchar(320)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="11" name="password">
+    <column id="31" parent="11" name="password">
       <Position>3</Position>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="11" name="salt">
+    <column id="32" parent="11" name="salt">
       <Position>4</Position>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="11" name="join_date">
+    <column id="33" parent="11" name="join_date">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <index id="33" parent="11" name="user_email_uindex">
+    <index id="34" parent="11" name="user_email_uindex">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="34" parent="11" name="user_id_uindex">
+    <index id="35" parent="11" name="user_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="11" name="user_salt_uindex">
+    <index id="36" parent="11" name="user_salt_uindex">
       <ColNames>salt</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="36" parent="11" name="PRIMARY">
+    <key id="37" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="37" parent="11" name="user_id_uindex">
+    <key id="38" parent="11" name="user_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="38" parent="11" name="user_email_uindex">
+    <key id="39" parent="11" name="user_email_uindex">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>user_email_uindex</UnderlyingIndexName>
     </key>
-    <key id="39" parent="11" name="user_salt_uindex">
+    <key id="40" parent="11" name="user_salt_uindex">
       <ColNames>salt</ColNames>
       <UnderlyingIndexName>user_salt_uindex</UnderlyingIndexName>
     </key>
+    <column id="41" parent="12" name="user_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="12" name="role">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <index id="44" parent="12" name="user_role_id_uindex">
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="45" parent="12" name="fk_user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="46" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="47" parent="12" name="user_role_id_uindex">
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
+    </key>
+    <foreign-key id="48" parent="12" name="fk_user_id">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>gw2_auxiliary</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>update</OnUpdate>
+      <OnDelete>delete</OnDelete>
+    </foreign-key>
   </database-model>
 </dataSource>

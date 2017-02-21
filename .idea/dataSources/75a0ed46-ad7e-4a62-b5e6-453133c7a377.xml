@@ -161,22 +161,27 @@
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <index id="44" parent="12" name="user_role_id_uindex">
+    <column id="44" parent="12" name="email">
+      <Position>4</Position>
+      <DataType>varchar(320)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="45" parent="12" name="user_role_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="45" parent="12" name="fk_user_id">
+    <index id="46" parent="12" name="fk_user_id">
       <ColNames>user_id</ColNames>
     </index>
-    <key id="46" parent="12" name="PRIMARY">
+    <key id="47" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="47" parent="12" name="user_role_id_uindex">
+    <key id="48" parent="12" name="user_role_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="48" parent="12" name="fk_user_id">
+    <foreign-key id="49" parent="12" name="fk_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>gw2_auxiliary</RefSchemaName>
       <RefTableName>user</RefTableName>

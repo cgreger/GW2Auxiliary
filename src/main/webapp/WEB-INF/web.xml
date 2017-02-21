@@ -21,7 +21,7 @@
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>item-tracker</web-resource-name>
-      <url-pattern>/item-tracker/*</url-pattern>
+      <url-pattern>/item-tracker</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>registered-user</role-name>

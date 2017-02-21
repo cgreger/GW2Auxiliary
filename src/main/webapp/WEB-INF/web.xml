@@ -6,4 +6,14 @@
         id="Your_WebApp_ID"
         version="2.5">
   <display-name>Archetype Created Web Application</display-name>
+
+  <!-- Tell the server to use form-based authentication. -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>login.jsp</form-login-page>
+      <form-error-page>loginError.jsp</form-error-page>
+    </form-login-config>
+  </login-config>
+
 </web-app>

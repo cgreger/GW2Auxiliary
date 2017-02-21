@@ -106,16 +106,16 @@
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="11" name="salt">
+    <column id="32" parent="11" name="join_date">
       <Position>4</Position>
-      <DataType>varchar(60)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="33" parent="11" name="join_date">
-      <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="33" parent="11" name="salt">
+      <Position>5</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
     <index id="34" parent="11" name="user_email_uindex">
       <ColNames>email</ColNames>
@@ -125,63 +125,55 @@
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="36" parent="11" name="user_salt_uindex">
-      <ColNames>salt</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="37" parent="11" name="PRIMARY">
+    <key id="36" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="38" parent="11" name="user_id_uindex">
+    <key id="37" parent="11" name="user_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="39" parent="11" name="user_email_uindex">
+    <key id="38" parent="11" name="user_email_uindex">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>user_email_uindex</UnderlyingIndexName>
     </key>
-    <key id="40" parent="11" name="user_salt_uindex">
-      <ColNames>salt</ColNames>
-      <UnderlyingIndexName>user_salt_uindex</UnderlyingIndexName>
-    </key>
-    <column id="41" parent="12" name="user_id">
+    <column id="39" parent="12" name="user_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="42" parent="12" name="role">
+    <column id="40" parent="12" name="role">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="43" parent="12" name="id">
+    <column id="41" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="44" parent="12" name="email">
+    <column id="42" parent="12" name="email">
       <Position>4</Position>
       <DataType>varchar(320)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="45" parent="12" name="user_role_id_uindex">
+    <index id="43" parent="12" name="user_role_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="46" parent="12" name="fk_user_id">
+    <index id="44" parent="12" name="fk_user_id">
       <ColNames>user_id</ColNames>
     </index>
-    <key id="47" parent="12" name="PRIMARY">
+    <key id="45" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="48" parent="12" name="user_role_id_uindex">
+    <key id="46" parent="12" name="user_role_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_role_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="49" parent="12" name="fk_user_id">
+    <foreign-key id="47" parent="12" name="fk_user_id">
       <ColNames>user_id</ColNames>
       <RefSchemaName>gw2_auxiliary</RefSchemaName>
       <RefTableName>user</RefTableName>

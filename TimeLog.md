@@ -35,3 +35,4 @@
 | 2/20/17 | Finished implementing authentication exercise into project | 2 | |
 | 2/21/17 | Finished Activity 1 & 2 (SOAP w/ JAXB) for week 6 | 2 | |
 | 2/27/17 | Finished Activity 3 (SOAP w/ Axis) for week 6 | 1 | |
+| | | **Total: 54.5** | |

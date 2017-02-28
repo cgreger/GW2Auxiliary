@@ -1,24 +1,51 @@
 package com.cgreger.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by cgreger on 2/6/17.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
 
+    @JsonProperty("id")
     private int gw2Id;
+
+    @JsonProperty("chat_link")
     private String chatLink;
+
+    @JsonProperty("name")
     private String name;
+
+    @JsonProperty("icon")
     private String iconUrl;
+
+    @JsonProperty("description")
     private String description;
+
+    @JsonProperty("type")
     private String itemType;
+
+    @JsonProperty("rarity")
     private String rarity;
+
+    @JsonProperty("level")
     private int level;
+
+    @JsonProperty("vendor_value")
     private int vendorValue; //TODO: figure out exact currency conversion
+
+    @JsonProperty("flags")
     private List<String> flags = new ArrayList<String>();
+
+    @JsonProperty("restrictions")
     private List<String> restrictions = new ArrayList<String>();
+
+    @JsonProperty("recipe")
     private List<Integer> recipe = new ArrayList<Integer>();
 
     public Item() { }

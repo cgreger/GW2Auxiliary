@@ -30,4 +30,6 @@
 | 2/11/17 | Completed peer code review comments | 1 | 
 | 2/13/17 | Added more item entities | 2 ||
 | 2/14/17 | Deployed application to AWS | 2 | Figured out that I had forgotten to add a web.xml file to my project, which is why the war file was not being created correctly |
-| 2/15/17 | Completed basic pojos for all item objects | 2 |||
+| 2/15/17 | Completed basic pojos for all item objects | 2 | |
+| 2/19/17 | Worked on implementing authentication exercise into project | 2 | |
+| 2/20/17 | Finished implementing authentication exercise into project | 2 | |

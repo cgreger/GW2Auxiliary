@@ -1,11 +1,14 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Hello World</title>
-</head>
+<!DOCTYPE html>
+<%@include file="template/head.jsp"%>
 <body>
+<%@include file="template/nav.jsp"%>
+<div class="content">
 
-    <h1></h1>
+    <table>
+        <th>${user.getEmail()}</th>
+    </table>
 
+</div>
+<%@include file="template/footer.jsp"%>
 </body>
 </html>

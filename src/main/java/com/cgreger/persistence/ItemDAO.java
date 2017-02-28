@@ -1,6 +1,6 @@
 package com.cgreger.persistence;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 import com.cgreger.entity.Item;

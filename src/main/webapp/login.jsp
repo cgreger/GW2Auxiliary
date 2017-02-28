@@ -4,13 +4,13 @@
 <%@include file="template/nav.jsp"%>
     <div class="content">
 
-        <FORM ACTION="j_security_check" METHOD="POST">
-            <TABLE>
-                <TR><TD>Account Email: <INPUT TYPE="TEXT" NAME="j_username">
-                <TR><TD>Password: <INPUT TYPE="PASSWORD" NAME="j_password">
-                <TR><TH><INPUT TYPE="SUBMIT" VALUE="Log In">
-            </TABLE>
-        </FORM>
+        <form action="j_security_check" method="POST">
+            <table>
+                <tr><td>Account Email: <INPUT TYPE="TEXT" NAME="j_username"></td></tr>
+                <tr><td>Password: <INPUT TYPE="PASSWORD" NAME="j_password"></td></tr>
+                <tr><td><INPUT TYPE="SUBMIT" VALUE="Log In"></td></tr>
+            </table>
+        </form>
 
     </div>
 </body>

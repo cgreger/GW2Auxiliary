@@ -30,4 +30,11 @@
 | 2/11/17 | Completed peer code review comments | 1 | 
 | 2/13/17 | Added more item entities | 2 ||
 | 2/14/17 | Deployed application to AWS | 2 | Figured out that I had forgotten to add a web.xml file to my project, which is why the war file was not being created correctly |
-| 2/15/17 | Completed basic pojos for all item objects | 2 |||
+| 2/15/17 | Completed basic pojos for all item objects | 2 | |
+| 2/19/17 | Worked on implementing authentication exercise into project | 2 | |
+| 2/20/17 | Finished implementing authentication exercise into project | 2 | |
+| 2/21/17 | Finished Activity 1 & 2 (SOAP w/ JAXB) for week 6 | 2 | |
+| 2/27/17 | Finished Activity 3 (SOAP w/ Axis) for week 6 | 1 | |
+| 2/27/17 | Started mapping entities with jackson annotations for json parsing | 2.5 | My basic test for this works, but deployment of the app causes an exception: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper. It seems to think that I do not have the dependency for ObjectMapper, but I do? Still fixing...|
+| 2/27/17 | Successfully displayed data from database on a jsp | 1 | |
+| | | **Total: 58** | |

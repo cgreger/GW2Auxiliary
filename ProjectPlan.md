@@ -27,8 +27,7 @@
 
 ### Week 4
 - [X] Create database
-- [ ] Work on CSS/JSPs
-- [ ] Research Apache-Lucene
+- [X] Work on CSS/JSPs
 - [X] Configure Hibernate
 - [X] Write at least 1 DAO
 - [X] Create unit tests for DAO
@@ -37,31 +36,30 @@
 - [X] Time log entries
 
 ### Week 5
+- [X] Create the Item class
+- [X] Create User class
+- [X] Implement week 5 exercise
+- [X] Deploy application to AWS
+- [X] Make sure logging is complete in current code
+- [X] Time log entries
+
+### Week 6
+- [X] Make sure logging is complete in current code
+- [X] Make sure at least 1 JSP displays data from database
+- [X] Write some tests
+- [X] Work on CSS/JSPs
+- [X] Time log entries
+
+### Week 7
 - [ ] Finish DAOs
 - [ ] Create DAO unit tests
 - [ ] Create ItemTracker class
 - [ ] Create TrackedItem class
-- [X] Create the Item class
-- [X] Create User class
-- [ ] Implement week 5 exercise
-- [X] Deploy application to AWS
 - [ ] Make sure logging is complete in current code
-- [ ] Time log entries
-
-### Week 6
+- [ ] Work on CSS/JSPs
+- [ ] Write some tests
+- [ ] Research Apache-Lucene
 - [ ] Create ItemSearch class
-- [ ] Make sure logging is complete in current code
-- [ ] Make sure at least 1 JSP displays data from database
-- [ ] Write some tests
-- [ ] Work on CSS/JSPs
-- [ ] Time log entries
-
-## Adding more tasks below once database design and class docs finished
-
-### Week 7
-- [ ] Make sure logging is complete in current code
-- [ ] Work on CSS/JSPs
-- [ ] Write some tests
 - [ ] Time log entries
 
 ### Week 8

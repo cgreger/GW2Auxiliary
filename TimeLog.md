@@ -35,4 +35,6 @@
 | 2/20/17 | Finished implementing authentication exercise into project | 2 | |
 | 2/21/17 | Finished Activity 1 & 2 (SOAP w/ JAXB) for week 6 | 2 | |
 | 2/27/17 | Finished Activity 3 (SOAP w/ Axis) for week 6 | 1 | |
-| | | **Total: 54.5** | |
+| 2/27/17 | Started mapping entities with jackson annotations for json parsing | 2.5 | My basic test for this works, but deployment of the app causes an exception: java.lang.NoClassDefFoundError: com/fasterxml/jackson/databind/ObjectMapper. It seems to think that I do not have the dependency for ObjectMapper, but I do? Still fixing...|
+| 2/27/17 | Successfully displayed data from database on a jsp | 1 | |
+| | | **Total: 58** | |

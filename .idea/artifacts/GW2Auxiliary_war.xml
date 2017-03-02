@@ -1,17 +1,8 @@
 <component name="ArtifactManager">
   <artifact type="war" name="GW2Auxiliary:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="GW2Auxiliary.war">
+    <root id="archive" name="gw2auxiliary.war">
       <element id="artifact" artifact-name="GW2Auxiliary:war exploded" />
-      <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/GW2Auxiliary/META-INF/MANIFEST.MF" />
-      </element>
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
-          <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>

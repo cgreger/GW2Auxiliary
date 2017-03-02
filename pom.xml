@@ -6,7 +6,10 @@
 
     <groupId>gw2-auxiliary</groupId>
     <artifactId>gw2-auxiliary</artifactId>
-    <version>1.0</version>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>gw2-auxiliary</name>
+    <url>http://maven.apache.org</url>
 
     <dependencies>
         <dependency>

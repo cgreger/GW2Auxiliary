@@ -45,8 +45,7 @@ public class Item {
     @JsonProperty("restrictions")
     private List<String> restrictions = new ArrayList<String>();
 
-    @JsonProperty("recipe")
-    private List<Integer> recipe = new ArrayList<Integer>();
+    private List<Recipe> recipes = new ArrayList<Recipe>();
 
     public Item() { }
 
@@ -142,6 +141,7 @@ public class Item {
         return recipe;
     }
 
+    @JsonProperty("recipe")
     public void setRecipe(List<Integer> recipe) {
         this.recipe = recipe;
     }

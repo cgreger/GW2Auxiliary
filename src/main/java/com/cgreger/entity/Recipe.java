@@ -12,6 +12,9 @@ public class Recipe {
     @JsonProperty("id")
     private int id;
 
+    @JsonProperty("type")
+    private String type;
+
     @JsonProperty("output_item_id")
     private int outputItemId;
 
@@ -30,8 +33,9 @@ public class Recipe {
     @JsonProperty("flags")
     private List<String> flags;
 
+    //Ingredients are automatically mapped as each ingredient when using itemDAO.getRecipe()
     @JsonProperty("ingredients")
-    private List<Integer> ingredients;
+    private List<Ingredient> ingredients;
 
     @JsonProperty("chat_link")
     private String chatLink;
@@ -94,11 +98,11 @@ public class Recipe {
         this.flags = flags;
     }
 
-    public List<Integer> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<Integer> ingredients) {
+    public void setIngredients(List<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -112,17 +116,17 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Recipe{" +
+        return "Recipe{\n" +
                 "id=" + id +
-                ", outputItemId=" + outputItemId +
-                ", outputItemCount=" + outputItemCount +
-                ", minRating=" + minRating +
-                ", timeToCraftInMili=" + timeToCraftInMili +
-                ", disciplines=" + disciplines +
-                ", flags=" + flags +
-                ", ingredients=" + ingredients +
-                ", chatLink='" + chatLink + '\'' +
-                '}';
+                ", \noutputItemId=" + outputItemId +
+                ", \noutputItemCount=" + outputItemCount +
+                ", \nminRating=" + minRating +
+                ", \ntimeToCraftInMili=" + timeToCraftInMili +
+                ", \ndisciplines=" + disciplines +
+                ", \nflags=" + flags +
+                ", \ningredients=" + ingredients +
+                ", \nchatLink='" + chatLink + '\'' +
+                "\n}";
     }
 
 }

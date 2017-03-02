@@ -1,8 +1,8 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.api.item.recipe.Ingredient;
+import com.cgreger.entity.api.Ingredient;
 import com.cgreger.entity.api.Item;
-import com.cgreger.entity.api.item.recipe.Recipe;
+import com.cgreger.entity.api.Recipe;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;

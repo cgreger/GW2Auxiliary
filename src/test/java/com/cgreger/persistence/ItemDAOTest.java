@@ -67,6 +67,11 @@ public class ItemDAOTest {
 
         log.info("\n\n" + recipe.toString());
 
+        ArrayList<Ingredient> ingredients = (ArrayList<Ingredient>) recipe.getIngredients();
+
+
+        log.info(ingredients);
+
     }
 
     @Test

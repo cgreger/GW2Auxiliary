@@ -1,6 +1,10 @@
 package com.cgreger.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +12,9 @@ import java.util.List;
 /**
  * Created by katana on 2/13/17.
  */
+//@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
+//@JsonSubTypes(@JsonSubTypes.Type(value=ArmorItem.class, name="Armor"),
+//        @JsonSubTypes.Type(value=WeaponItem.class, name="Weapon")
 public class CustomizedItem extends Item {
 
     @JsonProperty("infusion_slots")

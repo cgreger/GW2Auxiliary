@@ -1,5 +1,7 @@
 package com.cgreger.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,18 +10,24 @@ import java.util.List;
  */
 public class ArmorItem extends CustomizedItem {
 
-    private String type;
+    @JsonProperty("type")
+    //TODO: item types must be named descriptively, super class Item already has attribute called type!!
+    private String armorType;
+
+    @JsonProperty("weight_class")
     private String weightClass;
+
+    @JsonProperty("defense")
     private String defenseValue;
 
     public ArmorItem() { }
 
     public String getType() {
-        return type;
+        return armorType;
     }
 
     public void setType(String type) {
-        this.type = type;
+        this.armorType = type;
     }
 
     public String getWeightClass() {
@@ -41,7 +49,7 @@ public class ArmorItem extends CustomizedItem {
     @Override
     public String toString() {
         return "ArmorItem{" +
-                "type='" + type + '\'' +
+                "type='" + armorType + '\'' +
                 ", weightClass='" + weightClass + '\'' +
                 ", defenseValue='" + defenseValue + '\'' +
                 '}';

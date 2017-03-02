@@ -1,5 +1,7 @@
 package com.cgreger.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +10,20 @@ import java.util.List;
  */
 public class CustomizedItem extends Item {
 
+    @JsonProperty("infusion_slots")
     private List<InfusionSlot> infusionSlots = new ArrayList<InfusionSlot>();
+
+    @JsonProperty("infix_upgrade")
     private InfixUpgrade infixUpgrade;
+
+    @JsonProperty("suffix_item_id")
     private int suffixItemId;
+
+    @JsonProperty("secondary_suffix_item_id")
     private int secondarySuffixItemId;
-    private List<String> statChoices = new ArrayList<String>(); //TODO: might be array of objects? not sure..
+
+    //TODO: not an attribute of customized item, must be placed in necessary subclasses.
+    //private List<String> statChoices = new ArrayList<String>(); //TODO: might be array of objects? not sure..
 
     public CustomizedItem() { }
 
@@ -48,13 +59,13 @@ public class CustomizedItem extends Item {
         this.secondarySuffixItemId = secondarySuffixItemId;
     }
 
-    public List<String> getStatChoices() {
-        return statChoices;
-    }
+//    public List<String> getStatChoices() {
+//        return statChoices;
+//    }
 
-    public void setStatChoices(List<String> statChoices) {
-        this.statChoices = statChoices;
-    }
+//    public void setStatChoices(List<String> statChoices) {
+//        this.statChoices = statChoices;
+//    }
 
     @Override
     public String toString() {
@@ -63,7 +74,7 @@ public class CustomizedItem extends Item {
                 ", infixUpgrade=" + infixUpgrade +
                 ", suffixItemId=" + suffixItemId +
                 ", secondarySuffixItemId=" + secondarySuffixItemId +
-                ", statChoices=" + statChoices +
+                //", statChoices=" + statChoices +
                 '}';
     }
 

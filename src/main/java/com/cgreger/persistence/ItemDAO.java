@@ -1,5 +1,6 @@
 package com.cgreger.persistence;
 
+import com.cgreger.entity.Recipe;
 import com.fasterxml.jackson.databind.*;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
@@ -19,7 +20,7 @@ public class ItemDAO {
     private String response;
     private ObjectMapper mapper = new ObjectMapper();
 
-    public Item getGW2Item(int id) throws IOException {
+    public Item getItem(int id) throws IOException {
 
         gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/items?id=" + id);
 
@@ -27,22 +28,19 @@ public class ItemDAO {
 
         Item item = mapper.readValue(response, Item.class);
 
-
-
         return item;
 
     }
 
-    public Item getItemRecipe(int id) throws IOException {
+    public ArrayList<Integer> getItemRecipes(int id) throws IOException {
 
-        gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/recipes?id=" + id);
+        gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/recipes/search?output=" + id);
 
         response = gw2Client.target.request(MediaType.APPLICATION_JSON).get(String.class);
 
-        Item recipe = mapper.readValue(response, Item.class);
+        ArrayList<Integer> recipes = mapper.readValue(response, ArrayList.class);
 
-
-        return recipe;
+        return recipes;
 
     }
 

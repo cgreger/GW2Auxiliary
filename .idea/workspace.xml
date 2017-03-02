@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bbe8461a-f81f-4b20-87d6-2ab73246b41a" name="Default" comment="" />
+    <list default="true" id="bbe8461a-f81f-4b20-87d6-2ab73246b41a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,11 +111,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ItemDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ItemDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            <state relative-caret-position="407">
+              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemDAOTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ItemDAOTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="65" column="44" lean-forward="false" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
+            <state relative-caret-position="421">
+              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1023#1032#0" expanded="true" />
@@ -189,8 +191,8 @@
       <file leaf-file-name="Recipe.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/entity/Recipe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+            <state relative-caret-position="154">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#804#805#0" expanded="true" />
@@ -287,7 +289,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/com/cgreger/persistence/APIKeyDAOTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Customized.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/UpgradeItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/MinatureItem.java" />
@@ -336,8 +337,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/controller/DisplayItemPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Recipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" />
       </list>
     </option>
   </component>
@@ -1732,7 +1734,7 @@
       <workItem from="1487880063417" duration="6072000" />
       <workItem from="1488250720002" duration="865000" />
       <workItem from="1488259750458" duration="104000" />
-      <workItem from="1488259954476" duration="32169000" />
+      <workItem from="1488259954476" duration="32927000" />
     </task>
     <servers />
   </component>
@@ -1769,7 +1771,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188176000" />
+    <option name="totallyTimeSpent" value="188934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1782,7 +1784,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1920" height="1011" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1807,7 +1809,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33405876" sideWeight="0.543131" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861805" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33405876" sideWeight="0.456869" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33405876" sideWeight="0.456869" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17220543" sideWeight="0.50835323" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13578275" sideWeight="0.48377582" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19561933" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1841,128 +1843,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JAVA/com.cgreger.entity">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.cgreger.entity</OriginalElement>
-          <nodes>
-            <node x="-107.37329700272494" y="427.392370572207">com.cgreger.entity.InfusionSlot</node>
-            <node x="210.95367847411444" y="17.504087193460464">com.cgreger.entity.Attribute</node>
-            <node x="1666.3611111111109" y="430.0">com.cgreger.entity.GizmoItem</node>
-            <node x="76.14713896457761" y="1352.574931880109">com.cgreger.entity.APIKey</node>
-            <node x="271.0" y="598.0">com.cgreger.entity.WeaponItem</node>
-            <node x="187.36111111111097" y="386.0">com.cgreger.entity.CustomizedItem</node>
-            <node x="1377.3611111111109" y="419.0">com.cgreger.entity.SalvageKitItem</node>
-            <node x="509.9999999999999" y="642.0">com.cgreger.entity.TrinketItem</node>
-            <node x="-38.11989100817436" y="153.1525885558583">com.cgreger.entity.Buff</node>
-            <node x="0.0" y="783.0">com.cgreger.entity.User</node>
-            <node x="208.149863760218" y="141.06267029972736">com.cgreger.entity.InfixUpgrade</node>
-            <node x="101.0" y="620.0">com.cgreger.entity.ArmorItem</node>
-            <node x="1796.3611111111109" y="430.0">com.cgreger.entity.ToolItem</node>
-            <node x="1012.7499999999999" y="2.0">com.cgreger.entity.Item</node>
-            <node x="0.0" y="653.0">com.cgreger.entity.BackItem</node>
-            <node x="336.1634877384196" y="822.1771117166213">com.cgreger.entity.TrackedItem</node>
-            <node x="903.361111111111" y="430.0">com.cgreger.entity.ContainerItem</node>
-            <node x="419.361111111111" y="364.0">com.cgreger.entity.ConsumableItem</node>
-            <node x="391.34748713290924" y="124.10899182561309">com.cgreger.entity.UpgradeComponentItem</node>
-            <node x="1527.3611111111109" y="430.0">com.cgreger.entity.Miniature</node>
-            <node x="702.361111111111" y="419.0">com.cgreger.entity.BagItem</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.cgreger.entity.ConsumableItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-92.0" />
-              <point x="550.861111111111" y="324.0" />
-              <point x="1068.583333333333" y="324.0" />
-              <point x="-111.66666666666674" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.Miniature" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-26.0" />
-              <point x="1586.8611111111109" y="334.0" />
-              <point x="1254.6944444444443" y="334.0" />
-              <point x="74.44444444444457" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.UpgradeComponentItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-81.0" />
-              <point x="778.3611111111109" y="153.0" />
-              <point x="848.25" y="168.0" />
-              <point x="0.0" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.BackItem" target="com.cgreger.entity.CustomizedItem">
-              <point x="0.0" y="-15.0" />
-              <point x="40.5" y="568.0" />
-              <point x="213.86111111111097" y="568.0" />
-              <point x="-79.5" y="70.0" />
-            </edge>
-            <edge source="com.cgreger.entity.CustomizedItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-70.0" />
-              <point x="293.361111111111" y="314.0" />
-              <point x="1031.3611111111109" y="314.0" />
-              <point x="-148.8888888888889" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.ToolItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-26.0" />
-              <point x="1851.3611111111109" y="314.0" />
-              <point x="1329.1388888888887" y="314.0" />
-              <point x="148.8888888888889" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.SalvageKitItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-37.0" />
-              <point x="1442.3611111111109" y="344.0" />
-              <point x="1217.4722222222222" y="344.0" />
-              <point x="37.22222222222217" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.WeaponItem" target="com.cgreger.entity.CustomizedItem">
-              <point x="0.0" y="-70.0" />
-              <point x="380.5" y="578.0" />
-              <point x="319.861111111111" y="578.0" />
-              <point x="26.5" y="70.0" />
-            </edge>
-            <edge source="com.cgreger.entity.TrinketItem" target="com.cgreger.entity.CustomizedItem">
-              <point x="0.0" y="-26.0" />
-              <point x="564.9999999999999" y="568.0" />
-              <point x="372.861111111111" y="568.0" />
-              <point x="79.5" y="70.0" />
-            </edge>
-            <edge source="com.cgreger.entity.ArmorItem" target="com.cgreger.entity.CustomizedItem">
-              <point x="0.0" y="-48.0" />
-              <point x="176.0" y="578.0" />
-              <point x="266.861111111111" y="578.0" />
-              <point x="-26.5" y="70.0" />
-            </edge>
-            <edge source="com.cgreger.entity.GizmoItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-26.0" />
-              <point x="1721.3611111111109" y="324.0" />
-              <point x="1291.9166666666665" y="324.0" />
-              <point x="111.66666666666674" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.BagItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-37.0" />
-              <point x="792.861111111111" y="334.0" />
-              <point x="1105.8055555555557" y="334.0" />
-              <point x="-74.44444444444434" y="147.0" />
-            </edge>
-            <edge source="com.cgreger.entity.ContainerItem" target="com.cgreger.entity.Item">
-              <point x="0.0" y="-26.0" />
-              <point x="958.361111111111" y="344.0" />
-              <point x="1143.0277777777778" y="344.0" />
-              <point x="-37.22222222222217" y="147.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="159.0" y="230.0" />
-          <SelectedNodes>
-            <node>com.cgreger.entity.InfusionSlot</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/template/nav.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2639,10 +2519,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/TrackedItemDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIKeyDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-532">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/entity/Recipe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+        <state relative-caret-position="154">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#804#805#0" expanded="true" />
@@ -2685,22 +2597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/TrackedItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIKeyDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1606">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/UserDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -2712,32 +2608,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/UserDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="421">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1023#1032#0" expanded="true" />
+            <element signature="e#1406#1415#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        <state relative-caret-position="407">
+          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="65" column="44" lean-forward="false" selection-start-line="65" selection-start-column="44" selection-end-line="65" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1023#1032#0" expanded="true" />
-            <element signature="e#1406#1415#0" expanded="true" />
           </folding>
         </state>
       </provider>

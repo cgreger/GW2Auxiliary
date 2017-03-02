@@ -55,6 +55,19 @@ public class ItemDAO {
 
     }
 
+    public Recipe getRecipe(int id) throws IOException {
+
+        log.info("Retrieving Recipe (id" + id + ")");
+
+        gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/recipes?id=" + id);
+
+        response = gw2Client.target.request(MediaType.APPLICATION_JSON).get(String.class);
+
+        Recipe recipe = mapper.readValue(response, Recipe.class);
+
+        return recipe;
+    }
+
     //TODO: Anyway to keep this private??
     protected void setItemRecipes(Item item) throws IOException {
 
@@ -71,7 +84,6 @@ public class ItemDAO {
             log.error("Failed to set Recipes list for Item (id=" + item.getId() + ")");
 
         }
-
 
     }
 

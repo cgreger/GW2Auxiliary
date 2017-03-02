@@ -1,15 +1,13 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.Ingredient;
-import com.cgreger.entity.Item;
-import com.cgreger.entity.Recipe;
+import com.cgreger.entity.api.item.recipe.Ingredient;
+import com.cgreger.entity.api.Item;
+import com.cgreger.entity.api.item.recipe.Recipe;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -22,6 +20,7 @@ public class ItemDAOTest {
     ItemDAO dao;
 
     //TODO: maybe parse the details of the response to map sub classes?
+    //TODO: check the type before response is mapped, then map to that class.
 
     @Before
     public void setUp() throws  Exception {

@@ -1,13 +1,13 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class ContainerItem extends Item {
+public class Trinket extends CustomizedItem {
 
     private String type;
 
-    public ContainerItem() { }
+    public Trinket() { }
 
     public String getType() {
         return type;
@@ -19,9 +19,8 @@ public class ContainerItem extends Item {
 
     @Override
     public String toString() {
-        return "ContainerItem{" +
+        return "Trinket{" +
                 "type='" + type + '\'' +
                 '}';
     }
-
 }

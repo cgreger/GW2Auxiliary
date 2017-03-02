@@ -22,9 +22,9 @@
         <property name="show_sql">true</property>
 
         <!-- List the annotated entity class/es -->
-        <mapping class="com.cgreger.entity.User"/>
-        <mapping class="com.cgreger.entity.APIKey"/>
-        <mapping class="com.cgreger.entity.TrackedItem"/>
+        <mapping class="com.cgreger.entity.db.User"/>
+        <mapping class="com.cgreger.entity.db.APIKey"/>
+        <mapping class="com.cgreger.entity.db.TrackedItem"/>
 
     </session-factory>
 

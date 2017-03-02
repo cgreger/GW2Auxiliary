@@ -1,16 +1,13 @@
-package com.cgreger.entity;
-
-import java.util.ArrayList;
-import java.util.List;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class TrinketItem extends CustomizedItem {
+public class Container extends Item {
 
     private String type;
 
-    public TrinketItem() { }
+    public Container() { }
 
     public String getType() {
         return type;
@@ -22,8 +19,9 @@ public class TrinketItem extends CustomizedItem {
 
     @Override
     public String toString() {
-        return "TrinketItem{" +
+        return "Container{" +
                 "type='" + type + '\'' +
                 '}';
     }
+
 }

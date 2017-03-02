@@ -1,19 +1,13 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.ArrayList;
-import java.util.List;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 
 /**
  * Created by katana on 2/13/17.
  */
 
 //@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
-public class ArmorItem extends CustomizedItem {
+public class Armor extends CustomizedItem {
 
     @JsonProperty("type")
     //TODO: item types must be named descriptively, super class Item already has attribute called type!!
@@ -25,7 +19,7 @@ public class ArmorItem extends CustomizedItem {
     @JsonProperty("defense")
     private String defenseValue;
 
-    public ArmorItem() { }
+    public Armor() { }
 
     public String getArmorType() {
         return armorType;
@@ -53,7 +47,7 @@ public class ArmorItem extends CustomizedItem {
 
     @Override
     public String toString() {
-        return "ArmorItem{" +
+        return "Armor{" +
                 "armorType='" + armorType + '\'' +
                 ", weightClass='" + weightClass + '\'' +
                 ", defenseValue='" + defenseValue + '\'' +

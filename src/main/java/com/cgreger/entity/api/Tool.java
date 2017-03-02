@@ -1,13 +1,13 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class GizmoItem extends Item {
+public class Tool extends Item {
 
     private String type;
 
-    public GizmoItem() { }
+    public Tool() { }
 
     public String getType() {
         return type;
@@ -19,9 +19,8 @@ public class GizmoItem extends Item {
 
     @Override
     public String toString() {
-        return "GizmoItem{" +
+        return "Tool{" +
                 "type='" + type + '\'' +
                 '}';
     }
-
 }

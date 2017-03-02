@@ -1,4 +1,4 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by katana on 2/13/17.
  */
-public class UpgradeComponentItem extends Item {
+public class UpgradeComponent extends Item {
 
     private String type;
     private List<String> upgradableItemTypes = new ArrayList<String>();
@@ -15,7 +15,7 @@ public class UpgradeComponentItem extends Item {
     private InfixUpgrade infixUpgrade;
     private List<String> bonuses = new ArrayList<String>();
 
-    public UpgradeComponentItem() { }
+    public UpgradeComponent() { }
 
     public String getType() {
         return type;
@@ -67,7 +67,7 @@ public class UpgradeComponentItem extends Item {
 
     @Override
     public String toString() {
-        return "UpgradeComponentItem{" +
+        return "UpgradeComponent{" +
                 "type='" + type + '\'' +
                 ", upgradableItemTypes=" + upgradableItemTypes +
                 ", applicableInfusions=" + applicableInfusions +

@@ -1,17 +1,13 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.Recipe;
+import com.cgreger.entity.api.*;
 import com.fasterxml.jackson.databind.*;
-import javax.ws.rs.client.*;
-import javax.ws.rs.core.MediaType;
-import com.cgreger.entity.Item;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import org.apache.log4j.Logger;
 
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by katana on 2/13/17.
@@ -28,7 +24,9 @@ public class ItemDAO {
 
         String response = gw2Client.request("https://api.guildwars2.com/v2/items?id=" + id);
 
-        Item item = mapper.readValue(response, Item.class);
+        String itemType = mapper.readValue(response, JsonNode.class).get("type").toString();
+
+        Item item = mapItem(itemType, response);
 
         log.info("Successfully retrieved Item (id=" + id + ")");
 
@@ -77,6 +75,81 @@ public class ItemDAO {
             log.error("Failed to set Recipes list for Item (id=" + item.getId() + ")");
 
         }
+
+    }
+
+    private Item mapItem(String itemType, String response) {
+
+        Item itemClass;
+
+        switch (itemType) {
+
+            case "Armor":
+                itemClass = mapper.readValue(response, Item.class);
+                break;
+
+            case "Back":
+                itemClass = Back.class;
+                break;
+
+            case "Bag":
+                itemClass = Bag.class;
+                break;
+
+            case "Consumable":
+                itemClass = Consumable.class;
+                break;
+
+            case "Container":
+                itemClass = Container.class;
+                break;
+
+            case "CraftingMaterial":
+                itemClass = CraftingMaterial.class;
+                break;
+
+            case "Gathering":
+                itemClass = Tool.class;
+                break;
+
+            case "Gizmo":
+                itemClass = Gizmo.class;
+                break;
+
+            case "MiniPet":
+                itemClass = Miniature.class;
+                break;
+
+            case "Tool":
+                itemClass = SalvageKit.class;
+                break;
+
+            case "Trait":
+                itemClass = Trait.class;
+                break;
+
+            case "Trinket":
+                itemClass = Trinket.class;
+                break;
+
+            case "Trophy":
+                itemClass = Trophy.class;
+                break;
+
+            case "UpgradeComponent":
+                return UpgradeComponent.class;
+                break;
+
+            case "Weapon":
+                itemClass = Weapon.class;
+                break;
+
+            default:
+                itemClass = Item.class;
+
+        }
+
+        return itemClass;
 
     }
 

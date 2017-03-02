@@ -1,14 +1,14 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class SalvageKitItem extends Item {
+public class SalvageKit extends Item {
 
     private String type;
     private int chargesLeft;
 
-    public SalvageKitItem() { }
+    public SalvageKit() { }
 
     public String getType() {
         return type;
@@ -28,7 +28,7 @@ public class SalvageKitItem extends Item {
 
     @Override
     public String toString() {
-        return "SalvageKitItem{" +
+        return "SalvageKit{" +
                 "type='" + type + '\'' +
                 ", chargesLeft=" + chargesLeft +
                 '}';

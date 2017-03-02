@@ -137,13 +137,12 @@ public class Item {
         this.restrictions = restrictions;
     }
 
-    public List<Integer> getRecipe() {
-        return recipe;
+    public List<Recipe> getRecipes() {
+        return recipes;
     }
 
-    @JsonProperty("recipe")
-    public void setRecipe(List<Integer> recipe) {
-        this.recipe = recipe;
+    public void setRecipes(List<Recipe> recipes) {
+        this.recipes = recipes;
     }
 
     @Override
@@ -160,7 +159,7 @@ public class Item {
                 ", vendorValue=" + vendorValue +
                 ", flags=" + flags +
                 ", restrictions=" + restrictions +
-                ", recipe=" + recipe +
+                ", recipes=" + recipes +
                 '}';
     }
 }

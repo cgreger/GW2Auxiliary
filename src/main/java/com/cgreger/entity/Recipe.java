@@ -1,5 +1,7 @@
 package com.cgreger.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 /**
@@ -7,14 +9,31 @@ import java.util.List;
  */
 public class Recipe {
 
+    @JsonProperty("id")
     private int id;
+
+    @JsonProperty("output_item_id")
     private int outputItemId;
+
+    @JsonProperty("output_item_count")
     private int outputItemCount;
+
+    @JsonProperty("min_rating")
     private int minRating;
+
+    @JsonProperty("time_to_craft_ms")
     private int timeToCraftInMili;
+
+    @JsonProperty("disciplines")
     private List<String> disciplines;
+
+    @JsonProperty("flags")
     private List<String> flags;
+
+    @JsonProperty("ingredients")
     private List<Integer> ingredients;
+
+    @JsonProperty("chat_link")
     private String chatLink;
 
     public int getId() {

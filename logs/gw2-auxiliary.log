@@ -9456,3 +9456,7 @@ flags=[NoSell, SoulbindOnAcquire, SoulBindOnUse],
 restrictions=[], 
 recipes=[]
 }
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)

@@ -36,6 +36,8 @@ public class Recipe {
     @JsonProperty("chat_link")
     private String chatLink;
 
+    public Recipe() { }
+
     public int getId() {
         return id;
     }

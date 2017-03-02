@@ -37,4 +37,7 @@
 | 2/27/17 | Finished Activity 3 (SOAP w/ Axis) for week 6 | 1 | |
 | 2/27/17 | Started mapping entities with jackson annotations for json parsing | 2.5 | [Note](https://github.com/cgreger/GW2Auxiliary/blob/master/Notes/2-27-17-note.md) |
 | 2/27/17 | Successfully displayed data from database on a jsp | 1 | |
-| | | **Total: 58** | |
+| 3/1/17 | Created more DAO methods and tests | 4 | |
+| 3/1/17 | Refactored code to send API requests | .5 | |
+| 3/1/17 | Tried to map subclasses using Jackson | 2 | Still not working correctly... |
+| | | **Total: 64.5** | |

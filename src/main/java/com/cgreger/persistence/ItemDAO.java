@@ -3,7 +3,9 @@ package com.cgreger.persistence;
 import com.cgreger.entity.api.*;
 import com.fasterxml.jackson.databind.*;
 
+import com.mysql.jdbc.MiniAdmin;
 import org.apache.log4j.Logger;
+import org.hibernate.Transaction;
 
 
 import java.io.IOException;
@@ -78,74 +80,74 @@ public class ItemDAO {
 
     }
 
-    private Item mapItem(String itemType, String response) {
+    private Item mapItem(String itemType, String response) throws IOException {
 
         Item itemClass;
 
         switch (itemType) {
 
             case "Armor":
-                itemClass = mapper.readValue(response, Item.class);
+                itemClass = mapper.readValue(response, Armor.class);
                 break;
 
             case "Back":
-                itemClass = Back.class;
+                itemClass = mapper.readValue(response, Back.class);
                 break;
 
             case "Bag":
-                itemClass = Bag.class;
+                itemClass = mapper.readValue(response, Bag.class);
                 break;
 
             case "Consumable":
-                itemClass = Consumable.class;
+                itemClass = mapper.readValue(response, Consumable.class);
                 break;
 
             case "Container":
-                itemClass = Container.class;
+                itemClass = mapper.readValue(response, Container.class);
                 break;
 
             case "CraftingMaterial":
-                itemClass = CraftingMaterial.class;
+                itemClass = mapper.readValue(response, CraftingMaterial.class);
                 break;
 
             case "Gathering":
-                itemClass = Tool.class;
+                itemClass = mapper.readValue(response, Tool.class);
                 break;
 
             case "Gizmo":
-                itemClass = Gizmo.class;
+                itemClass = mapper.readValue(response, Gizmo.class);
                 break;
 
             case "MiniPet":
-                itemClass = Miniature.class;
+                itemClass = mapper.readValue(response, Miniature.class);
                 break;
 
             case "Tool":
-                itemClass = SalvageKit.class;
+                itemClass = mapper.readValue(response, SalvageKit.class);
                 break;
 
             case "Trait":
-                itemClass = Trait.class;
+                itemClass = mapper.readValue(response, Trait.class);
                 break;
 
             case "Trinket":
-                itemClass = Trinket.class;
+                itemClass = mapper.readValue(response, Trinket.class);
                 break;
 
             case "Trophy":
-                itemClass = Trophy.class;
+                itemClass = mapper.readValue(response, Trophy.class);
                 break;
 
             case "UpgradeComponent":
-                return UpgradeComponent.class;
+                itemClass = mapper.readValue(response, UpgradeComponent.class);
                 break;
 
             case "Weapon":
-                itemClass = Weapon.class;
+                itemClass = mapper.readValue(response, Weapon.class);
                 break;
 
             default:
-                itemClass = Item.class;
+                itemClass = mapper.readValue(response, Item.class);
 
         }
 

@@ -10,13 +10,22 @@ public class GW2ServiceClient {
 
     Client client;
     WebTarget target;
+    String response;
 
 
-    public GW2ServiceClient(String target) {
+    public GW2ServiceClient() { }
+
+    public String request(String requestUrl) {
 
         client = ClientBuilder.newClient();
-        this.target = client.target(target);
+        this.target = client.target(requestUrl);
+
+        response = this.target.request(MediaType.APPLICATION_JSON).get(String.class);
+
+        return response;
 
     }
+
+
 
 }

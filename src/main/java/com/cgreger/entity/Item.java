@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Created by cgreger on 2/6/17.
  */
+//TODO: create correct annotations so that entities map out properly. May need to run jackson generator instead...
 //@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
 //@JsonSubTypes(@JsonSubTypes.Type(value=CustomizedItem.class, name="CustomizedItem"))
 @JsonIgnoreProperties(ignoreUnknown = true)

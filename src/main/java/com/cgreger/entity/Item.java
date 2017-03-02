@@ -13,7 +13,7 @@ import java.util.List;
 public class Item {
 
     @JsonProperty("id")
-    private int gw2Id;
+    private int id;
 
     @JsonProperty("chat_link")
     private String chatLink;
@@ -45,16 +45,16 @@ public class Item {
     @JsonProperty("restrictions")
     private List<String> restrictions = new ArrayList<String>();
 
-    private List<Recipe> recipes = new ArrayList<Recipe>();
+    private List<Integer> recipes = new ArrayList<Integer>();
 
     public Item() { }
 
-    public int getGw2Id() {
-        return gw2Id;
+    public int getId() {
+        return id;
     }
 
-    public void setGw2Id(int gw2Id) {
-        this.gw2Id = gw2Id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getChatLink() {
@@ -137,29 +137,30 @@ public class Item {
         this.restrictions = restrictions;
     }
 
-    public List<Recipe> getRecipes() {
+    public List<Integer> getRecipes() {
         return recipes;
     }
 
-    public void setRecipes(List<Recipe> recipes) {
+    public void setRecipes(List<Integer> recipes) {
         this.recipes = recipes;
     }
 
+    //TODO: change default generation to add new lines like this one
     @Override
     public String toString() {
-        return "Item{" +
-                "gw2Id=" + gw2Id +
-                ", chatLink='" + chatLink + '\'' +
-                ", name='" + name + '\'' +
-                ", iconUrl='" + iconUrl + '\'' +
-                ", description='" + description + '\'' +
-                ", itemType='" + itemType + '\'' +
-                ", rarity='" + rarity + '\'' +
-                ", level=" + level +
-                ", vendorValue=" + vendorValue +
-                ", flags=" + flags +
-                ", restrictions=" + restrictions +
-                ", recipes=" + recipes +
-                '}';
+        return "Item{\n" +
+                "id=" + id +
+                ", \nchatLink='" + chatLink + '\'' +
+                ", \nname='" + name + '\'' +
+                ", \niconUrl='" + iconUrl + '\'' +
+                ", \ndescription='" + description + '\'' +
+                ", \nitemType='" + itemType + '\'' +
+                ", \nrarity='" + rarity + '\'' +
+                ", \nlevel=" + level +
+                ", \nvendorValue=" + vendorValue +
+                ", \nflags=" + flags +
+                ", \nrestrictions=" + restrictions +
+                ", \nrecipes=" + recipes +
+                "\n}";
     }
 }

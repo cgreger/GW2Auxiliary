@@ -25,7 +25,7 @@ public class DisplayItemPage extends HttpServlet {
 
         ItemDAO itemDAO = new ItemDAO();
 
-        Item item = itemDAO.getGW2Item(1);
+        Item item = itemDAO.getItem(1);
 
         request.setAttribute("item", item);
 

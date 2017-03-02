@@ -21,6 +21,8 @@ public class ItemDAOTest {
     Logger log = Logger.getLogger(this.getClass());
     ItemDAO dao;
 
+    //TODO: maybe parse the details of the response to map sub classes?
+
     @Before
     public void setUp() throws  Exception {
 

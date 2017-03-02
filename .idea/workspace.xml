@@ -4,9 +4,8 @@
     <list default="true" id="bbe8461a-f81f-4b20-87d6-2ab73246b41a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/gw2-auxiliary.log" afterPath="$PROJECT_DIR$/logs/gw2-auxiliary.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Ingredient.java" afterPath="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Ingredient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Recipe.java" afterPath="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Recipe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -115,11 +114,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ItemDAOTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1084#1093#0" expanded="true" />
+                <element signature="e#1484#1492#0" expanded="true" />
+                <element signature="e#2026#2035#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ItemDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+            <state relative-caret-position="1008">
+              <caret line="72" column="80" lean-forward="true" selection-start-line="72" selection-start-column="80" selection-end-line="72" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,17 +141,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemDAOTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java">
+      <file leaf-file-name="GW2ServiceClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1084#1093#0" expanded="true" />
-                <element signature="e#1484#1492#0" expanded="true" />
-                <element signature="e#2026#2035#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="196">
+              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,7 +190,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/entity/Item.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="47" column="61" lean-forward="true" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+              <caret line="47" column="61" lean-forward="false" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
               <folding>
                 <element signature="e#1090#1099#0" expanded="true" />
                 <element signature="e#2811#2812#0" expanded="true" />
@@ -241,30 +250,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ingredient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/entity/Ingredient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="34" column="18" lean-forward="false" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-              <folding>
-                <element signature="e#310#311#0" expanded="true" />
-                <element signature="e#335#336#0" expanded="true" />
-                <element signature="e#368#369#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#465#466#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#562#563#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="APIKeyDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIKeyDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -313,7 +303,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/UpgradeItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/MinatureItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/WeaponItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/APIKey.java" />
@@ -342,7 +331,6 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/75a0ed46-ad7e-4a62-b5e6-453133c7a377/console.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ServiceClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cgreger/persistence/GW2ServiceClientTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guildwars2/api/Details.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guildwars2/api/InfixUpgrade.java" />
@@ -360,10 +348,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/controller/DisplayItemPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/cgreger/entity/Recipe.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java" />
       </list>
     </option>
   </component>
@@ -952,11 +942,11 @@
       <recent name="$PROJECT_DIR$/src/test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ItemDAOTest.getRecipe">
+  <component name="RunManager" selected="JUnit.ItemDAOTest">
     <configuration default="false" name="ItemDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.cgreger.persistence.*" />
+          <option name="PATTERN" value="com.cgreger.persistence.GW2ServiceClient" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -982,7 +972,7 @@
     <configuration default="false" name="ItemDAOTest.getItemRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.cgreger.persistence.*" />
+          <option name="PATTERN" value="com.cgreger.persistence.GW2ServiceClient" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1008,7 +998,7 @@
     <configuration default="false" name="ItemDAOTest.getItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.cgreger.persistence.*" />
+          <option name="PATTERN" value="com.cgreger.persistence.GW2ServiceClient" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1034,7 +1024,7 @@
     <configuration default="false" name="ItemDAOTest.setItemRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.cgreger.persistence.*" />
+          <option name="PATTERN" value="com.cgreger.persistence.GW2ServiceClient" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1060,7 +1050,7 @@
     <configuration default="false" name="ItemDAOTest.getRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.cgreger.persistence.*" />
+          <option name="PATTERN" value="com.cgreger.persistence.GW2ServiceClient" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1725,11 +1715,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.getRecipe" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.setItemRecipes" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ItemDAOTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.getItemRecipes" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.getItem" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ItemDAOTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.getItem" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.getRecipe" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.setItemRecipes" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.ItemDAOTest.getItemRecipes" />
       </list>
     </recent_temporary>
   </component>
@@ -1758,19 +1748,19 @@
       <workItem from="1487880063417" duration="6072000" />
       <workItem from="1488250720002" duration="865000" />
       <workItem from="1488259750458" duration="104000" />
-      <workItem from="1488259954476" duration="34675000" />
+      <workItem from="1488259954476" duration="35781000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ItemDAOTest_getRecipe - 2017.03.01 at 22h 08m 13s.xml">
-      <configuration name="ItemDAOTest.getRecipe" configurationId="JUnit" />
+    <history-entry file="ItemDAOTest - 2017.03.01 at 22h 45m 31s.xml">
+      <configuration name="ItemDAOTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ItemDAOTest_getRecipe - 2017.03.01 at 22h 09m 03s.xml">
-      <configuration name="ItemDAOTest.getRecipe" configurationId="JUnit" />
+    <history-entry file="ItemDAOTest_getItem - 2017.03.01 at 22h 43m 33s.xml">
+      <configuration name="ItemDAOTest.getItem" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ItemDAOTest_getRecipe - 2017.03.01 at 22h 09m 37s.xml">
-      <configuration name="ItemDAOTest.getRecipe" configurationId="JUnit" />
+    <history-entry file="ItemDAOTest_getItem - 2017.03.01 at 22h 44m 18s.xml">
+      <configuration name="ItemDAOTest.getItem" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ItemDAOTest_getRecipe - 2017.03.01 at 22h 10m 01s.xml">
       <configuration name="ItemDAOTest.getRecipe" configurationId="JUnit" />
@@ -1790,12 +1780,12 @@
     <history-entry file="ItemDAOTest_getRecipe - 2017.03.01 at 22h 23m 33s.xml">
       <configuration name="ItemDAOTest.getRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ItemDAOTest_setItemRecipes - 2017.03.01 at 22h 08m 10s.xml">
-      <configuration name="ItemDAOTest.setItemRecipes" configurationId="JUnit" />
+    <history-entry file="ItemDAOTest_getRecipe - 2017.03.01 at 22h 27m 21s.xml">
+      <configuration name="ItemDAOTest.getRecipe" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190682000" />
+    <option name="totallyTimeSpent" value="191788000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2040,16 +2030,6 @@
             <element signature="e#442#443#0" expanded="true" />
             <element signature="e#513#514#0" expanded="true" />
             <element signature="e#720#721#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2520,16 +2500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/entity/Ingredient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -2558,7 +2528,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/APIKeyDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2612,7 +2582,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/entity/Item.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
-          <caret line="47" column="61" lean-forward="true" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
+          <caret line="47" column="61" lean-forward="false" selection-start-line="47" selection-start-column="61" selection-end-line="47" selection-end-column="61" />
           <folding>
             <element signature="e#1090#1099#0" expanded="true" />
             <element signature="e#2811#2812#0" expanded="true" />
@@ -2652,10 +2622,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/GW2ServiceClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/cgreger/persistence/ItemDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="72" column="80" lean-forward="true" selection-start-line="72" selection-start-column="80" selection-end-line="72" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/cgreger/persistence/ItemDAOTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="67" column="45" lean-forward="true" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+        <state relative-caret-position="239">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1084#1093#0" expanded="true" />

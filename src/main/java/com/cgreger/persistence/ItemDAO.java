@@ -18,8 +18,7 @@ import java.util.List;
  */
 public class ItemDAO {
 
-    private GW2ServiceClient gw2Client;
-    private String response;
+    private GW2ServiceClient gw2Client = new GW2ServiceClient();
     private ObjectMapper mapper = new ObjectMapper();
     private Logger log = Logger.getLogger(this.getClass());
 
@@ -27,9 +26,7 @@ public class ItemDAO {
 
         log.info("Retrieving Item (id=" + id + ")");
 
-        gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/items?id=" + id);
-
-        response = gw2Client.target.request(MediaType.APPLICATION_JSON).get(String.class);
+        String response = gw2Client.request("https://api.guildwars2.com/v2/items?id=" + id);
 
         Item item = mapper.readValue(response, Item.class);
 
@@ -43,9 +40,7 @@ public class ItemDAO {
 
         log.info("Retrieving Recipes for Item (id=" + id + ")");
 
-        gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/recipes/search?output=" + id);
-
-        response = gw2Client.target.request(MediaType.APPLICATION_JSON).get(String.class);
+        String response = gw2Client.request("https://api.guildwars2.com/v2/recipes/search?output=" + id);
 
         ArrayList<Integer> recipes = mapper.readValue(response, ArrayList.class);
 
@@ -59,9 +54,7 @@ public class ItemDAO {
 
         log.info("Retrieving Recipe (id" + id + ")");
 
-        gw2Client = new GW2ServiceClient("https://api.guildwars2.com/v2/recipes?id=" + id);
-
-        response = gw2Client.target.request(MediaType.APPLICATION_JSON).get(String.class);
+        String response = gw2Client.request("https://api.guildwars2.com/v2/recipes?id=" + id);
 
         Recipe recipe = mapper.readValue(response, Recipe.class);
 

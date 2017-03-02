@@ -1,9 +1,9 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class ConsumableItem extends Item {
+public class Consumable extends Item {
 
     private String type;
     private String description;
@@ -13,7 +13,7 @@ public class ConsumableItem extends Item {
     private int recipeId; //TODO: redundant?
     private String effectName;
 
-    public ConsumableItem() { }
+    public Consumable() { }
 
     public String getType() {
         return type;
@@ -73,7 +73,7 @@ public class ConsumableItem extends Item {
 
     @Override
     public String toString() {
-        return "ConsumableItem{" +
+        return "Consumable{" +
                 "type='" + type + '\'' +
                 ", description='" + description + '\'' +
                 ", durationInMiliSec=" + durationInMiliSec +

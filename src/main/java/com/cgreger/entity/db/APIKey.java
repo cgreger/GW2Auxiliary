@@ -1,4 +1,4 @@
-package com.cgreger.entity;
+package com.cgreger.entity.db;
 
 import javax.persistence.*;
 

@@ -3623,7 +3623,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -3717,7 +3717,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -3823,7 +3823,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -4503,7 +4503,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -4579,7 +4579,7 @@ Successfully created List of all Users.
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -4671,7 +4671,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -4728,7 +4728,7 @@ Successfully created List of all Users.
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -4805,12 +4805,12 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -4855,12 +4855,12 @@ Successfully created List of all Users.
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -4925,12 +4925,12 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -4975,12 +4975,12 @@ Successfully created List of all Users.
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -5045,12 +5045,12 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -5095,12 +5095,12 @@ Successfully created List of all Users.
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -5165,12 +5165,12 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -5257,7 +5257,7 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -5332,7 +5332,7 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -5407,7 +5407,7 @@ Field 'user_id' doesn't have a default value
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -5478,7 +5478,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -5549,7 +5549,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -5620,7 +5620,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.User.joinDate
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.User.joinDate
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -5691,7 +5691,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.APIKey
+org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.db.APIKey
 	at org.hibernate.engine.internal.ForeignKeys.getEntityIdentifierIfNotUnsaved(ForeignKeys.java:294)
 	at org.hibernate.collection.internal.AbstractPersistentCollection.getOrphans(AbstractPersistentCollection.java:1186)
 	at org.hibernate.collection.internal.PersistentBag.getOrphans(PersistentBag.java:171)
@@ -5764,12 +5764,12 @@ HHH000227: Running hbm2ddl schema export
 HHH000230: Schema export complete
 Adding new User.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (idnull).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -5827,7 +5827,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.APIKey
+org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.db.APIKey
 	at org.hibernate.engine.internal.ForeignKeys.getEntityIdentifierIfNotUnsaved(ForeignKeys.java:294)
 	at org.hibernate.collection.internal.AbstractPersistentCollection.getOrphans(AbstractPersistentCollection.java:1186)
 	at org.hibernate.collection.internal.PersistentBag.getOrphans(PersistentBag.java:171)
@@ -5900,12 +5900,12 @@ HHH000227: Running hbm2ddl schema export
 HHH000230: Schema export complete
 Adding new User.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (idnull).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -5963,7 +5963,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.APIKey
+org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.db.APIKey
 	at org.hibernate.engine.internal.ForeignKeys.getEntityIdentifierIfNotUnsaved(ForeignKeys.java:294)
 	at org.hibernate.collection.internal.AbstractPersistentCollection.getOrphans(AbstractPersistentCollection.java:1186)
 	at org.hibernate.collection.internal.PersistentBag.getOrphans(PersistentBag.java:171)
@@ -6037,7 +6037,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.APIKey
+org.hibernate.TransientObjectException: object references an unsaved transient instance - save the transient instance before flushing: com.cgreger.entity.db.APIKey
 	at org.hibernate.engine.internal.ForeignKeys.getEntityIdentifierIfNotUnsaved(ForeignKeys.java:294)
 	at org.hibernate.collection.internal.AbstractPersistentCollection.getOrphans(AbstractPersistentCollection.java:1186)
 	at org.hibernate.collection.internal.PersistentBag.getOrphans(PersistentBag.java:171)
@@ -6111,7 +6111,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -6270,12 +6270,12 @@ HHH000230: Schema export complete
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -6355,12 +6355,12 @@ HHH000230: Schema export complete
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -6463,12 +6463,12 @@ HHH000230: Schema export complete
 Adding new User.
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new User (id0).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -7382,12 +7382,12 @@ HHH000227: Running hbm2ddl schema export
 HHH000230: Schema export complete
 Adding new API key.
 HHH000437: Attempting to save one or more entities that have a non-nullable association with an unsaved transient entity. The unsaved transient entity must be saved in an operation prior to saving these dependent entities.
-	Unsaved transient entity: ([com.cgreger.entity.User#0])
-	Dependent entities: ([[com.cgreger.entity.APIKey#<null>]])
-	Non-nullable association(s): ([com.cgreger.entity.APIKey.user])
+	Unsaved transient entity: ([com.cgreger.entity.db.User#0])
+	Dependent entities: ([[com.cgreger.entity.db.APIKey#<null>]])
+	Non-nullable association(s): ([com.cgreger.entity.db.APIKey.user])
 Failed to add new APIKey (associated w/ email testuser@gmail.com).
 
-org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.APIKey.user -> com.cgreger.entity.User
+org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.cgreger.entity.db.APIKey.user -> com.cgreger.entity.db.User
 	at org.hibernate.action.internal.UnresolvedEntityInsertActions.checkNoUnresolvedActionsAfterOperation(UnresolvedEntityInsertActions.java:137)
 	at org.hibernate.engine.spi.ActionQueue.checkNoUnresolvedActionsAfterOperation(ActionQueue.java:320)
 	at org.hibernate.internal.SessionImpl.checkNoUnresolvedActionsAfterOperation(SessionImpl.java:658)
@@ -7395,7 +7395,7 @@ org.hibernate.TransientPropertyValueException: Not-null property references a tr
 	at org.hibernate.internal.SessionImpl.save(SessionImpl.java:707)
 	at org.hibernate.internal.SessionImpl.save(SessionImpl.java:702)
 	at com.cgreger.persistence.APIKeyDAO.addAPIKey(APIKeyDAO.java:37)
-	at com.cgreger.entity.User.<init>(User.java:52)
+	at com.cgreger.entity.db.User.<init>(User.java:52)
 	at com.cgreger.persistence.UserDAOTest.addUser(UserDAOTest.java:69)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -7659,7 +7659,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -7842,7 +7842,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -7951,7 +7951,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -8041,7 +8041,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -8131,7 +8131,7 @@ HHH000230: Schema export complete
 Adding new User.
 Failed to add new User (idnull).
 
-org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.APIKey.user
+org.hibernate.PropertyValueException: not-null property references a null or transient value : com.cgreger.entity.db.APIKey.user
 	at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:106)
 	at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:132)
 	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:86)
@@ -9670,6 +9670,42 @@ chatLink='[&CWQAAAA=]'
 Retrieving Recipes for Item (id=50065)
 Successfully retrieved Recipes for Item (id=50065)
 Retrieving Item (id=1)
+Successfully retrieved Item (id=1)
+
+
+Item{
+id=1, 
+chatLink='[&AgEBAAAA]', 
+name='MONSTER ONLY Moa Unarmed Pet', 
+iconUrl='https://render.guildwars2.com/file/4AECE5EA59CA057F4C53E1EDFE95E0E3E61DE37F/60980.png', 
+description='null', 
+itemType='Weapon', 
+rarity='Fine', 
+level=0, 
+vendorValue=0, 
+flags=[NoSell, SoulbindOnAcquire, SoulBindOnUse], 
+restrictions=[], 
+recipes=[]
+}
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}]
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Retrieving Item (id=1)
+"Weapon"
 Successfully retrieved Item (id=1)
 
 

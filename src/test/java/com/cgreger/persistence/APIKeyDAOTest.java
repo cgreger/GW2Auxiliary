@@ -1,7 +1,6 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.APIKey;
-import com.cgreger.entity.User;
+import com.cgreger.entity.db.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,8 +8,6 @@ import org.hibernate.Transaction;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by katana on 2/13/17.

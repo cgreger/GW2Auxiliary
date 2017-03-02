@@ -1,10 +1,9 @@
 package com.cgreger.controller;
 
-import com.cgreger.entity.Item;
+import com.cgreger.entity.api.Item;
 import com.cgreger.persistence.ItemDAO;
 
 import java.io.*;
-import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

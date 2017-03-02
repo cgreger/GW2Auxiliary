@@ -1,14 +1,14 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class BagItem extends Item {
+public class Bag extends Item {
 
     private int numberOfSlots;
     private boolean noSellOrSort;
 
-    public BagItem() { }
+    public Bag() { }
 
     public int getNumberOfSlots() {
         return numberOfSlots;
@@ -28,7 +28,7 @@ public class BagItem extends Item {
 
     @Override
     public String toString() {
-        return "BagItem{" +
+        return "Bag{" +
                 "numberOfSlots=" + numberOfSlots +
                 ", noSellOrSort=" + noSellOrSort +
                 '}';

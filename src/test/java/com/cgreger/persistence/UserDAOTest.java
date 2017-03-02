@@ -1,7 +1,7 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.APIKey;
-import com.cgreger.entity.User;
+import com.cgreger.entity.db.APIKey;
+import com.cgreger.entity.db.User;
 import org.hibernate.*;
 import org.junit.*;
 import java.util.List;

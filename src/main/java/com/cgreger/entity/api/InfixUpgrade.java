@@ -1,4 +1,4 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

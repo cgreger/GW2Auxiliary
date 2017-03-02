@@ -1,7 +1,7 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.APIKey;
-import com.cgreger.entity.User;
+import com.cgreger.entity.db.APIKey;
+import com.cgreger.entity.db.User;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

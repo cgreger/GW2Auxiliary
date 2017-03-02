@@ -1,10 +1,9 @@
 package com.cgreger.controller;
 
-import com.cgreger.entity.User;
+import com.cgreger.entity.db.User;
 import com.cgreger.persistence.UserDAO;
 
 import java.io.*;
-import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

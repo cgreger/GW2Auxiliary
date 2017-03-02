@@ -1,7 +1,6 @@
-package com.cgreger.entity;
+package com.cgreger.entity.db;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 
 /**

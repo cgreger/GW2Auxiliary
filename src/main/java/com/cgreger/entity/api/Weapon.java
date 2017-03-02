@@ -1,9 +1,9 @@
-package com.cgreger.entity;
+package com.cgreger.entity.api;
 
 /**
  * Created by katana on 2/13/17.
  */
-public class WeaponItem extends CustomizedItem {
+public class Weapon extends CustomizedItem {
 
     private String weaponType;
     private String damageType;
@@ -11,7 +11,7 @@ public class WeaponItem extends CustomizedItem {
     private int maxPower;
     private int defenseValue;
 
-    public WeaponItem() { }
+    public Weapon() { }
 
     public String getWeaponType() {
         return weaponType;
@@ -55,7 +55,7 @@ public class WeaponItem extends CustomizedItem {
 
     @Override
     public String toString() {
-        return "WeaponItem{" +
+        return "Weapon{" +
                 "weaponType='" + weaponType + '\'' +
                 ", damageType='" + damageType + '\'' +
                 ", minPower=" + minPower +

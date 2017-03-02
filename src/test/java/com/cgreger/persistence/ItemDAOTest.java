@@ -1,5 +1,6 @@
 package com.cgreger.persistence;
 
+import com.cgreger.entity.Ingredient;
 import com.cgreger.entity.Item;
 import com.cgreger.entity.Recipe;
 import org.apache.log4j.Logger;
@@ -8,6 +9,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -31,8 +33,8 @@ public class ItemDAOTest {
 
         Item item = dao.getItem(1);
 
-        assertEquals("Failed to retrieve correct item.", 1, item.getId());
-        assertEquals("Failed to retrieve correct item.", "MONSTER ONLY Moa Unarmed Pet", item.getName());
+        assertEquals("Failed to retrieve correct Item.", 1, item.getId());
+        assertEquals("Failed to retrieve correct Item.", "MONSTER ONLY Moa Unarmed Pet", item.getName());
 
         log.info("\n\n" + item.toString());
     }
@@ -50,7 +52,22 @@ public class ItemDAOTest {
 
     }
 
+    @Test
+    public void getRecipe() throws Exception {
 
+        Recipe recipe = dao.getRecipe(100);
+        ArrayList<String> disciplinesExpected = new ArrayList<String>();
+        disciplinesExpected.add("Leatherworker");
+        disciplinesExpected.add("Armorsmith");
+        disciplinesExpected.add("Tailor");
+
+
+        assertEquals("Failed to retrieve correct Recipe.", 100, recipe.getId());
+        assertEquals("Failed to retrieve correct Recipe.", disciplinesExpected, recipe.getDisciplines());
+
+        log.info("\n\n" + recipe.toString());
+
+    }
 
     @Test
     public void setItemRecipes() throws Exception {

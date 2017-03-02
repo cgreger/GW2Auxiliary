@@ -9460,3 +9460,70 @@ Setting Recipes list for Item (id=0)
 Retrieving Recipes for Item (id=0)
 Setting Recipes list for Item (id=0)
 Retrieving Recipes for Item (id=0)
+Retrieving Recipe (id100)
+Retrieving Recipe (id100)
+Retrieving Recipe (id100)
+Retrieving Recipe (id100)
+Retrieving Recipe (id100)
+Retrieving Recipe (id100)
+
+
+Recipe{id=100, outputItemId=19855, outputItemCount=1, minRating=350, timeToCraftInMili=1000, disciplines=[Leatherworker, Armorsmith, Tailor], flags=[AutoLearned], ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], chatLink='[&CWQAAAA=]'}
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}]
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+Ingredient{id=72194, countNeeded=1}
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}

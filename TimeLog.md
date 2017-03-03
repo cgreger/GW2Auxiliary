@@ -40,4 +40,6 @@
 | 3/1/17 | Created more DAO methods and tests | 4 | |
 | 3/1/17 | Refactored code to send API requests | .5 | |
 | 3/1/17 | Tried to map subclasses using Jackson | 2 | Still not working correctly... |
-| | | **Total: 64.5** | |
+| 3/2/17 | Refactored POJO mapping | 1 | |
+| 3/2/17 | Implemented Jackson annotation in all item classes | .5 | |
+| | | **Total: 66** | |

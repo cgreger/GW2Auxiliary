@@ -25,8 +25,8 @@ public class CustomizedItem extends Item {
     @JsonProperty("secondary_suffix_item_id")
     private int secondarySuffixItemId;
 
-    //TODO: not an attribute of customized item, must be placed in necessary subclasses.
-    //private List<String> statChoices = new ArrayList<String>(); //TODO: might be array of objects? not sure..
+    @JsonProperty("stat_choices")
+    private List<String> statChoices = new ArrayList<String>();
 
     public CustomizedItem() { }
 

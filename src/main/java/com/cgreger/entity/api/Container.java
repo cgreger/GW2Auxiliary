@@ -1,26 +1,29 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Container extends Item {
 
-    private String type;
+    @JsonProperty("containerType")
+    private String containerType;
 
     public Container() { }
 
-    public String getType() {
-        return type;
+    public String getContainerType() {
+        return containerType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setContainerType(String containerType) {
+        this.containerType = containerType;
     }
 
     @Override
     public String toString() {
         return "Container{" +
-                "type='" + type + '\'' +
+                "containerType='" + containerType + '\'' +
                 '}';
     }
 

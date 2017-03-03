@@ -1,21 +1,26 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Attribute {
 
-    private String type;
+    @JsonProperty("attribute")
+    private String attributeType;
+
+    @JsonProperty("modifier")
     private int modifierValue;
 
     public Attribute() { }
 
-    public String getType() {
-        return type;
+    public String getAttributeType() {
+        return attributeType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAttributeType(String attributeType) {
+        this.attributeType = attributeType;
     }
 
     public int getModifierValue() {
@@ -29,7 +34,7 @@ public class Attribute {
     @Override
     public String toString() {
         return "Attribute{" +
-                "type='" + type + '\'' +
+                "attributeType='" + attributeType + '\'' +
                 ", modifierValue=" + modifierValue +
                 '}';
     }

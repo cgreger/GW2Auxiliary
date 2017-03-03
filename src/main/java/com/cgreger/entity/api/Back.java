@@ -5,6 +5,6 @@ package com.cgreger.entity.api;
  */
 public class Back extends CustomizedItem {
 
-
+    //TODO: check to see if this needs stat_choices or if stat_choices should be in customizable
 
 }

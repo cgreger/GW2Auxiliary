@@ -16,18 +16,18 @@ HHH000397: Using ASTQueryTranslatorFactory
 Getting and creating List of all users.
 Failed to create List of all Users.
 
-org.hibernate.type.SerializationException: could not deserialize
+org.hibernate.consumableType.SerializationException: could not deserialize
 	at org.hibernate.internal.util.SerializationHelper.doDeserialize(SerializationHelper.java:262)
 	at org.hibernate.internal.util.SerializationHelper.deserialize(SerializationHelper.java:306)
-	at org.hibernate.type.descriptor.java.SerializableTypeDescriptor.fromBytes(SerializableTypeDescriptor.java:155)
-	at org.hibernate.type.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:130)
-	at org.hibernate.type.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:44)
-	at org.hibernate.type.descriptor.sql.VarbinaryTypeDescriptor$2.doExtract(VarbinaryTypeDescriptor.java:70)
-	at org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:64)
-	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:267)
-	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:263)
-	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:253)
-	at org.hibernate.type.AbstractStandardBasicType.hydrate(AbstractStandardBasicType.java:338)
+	at org.hibernate.consumableType.descriptor.java.SerializableTypeDescriptor.fromBytes(SerializableTypeDescriptor.java:155)
+	at org.hibernate.consumableType.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:130)
+	at org.hibernate.consumableType.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:44)
+	at org.hibernate.consumableType.descriptor.sql.VarbinaryTypeDescriptor$2.doExtract(VarbinaryTypeDescriptor.java:70)
+	at org.hibernate.consumableType.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:64)
+	at org.hibernate.consumableType.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:267)
+	at org.hibernate.consumableType.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:263)
+	at org.hibernate.consumableType.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:253)
+	at org.hibernate.consumableType.AbstractStandardBasicType.hydrate(AbstractStandardBasicType.java:338)
 	at org.hibernate.persister.entity.AbstractEntityPersister.hydrate(AbstractEntityPersister.java:2969)
 	at org.hibernate.loader.Loader.loadFromResultSet(Loader.java:1696)
 	at org.hibernate.loader.Loader.instanceNotYetLoaded(Loader.java:1628)
@@ -100,18 +100,18 @@ HHH000397: Using ASTQueryTranslatorFactory
 Getting and creating List of all users.
 Failed to create List of all Users.
 
-org.hibernate.type.SerializationException: could not deserialize
+org.hibernate.consumableType.SerializationException: could not deserialize
 	at org.hibernate.internal.util.SerializationHelper.doDeserialize(SerializationHelper.java:262)
 	at org.hibernate.internal.util.SerializationHelper.deserialize(SerializationHelper.java:306)
-	at org.hibernate.type.descriptor.java.SerializableTypeDescriptor.fromBytes(SerializableTypeDescriptor.java:155)
-	at org.hibernate.type.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:130)
-	at org.hibernate.type.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:44)
-	at org.hibernate.type.descriptor.sql.VarbinaryTypeDescriptor$2.doExtract(VarbinaryTypeDescriptor.java:70)
-	at org.hibernate.type.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:64)
-	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:267)
-	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:263)
-	at org.hibernate.type.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:253)
-	at org.hibernate.type.AbstractStandardBasicType.hydrate(AbstractStandardBasicType.java:338)
+	at org.hibernate.consumableType.descriptor.java.SerializableTypeDescriptor.fromBytes(SerializableTypeDescriptor.java:155)
+	at org.hibernate.consumableType.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:130)
+	at org.hibernate.consumableType.descriptor.java.SerializableTypeDescriptor.wrap(SerializableTypeDescriptor.java:44)
+	at org.hibernate.consumableType.descriptor.sql.VarbinaryTypeDescriptor$2.doExtract(VarbinaryTypeDescriptor.java:70)
+	at org.hibernate.consumableType.descriptor.sql.BasicExtractor.extract(BasicExtractor.java:64)
+	at org.hibernate.consumableType.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:267)
+	at org.hibernate.consumableType.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:263)
+	at org.hibernate.consumableType.AbstractStandardBasicType.nullSafeGet(AbstractStandardBasicType.java:253)
+	at org.hibernate.consumableType.AbstractStandardBasicType.hydrate(AbstractStandardBasicType.java:338)
 	at org.hibernate.persister.entity.AbstractEntityPersister.hydrate(AbstractEntityPersister.java:2969)
 	at org.hibernate.loader.Loader.loadFromResultSet(Loader.java:1696)
 	at org.hibernate.loader.Loader.instanceNotYetLoaded(Loader.java:1628)

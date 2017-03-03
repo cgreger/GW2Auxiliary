@@ -1,26 +1,41 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Consumable extends Item {
 
-    private String type;
+    @JsonProperty("type")
+    private String consumableType;
+
+    @JsonProperty("description")
     private String description;
+
+    @JsonProperty("duration_ms")
     private int durationInMiliSec;
+
+    @JsonProperty("unlock_type")
     private String unlockType;
+
+    @JsonProperty("color_id")
     private int dyeId;
+
+    @JsonProperty("recipe_id")
     private int recipeId; //TODO: redundant?
+
+    @JsonProperty("name")
     private String effectName;
 
     public Consumable() { }
 
-    public String getType() {
-        return type;
+    public String getConsumableType() {
+        return consumableType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setConsumableType(String consumableType) {
+        this.consumableType = consumableType;
     }
 
     public String getDescription() {
@@ -74,7 +89,7 @@ public class Consumable extends Item {
     @Override
     public String toString() {
         return "Consumable{" +
-                "type='" + type + '\'' +
+                "consumableType='" + consumableType + '\'' +
                 ", description='" + description + '\'' +
                 ", durationInMiliSec=" + durationInMiliSec +
                 ", unlockType='" + unlockType + '\'' +

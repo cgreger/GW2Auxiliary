@@ -1,5 +1,7 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,21 +10,32 @@ import java.util.List;
  */
 public class UpgradeComponent extends Item {
 
-    private String type;
+    @JsonProperty("type")
+    private String upgradeComponentType;
+
+    @JsonProperty("flags")
     private List<String> upgradableItemTypes = new ArrayList<String>();
+
+    @JsonProperty("infusion_upgrade_flags")
     private List<String> applicableInfusions = new ArrayList<String>();
+
+    @JsonProperty("suffix")
     private String suffix;
+
+    @JsonProperty("infix_upgrade")
     private InfixUpgrade infixUpgrade;
+
+    @JsonProperty("bonuses")
     private List<String> bonuses = new ArrayList<String>();
 
     public UpgradeComponent() { }
 
-    public String getType() {
-        return type;
+    public String getUpgradeComponentType() {
+        return upgradeComponentType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setUpgradeComponentType(String upgradeComponentType) {
+        this.upgradeComponentType = upgradeComponentType;
     }
 
     public List<String> getUpgradableItemTypes() {
@@ -68,7 +81,7 @@ public class UpgradeComponent extends Item {
     @Override
     public String toString() {
         return "UpgradeComponent{" +
-                "type='" + type + '\'' +
+                "upgradeComponentType='" + upgradeComponentType + '\'' +
                 ", upgradableItemTypes=" + upgradableItemTypes +
                 ", applicableInfusions=" + applicableInfusions +
                 ", suffix='" + suffix + '\'' +

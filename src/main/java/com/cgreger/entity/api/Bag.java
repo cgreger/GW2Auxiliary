@@ -1,11 +1,16 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Bag extends Item {
 
+    @JsonProperty("size")
     private int numberOfSlots;
+
+    @JsonProperty("no_sell_or_sort")
     private boolean noSellOrSort;
 
     public Bag() { }

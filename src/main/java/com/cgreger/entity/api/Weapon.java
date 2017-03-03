@@ -1,14 +1,25 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Weapon extends CustomizedItem {
 
+    @JsonProperty("type")
     private String weaponType;
+
+    @JsonProperty("damage_type")
     private String damageType;
+
+    @JsonProperty("min_power")
     private int minPower;
+
+    @JsonProperty("max_power")
     private int maxPower;
+
+    @JsonProperty("defense")
     private int defenseValue;
 
     public Weapon() { }

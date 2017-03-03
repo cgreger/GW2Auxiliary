@@ -1,26 +1,29 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Tool extends Item {
 
-    private String type;
+    @JsonProperty("type")
+    private String toolType;
 
     public Tool() { }
 
-    public String getType() {
-        return type;
+    public String getToolType() {
+        return toolType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setToolType(String toolType) {
+        this.toolType = toolType;
     }
 
     @Override
     public String toString() {
         return "Tool{" +
-                "type='" + type + '\'' +
+                "toolType='" + toolType + '\'' +
                 '}';
     }
 }

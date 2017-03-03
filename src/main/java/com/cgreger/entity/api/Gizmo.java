@@ -1,26 +1,29 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class Gizmo extends Item {
 
-    private String type;
+    @JsonProperty("type")
+    private String gizmoType;
 
     public Gizmo() { }
 
-    public String getType() {
-        return type;
+    public String getGizmoType() {
+        return gizmoType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setGizmoType(String gizmoType) {
+        this.gizmoType = gizmoType;
     }
 
     @Override
     public String toString() {
         return "Gizmo{" +
-                "type='" + type + '\'' +
+                "gizmoType='" + gizmoType + '\'' +
                 '}';
     }
 

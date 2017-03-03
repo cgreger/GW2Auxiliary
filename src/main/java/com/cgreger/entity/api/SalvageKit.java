@@ -1,21 +1,26 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class SalvageKit extends Item {
 
-    private String type;
+    @JsonProperty("type")
+    private String salvageKitType;
+
+    @JsonProperty("charges")
     private int chargesLeft;
 
     public SalvageKit() { }
 
-    public String getType() {
-        return type;
+    public String getSalvageKitType() {
+        return salvageKitType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setSalvageKitType(String salvageKitType) {
+        this.salvageKitType = salvageKitType;
     }
 
     public int getChargesLeft() {
@@ -29,7 +34,7 @@ public class SalvageKit extends Item {
     @Override
     public String toString() {
         return "SalvageKit{" +
-                "type='" + type + '\'' +
+                "salvageKitType='" + salvageKitType + '\'' +
                 ", chargesLeft=" + chargesLeft +
                 '}';
     }

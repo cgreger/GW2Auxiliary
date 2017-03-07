@@ -10,19 +10,19 @@ import javax.servlet.annotation.*;
 
 @WebServlet(
 
-        name = "DisplayIndex",
-        urlPatterns = {""}
+        name = "DisplayLogin",
+        urlPatterns = {"/login"}
 
 )
 
-public class DisplayIndex extends HttpServlet {
+public class DisplayLogin extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
 
-        String url = "/index.jsp";
+        String url = "/login.jsp";
 
         if (session.getAttribute("user") == null) {
 
@@ -33,11 +33,6 @@ public class DisplayIndex extends HttpServlet {
             request.setAttribute("nav", "<%@include file=\"template/userNav.jsp\"%>");
 
         }
-
-        UserDAO userDAO = new UserDAO();
-
-        User user = userDAO.getUser(1);
-        request.setAttribute("user", user);
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

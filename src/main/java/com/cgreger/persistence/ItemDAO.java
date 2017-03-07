@@ -80,79 +80,60 @@ public class ItemDAO {
 
     }
 
+    //TODO: fix
     private Item mapItem(String itemType, String response) throws IOException {
-
-        Item item;
 
         switch (itemType) {
 
             case "Armor":
-                item = mapper.readValue(response, Armor.class);
-                break;
+                return mapper.readValue(response, Armor.class);
 
             case "Back":
-                item = mapper.readValue(response, Back.class);
-                break;
+                return mapper.readValue(response, Back.class);
 
             case "Bag":
-                item = mapper.readValue(response, Bag.class);
-                break;
+                return mapper.readValue(response, Bag.class);
 
             case "Consumable":
-                item = mapper.readValue(response, Consumable.class);
-                break;
+                return mapper.readValue(response, Consumable.class);
 
             case "Container":
-                item = mapper.readValue(response, Container.class);
-                break;
+                return mapper.readValue(response, Container.class);
 
             case "CraftingMaterial":
-                item = mapper.readValue(response, CraftingMaterial.class);
-                break;
+                return mapper.readValue(response, CraftingMaterial.class);
 
             case "Gathering":
-                item = mapper.readValue(response, Tool.class);
-                break;
+                return mapper.readValue(response, Tool.class);
 
             case "Gizmo":
-                item = mapper.readValue(response, Gizmo.class);
-                break;
+                return mapper.readValue(response, Gizmo.class);
 
             case "MiniPet":
-                item = mapper.readValue(response, Miniature.class);
-                break;
+                return mapper.readValue(response, Miniature.class);
 
             case "Tool":
-                item = mapper.readValue(response, SalvageKit.class);
-                break;
+                return mapper.readValue(response, SalvageKit.class);
 
             case "Trait":
-                item = mapper.readValue(response, Trait.class);
-                break;
+                return mapper.readValue(response, Trait.class);
 
             case "Trinket":
-                item = mapper.readValue(response, Trinket.class);
-                break;
+                return mapper.readValue(response, Trinket.class);
 
             case "Trophy":
-                item = mapper.readValue(response, Trophy.class);
-                break;
+                return mapper.readValue(response, Trophy.class);
 
             case "UpgradeComponent":
-                item = mapper.readValue(response, UpgradeComponent.class);
-                break;
+                return mapper.readValue(response, UpgradeComponent.class);
 
             case "Weapon":
-                item = mapper.readValue(response, Weapon.class);
-                break;
+                return mapper.readValue(response, Weapon.class);
 
             default:
-                item = mapper.readValue(response, Item.class);
+                return mapper.readValue(response, Item.class);
 
         }
-
-        return item;
-
     }
 
 }

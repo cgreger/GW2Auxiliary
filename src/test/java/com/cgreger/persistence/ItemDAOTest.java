@@ -34,6 +34,8 @@ public class ItemDAOTest {
 
         Item item = dao.getItem(1);
 
+        log.info(item.getClass().toString());
+
         assertEquals("Failed to retrieve correct Item.", 1, item.getId());
         assertEquals("Failed to retrieve correct Item.", "MONSTER ONLY Moa Unarmed Pet", item.getName());
 

@@ -27,7 +27,6 @@ public class DisplayIndex extends HttpServlet {
         UserDAO userDAO = new UserDAO();
 
         User user = userDAO.getUser(1);
-
         request.setAttribute("user", user);
 
         RequestDispatcher dispatcher =

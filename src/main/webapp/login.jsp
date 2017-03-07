@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@include file="template/head.jsp"%>
 <body>
-<%@include file="template/nav.jsp"%>
+<%@include file="template/guestNav.jsp"%>
     <div class="content">
 
         <form action="j_security_check" method="POST">

@@ -5,7 +5,7 @@ ${nav}
 <div class="content">
 
     <table>
-        <th>${user.getEmail()}</th>
+        <th>${user.getName()}</th>
     </table>
 
 </div>

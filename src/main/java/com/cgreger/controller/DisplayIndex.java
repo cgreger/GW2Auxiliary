@@ -24,22 +24,23 @@ public class DisplayIndex extends HttpServlet {
 
         String url = "/index.jsp";
 
-        if (session.getAttribute("email") == null) {
+        if (request.getUserPrincipal() == null) {
 
             request.setAttribute("nav", "<%@include file=\"template/guestNav.jsp\"%>");
 
         } else {
 
             request.setAttribute("nav", "<%@include file=\"template/userNav.jsp\"%>");
+            request.setAttribute("user", request.getUserPrincipal());
 
         }
 
-        /*
+
         UserDAO userDAO = new UserDAO();
 
-        User user = userDAO.getUser(1);
-        request.setAttribute("user", user);
-        */
+        User user = userDAO.getUserById(1);
+        ;
+
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);
 

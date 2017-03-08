@@ -24,7 +24,7 @@ public class DisplayIndex extends HttpServlet {
 
         String url = "/index.jsp";
 
-        if (session.getAttribute("user") == null) {
+        if (session.getAttribute("email") == null) {
 
             request.setAttribute("nav", "<%@include file=\"template/guestNav.jsp\"%>");
 
@@ -34,11 +34,12 @@ public class DisplayIndex extends HttpServlet {
 
         }
 
+        /*
         UserDAO userDAO = new UserDAO();
 
         User user = userDAO.getUser(1);
         request.setAttribute("user", user);
-
+        */
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);
 

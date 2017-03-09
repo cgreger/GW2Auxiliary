@@ -2,11 +2,10 @@
 <html>
 <%@include file="template/head.jsp"%>
 <body>
-<%@include file="template/guestNav.jsp"%>
     <div class="content">
 
         <h2>Problem logging in: Your username or password is incorrect.</h2>
-        <a href="login.jsp">Back to login page</a>
+        <a href="/login.jsp">Back to login page</a>
 
     </div>
 </body>

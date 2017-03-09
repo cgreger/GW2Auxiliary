@@ -3,6 +3,7 @@ package com.cgreger.persistence;
 import com.cgreger.entity.db.User;
 import org.apache.log4j.Logger;
 import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,7 @@ public class UserDAO {
     }
 
     // READ BY ID
-    public User getUser(int userId) {
+    public User getUserById(int userId) {
 
         Session session = factory.openSession();
         Transaction tr = null;
@@ -77,6 +78,52 @@ public class UserDAO {
             }
 
             log.error("Failed to retrieve User (id" + userId + ")\n", e);
+
+        } finally {
+
+            session.close();
+
+        }
+
+        return user;
+
+    }
+
+    // READ BY EMAIL
+    public User getUserByEmail(String email) {
+
+        Session session = factory.openSession();
+        Transaction tr = null;
+        User user = null;
+
+        try {
+
+            log.info("Getting User (email=" + email + ").");
+
+            Criteria criteria = session.createCriteria(User.class);
+            criteria = criteria.add(Restrictions.eq("email", email));
+            List<User> results = (List<User>) criteria.list();
+
+            if (results.size() == 1) {
+
+                log.info("Successfully retrieved User (email=" + email + ")");
+                user = results.get(0);
+
+            } else {
+
+                log.error("Failed to retrieve User (email=" + email + ") : Email should exist and be unique!");
+
+            }
+
+        } catch (HibernateException e) {
+
+            if (tr != null) {
+
+                tr.rollback();
+
+            }
+
+            log.error("Failed to retrieve User (email=" + email + ")\n", e);
 
         } finally {
 

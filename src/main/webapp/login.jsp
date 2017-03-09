@@ -1,6 +1,6 @@
 <%@include file="template/head.jsp"%>
 <body>
-${nav}
+<%@include file="template/nav.jsp"%>
     <div class="content">
 
         <form action="j_security_check" method="POST">

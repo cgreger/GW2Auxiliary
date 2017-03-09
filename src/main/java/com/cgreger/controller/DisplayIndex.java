@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 @WebServlet(
 
         name = "DisplayIndex",
-        urlPatterns = {""}
+        urlPatterns = {"/"}
 
 )
 
@@ -20,14 +20,7 @@ public class DisplayIndex extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        //HttpSession session = request.getSession();
-
         String url = "/index.jsp";
-
-        UserDAO userDAO = new UserDAO();
-
-        User user = userDAO.getUser(1);
-        request.setAttribute("user", user);
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

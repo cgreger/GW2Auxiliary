@@ -1,10 +1,7 @@
 <div class="nav">
     <div class="login-links">
-        <a href="#">Log In</a>
+        <a href="/login">Log In</a>
         <a href="#">Create Account</a>
-    </div>
-    <div class="search-bar">
-        <input type="search" />
-        <button>Search Items</button>
+        <%@include file="searchBar.jsp"%>
     </div>
 </div>

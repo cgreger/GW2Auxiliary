@@ -1,6 +1,6 @@
 <div class="nav">
     <div class="login-links">
-        <a href="login.jsp">Log In</a>
+        <a href="/displayLogin">Log In</a>
         <a href="#">Create Account</a>
     </div>
     <div class="search-bar">

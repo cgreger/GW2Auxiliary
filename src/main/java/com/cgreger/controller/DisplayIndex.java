@@ -20,26 +20,7 @@ public class DisplayIndex extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        HttpSession session = request.getSession();
-
         String url = "/index.jsp";
-
-        if (request.getUserPrincipal() == null) {
-
-            request.setAttribute("nav", "<%@include file=\"template/guestNav.jsp\"%>");
-
-        } else {
-
-            request.setAttribute("nav", "<%@include file=\"template/userNav.jsp\"%>");
-            request.setAttribute("user", request.getUserPrincipal());
-
-        }
-
-
-        UserDAO userDAO = new UserDAO();
-
-        User user = userDAO.getUserById(1);
-        ;
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

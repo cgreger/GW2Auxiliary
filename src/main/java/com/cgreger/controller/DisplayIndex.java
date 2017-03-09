@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 @WebServlet(
 
         name = "DisplayIndex",
-        urlPatterns = {""}
+        urlPatterns = {"/"}
 
 )
 

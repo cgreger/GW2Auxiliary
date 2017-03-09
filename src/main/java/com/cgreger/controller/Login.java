@@ -13,20 +13,15 @@ import java.io.IOException;
 
 @WebServlet(
 
-        name = "DisplayLogin",
-        urlPatterns = {"/displayLogin"}
+        name = "Login",
+        urlPatterns = {"/login"}
 
 )
 
-public class DisplayLogin extends HttpServlet {
+public class Login extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String url = "/index.jsp";
-
-        RequestDispatcher dispatcher =
-                    getServletContext().getRequestDispatcher(url);
 
         UserDAO userDao = new UserDAO();
 
@@ -34,9 +29,7 @@ public class DisplayLogin extends HttpServlet {
 
         request.getSession().setAttribute("user", user);
 
-        dispatcher.forward(request, response);
-
-
+        response.sendRedirect("/");
 
     }
 

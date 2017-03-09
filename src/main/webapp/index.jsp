@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <%@include file="template/head.jsp"%>
 <body>
 <%@include file="template/guestNav.jsp"%>

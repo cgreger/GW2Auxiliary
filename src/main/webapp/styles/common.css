@@ -1,0 +1,25 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    background-color: cadetblue;
+
+}
+
+.nav {
+
+    width: 25%;
+    float: right;
+
+}
+
+.content {
+
+    width: 75%;
+    float: left;
+
+}

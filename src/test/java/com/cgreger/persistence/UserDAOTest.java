@@ -89,18 +89,27 @@ public class UserDAOTest {
 
 
     @Test
-    public void getUser() throws Exception {
+    public void getUserById() throws Exception {
 
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(5).getEmail().equals("johnny@gmail.com"));
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(5).getPassword().equals("passwordhash"));
-        assertTrue("Failed to retrieve User (id6).", dao.getUser(5).getSalt().equals("salthash5"));
+        assertEquals("Failed to retrieve User (id6).", "johnny@gmail.com", dao.getUserById(5).getEmail());
+        assertEquals("Failed to retrieve User (id6).", "passwordhash", dao.getUserById(5).getPassword());
+        assertEquals("Failed to retrieve User (id6).", "salthash5", dao.getUserById(5).getSalt());
+
+    }
+
+    @Test
+    public void getUserByEmail() throws Exception {
+
+        assertEquals("Failed to retrieve User (email=johnny@gmail.com).", 5, dao.getUserByEmail("johnny@gmail.com").getId());
+        assertEquals("Failed to retrieve User (email=johnny@gmail.com).", "passwordhash", dao.getUserByEmail("johnny@gmail.com").getPassword());
+        assertEquals("Failed to retrieve User (email=johnny@gmail.com).", "salthash5", dao.getUserByEmail("johnny@gmail.com").getSalt());
 
     }
 
     @Test
     public void updateUserEmail() throws Exception {
 
-        User user = dao.getUser(1);
+        User user = dao.getUserById(1);
         user.setEmail("TESTUPDATE@gmail.com");
 
         dao.updateUser(user);
@@ -113,7 +122,7 @@ public class UserDAOTest {
     @Test
     public void updateUserPassword() throws Exception {
 
-        User user = dao.getUser(1);
+        User user = dao.getUserById(1);
         user.setPassword("TESTPASSWORD");
         user.setSalt("TESTSALT");
 
@@ -132,7 +141,7 @@ public class UserDAOTest {
 
         dao.deleteUser(3);
 
-        assertEquals("Failed to delete User (id3).", null, dao.getUser(3));
+        assertEquals("Failed to delete User (id3).", null, dao.getUserById(3));
 
     }
 

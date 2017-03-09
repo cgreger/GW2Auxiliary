@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <%@include file="template/head.jsp"%>
 <body>
-<%@include file="template/guestNav.jsp"%>
+<%@include file="template/nav.jsp"%>
 <div class="content">
 
     <table>

@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <%@include file="template/head.jsp"%>
 <body>
-<%@include file="template/guestNav.jsp"%>
+<%if (session.getAttribute("user") == null) { %>
+
+    <%@include file="template/guestNav.jsp"%>
+
+<% } else { %>
+
+    <%@include file="template/userNav.jsp"%>
+
+<% } %>
+
 <div class="content">
 
     <table>

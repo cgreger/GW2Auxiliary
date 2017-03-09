@@ -12218,3 +12218,88 @@ SQL Error: 1452, SQLState: 23000
 Cannot add or update a child row: a foreign key constraint fails (`TEST_gw2_auxiliary`.`gw2_api_key`, CONSTRAINT `FK_cw3mhhjo09s4qhfcpmirhxss2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
 SQL Warning Code: 1452, SQLState: 23000
 Cannot add or update a child row: a foreign key constraint fails (`TEST_gw2_auxiliary`.`gw2_api_key`, CONSTRAINT `FK_cw3mhhjo09s4qhfcpmirhxss2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Retrieving Item (id=1)
+Successfully retrieved Item (id=1)
+class com.cgreger.entity.api.Item
+
+
+Item{
+id=1, 
+chatLink='[&AgEBAAAA]', 
+name='MONSTER ONLY Moa Unarmed Pet', 
+iconUrl='https://render.guildwars2.com/file/4AECE5EA59CA057F4C53E1EDFE95E0E3E61DE37F/60980.png', 
+description='null', 
+itemType='Weapon', 
+rarity='Fine', 
+level=0, 
+vendorValue=0, 
+flags=[NoSell, SoulbindOnAcquire, SoulBindOnUse], 
+restrictions=[], 
+recipes=[]
+}
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}]
+HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+HHH000412: Hibernate Core {4.3.11.Final}
+HHH000206: hibernate.properties not found
+HHH000021: Bytecode provider name : javassist
+HHH000043: Configuring from resource: /hibernate.cfg.xml
+HHH000040: Configuration resource: /hibernate.cfg.xml
+HHH000041: Configured SessionFactory: null
+HHH000402: Using Hibernate built-in connection pool (not for production use!)
+HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/TEST_gw2_auxiliary]
+HHH000046: Connection properties: {user=root, password=****}
+HHH000006: Autocommit mode: false
+HHH000115: Hibernate connection pool size: 20 (min=1)
+HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+HHH000399: Using default transaction strategy (direct JDBC transactions)
+HHH000397: Using ASTQueryTranslatorFactory
+HHH000227: Running hbm2ddl schema export
+HHH000230: Schema export complete
+Adding new User.
+Successfully added new User (id6).
+Getting User (email=johnny@gmail.com).
+Successfully retrieved User (email=johnny@gmail.com)
+Getting User (email=johnny@gmail.com).
+Successfully retrieved User (email=johnny@gmail.com)
+Getting User (email=johnny@gmail.com).
+Successfully retrieved User (email=johnny@gmail.com)
+Getting User (id1).
+Successfully retrieved User (id1)
+Updating User's (id1)
+Successfully upadated User (id1)
+Getting and creating List of all users.
+Successfully created List of all Users.
+Getting User (id1).
+Successfully retrieved User (id1)
+Updating User's (id1)
+Successfully upadated User (id1)
+Deleting User (id3).
+Successfully deleted User (id3).
+Getting User (id3).
+Successfully retrieved User (id3)
+Getting User (id5).
+Successfully retrieved User (id5)
+Getting User (id5).
+Successfully retrieved User (id5)
+Getting User (id5).
+Successfully retrieved User (id5)
+SQL Error: 1452, SQLState: 23000
+Cannot add or update a child row: a foreign key constraint fails (`TEST_gw2_auxiliary`.`gw2_api_key`, CONSTRAINT `FK_cw3mhhjo09s4qhfcpmirhxss2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+SQL Warning Code: 1452, SQLState: 23000
+Cannot add or update a child row: a foreign key constraint fails (`TEST_gw2_auxiliary`.`gw2_api_key`, CONSTRAINT `FK_cw3mhhjo09s4qhfcpmirhxss2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))

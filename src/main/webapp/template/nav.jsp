@@ -1,4 +1,4 @@
-<div class="nav">
+<div class="nav col-2">
     <div class="logo">
         <a href="/"><img src="/images/gw2-auxiliary-logo.png"></a>
     </div>

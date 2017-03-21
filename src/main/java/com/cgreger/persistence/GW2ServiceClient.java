@@ -30,7 +30,7 @@ public class GW2ServiceClient {
 
         } catch (NotFoundException nfe) {
 
-            log.error("API is currently down.");
+            log.error("API is currently down: " + nfe);
 
         }
 

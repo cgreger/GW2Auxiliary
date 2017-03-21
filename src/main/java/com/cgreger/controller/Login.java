@@ -29,7 +29,7 @@ public class Login extends HttpServlet {
 
         request.getSession().setAttribute("user", user);
 
-        response.sendRedirect("/");
+        response.sendRedirect("/index");
 
     }
 

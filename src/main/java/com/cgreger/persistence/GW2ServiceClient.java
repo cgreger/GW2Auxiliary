@@ -1,5 +1,8 @@
 package com.cgreger.persistence;
 
+import org.apache.log4j.Logger;
+
+import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 
@@ -8,19 +11,28 @@ import javax.ws.rs.core.MediaType;
  */
 public class GW2ServiceClient {
 
+    Logger log = Logger.getLogger(this.getClass());
     Client client;
     WebTarget target;
-    String response;
+    String response = null;
 
 
     public GW2ServiceClient() { }
 
     public String request(String requestUrl) {
 
-        client = ClientBuilder.newClient();
-        this.target = client.target(requestUrl);
+        try {
 
-        response = this.target.request(MediaType.APPLICATION_JSON).get(String.class);
+            client = ClientBuilder.newClient();
+            this.target = client.target(requestUrl);
+
+            response = this.target.request(MediaType.APPLICATION_JSON).get(String.class);
+
+        } catch (NotFoundException nfe) {
+
+            log.error("API is currently down.");
+
+        }
 
         return response;
 

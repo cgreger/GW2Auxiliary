@@ -12813,3 +12813,24 @@ SQL Error: 1452, SQLState: 23000
 Cannot add or update a child row: a foreign key constraint fails (`TEST_gw2_auxiliary`.`gw2_api_key`, CONSTRAINT `FK_cw3mhhjo09s4qhfcpmirhxss2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
 SQL Warning Code: 1452, SQLState: 23000
 Cannot add or update a child row: a foreign key constraint fails (`TEST_gw2_auxiliary`.`gw2_api_key`, CONSTRAINT `FK_cw3mhhjo09s4qhfcpmirhxss2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`))
+Retrieving Recipes for Item (id=50065)
+Retrieving Item (id=1)
+Retrieving Recipe (id100)
+Retrieving Recipes for Item (id=50065)
+Retrieving Item (id=1)
+Retrieving Recipe (id100)
+Retrieving Recipes for Item (id=50065)
+Retrieving Item (id=1)
+Retrieving Recipe (id100)
+Retrieving Recipes for Item (id=50065)
+API is currently down.
+Retrieving Item (id=1)
+API is currently down.
+Retrieving Recipe (id100)
+API is currently down.
+Retrieving Recipes for Item (id=50065)
+API is currently down.
+Retrieving Item (id=1)
+API is currently down.
+Retrieving Recipe (id100)
+API is currently down.

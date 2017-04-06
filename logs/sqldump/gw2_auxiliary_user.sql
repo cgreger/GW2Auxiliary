@@ -1,0 +1,3 @@
+INSERT INTO gw2_auxiliary.user (email, password, join_date, salt) VALUES ('admin@gmail.com', 'admin', '2017-02-16 14:06:32', 'salt1');
+INSERT INTO gw2_auxiliary.user (email, password, join_date, salt) VALUES ('user@gmail.com', 'user', '2017-02-16 14:06:32', 'salt2');
+INSERT INTO gw2_auxiliary.user (email, password, join_date, salt) VALUES ('user1@gmail.com', 'user1', '2017-02-21 13:35:33', 'salt3');

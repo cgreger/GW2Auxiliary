@@ -1,13 +1,12 @@
 package com.cgreger.persistence;
 
-import com.cgreger.entity.api.Ingredient;
-import com.cgreger.entity.api.Item;
-import com.cgreger.entity.api.Recipe;
+import com.cgreger.entity.api.*;
 import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -40,6 +39,17 @@ public class ItemDAOTest {
         assertEquals("Failed to retrieve correct Item.", "MONSTER ONLY Moa Unarmed Pet", item.getName());
 
         log.info("\n\n" + item.toString());
+    }
+
+    @Test
+    public void getItemMap() throws Exception {
+
+        Item<?> item = dao.getItem(80010);
+        Item<Armor> armor = (Item<Armor>) item;
+        log.info(armor.getWeight());
+
+        //log.info("\n\n" + item.toString());
+
     }
 
     @Test
@@ -91,6 +101,13 @@ public class ItemDAOTest {
 
         assertEquals("Failed to set Recipes for Item (id" + item.getId() + ")",
                 recipes, item.getRecipes());
+
+    }
+
+    @Test
+    public void updateItemDatabase() throws Exception {
+
+        dao.updateItemDatabase();
 
     }
 

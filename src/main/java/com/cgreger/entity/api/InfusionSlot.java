@@ -1,5 +1,7 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ import java.util.List;
  */
 public class InfusionSlot {
 
+    @JsonProperty("flags")
     private List<String> type = new ArrayList<String>(); //TODO: May be able to change to a single string??
     private int itemInSlotId;
 

@@ -1,6 +1,8 @@
 package com.cgreger.persistence;
 
+import com.cgreger.entity.db.APIKey;
 import com.cgreger.entity.db.User;
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,12 +11,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 /**
  * Created by katana on 2/13/17.
  */
 public class APIKeyDAOTest {
-    private static User user1;
+    private User user1;
+    private UserDAO userDAO = new UserDAO();
+    private APIKeyDAO apiKeyDAO = new APIKeyDAO();
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
+    private final Logger log = Logger.getLogger(this.getClass());
 
     @BeforeClass
     public static void runOnceBeforeClass() throws Exception {
@@ -38,8 +45,6 @@ public class APIKeyDAOTest {
                     "(4, 'APIKEY4')," +
                     "(5, 'APIKEY5')").executeUpdate();
 
-            user1 = (User) session.get(User.class, 1);
-
 
         } catch (HibernateException e) {
 
@@ -61,18 +66,25 @@ public class APIKeyDAOTest {
     @Before
     public void setUp() {
 
+        user1 = userDAO.getUserById(1);
 
     }
 
     @Test
     public void addAPIKey() throws Exception {
 
+        APIKey newKey = new APIKey(user1, "newTestAPIKey654654");
+        apiKeyDAO.addAPIKey(user1, newKey);
 
+        assertEquals("The initial api key is nonexistant. (id1)", user1.getApiKeys().get(0).getApiKey(), "APIKEY1");
+        assertEquals("The api key was not added correctly. (id1)", user1.getApiKeys().get(1).getApiKey(), "newTestAPIKey654654");
 
     }
 
     @Test
     public void getAPIKey() throws Exception {
+
+        log.info(apiKeyDAO.getAPIKey(1).getApiKey());
 
     }
 

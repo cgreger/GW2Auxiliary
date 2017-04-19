@@ -1,12 +1,13 @@
 package com.cgreger.entity.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 /**
  * Created by katana on 2/13/17.
  */
 
-//@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
+//@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 public class Armor extends CustomizedItem {
 
     @JsonProperty("type")

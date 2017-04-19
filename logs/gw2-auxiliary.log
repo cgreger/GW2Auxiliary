@@ -80556,3 +80556,24 @@ class com.cgreger.entity.api.Armor
 
 
 Armor{armorType='Armor', weightClass='null', defenseValue='null'}
+Retrieving Item (id=80010)
+class com.cgreger.entity.api.Armor
+
+
+Armor{armorType='Armor', weightClass='null', defenseValue='null'}
+Retrieving Item (id=80010)
+class com.cgreger.entity.api.Armor
+
+
+Armor{armorType='Armor', weightClass='null', defenseValue='null'}
+Retrieving Item (id=80010)
+class com.cgreger.entity.api.Armor
+
+
+Armor{armorType='null', weightClass='null', defenseValue='null'}
+Retrieving Item (id=80010)
+Successfully retrieved Item (id=80010)
+class com.cgreger.entity.api.Armor
+
+
+Armor{armorType='Armor', weightClass='null', defenseValue='null'}

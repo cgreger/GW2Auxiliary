@@ -2,6 +2,7 @@ package com.cgreger.entity.api;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  */
 //TODO: create correct annotations so that entities map out properly. May need to run jackson generator instead...
 //@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
-//@JsonSubTypes(@JsonSubTypes.Type(value=CustomizedItem.class, name="CustomizedItem"))
+@JsonSubTypes(@JsonSubTypes.Type(value=CustomizedItem.class, name="CustomizedItem"))
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
 

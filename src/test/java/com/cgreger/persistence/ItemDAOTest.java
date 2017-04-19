@@ -31,26 +31,16 @@ public class ItemDAOTest {
     @Test
     public void getItem() throws Exception {
 
-        Item item = dao.getItem(1);
-
+        Item item = dao.getItem(80010);
         log.info(item.getClass().toString());
 
-        assertEquals("Failed to retrieve correct Item.", 1, item.getId());
-        assertEquals("Failed to retrieve correct Item.", "MONSTER ONLY Moa Unarmed Pet", item.getName());
+        assertEquals("Failed to retrieve correct Item.", 80010, item.getId());
+        assertEquals("Failed to retrieve correct Item.", "Ardent Glorious Plate Helm", item.getName());
 
         log.info("\n\n" + item.toString());
-    }
-
-    @Test
-    public void getItemMap() throws Exception {
-
-        Item<?> item = dao.getItem(80010);
-        Item<Armor> armor = (Item<Armor>) item;
-        log.info(armor.getWeight());
-
-        //log.info("\n\n" + item.toString());
 
     }
+
 
     @Test
     public void getItemRecipes() throws Exception {

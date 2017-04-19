@@ -1,6 +1,7 @@
 package com.cgreger.persistence;
 
 import com.cgreger.entity.api.*;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -25,7 +26,18 @@ public class ItemDAO {
 
     private GW2ServiceClient gw2Client = new GW2ServiceClient();
     private ObjectMapper mapper = new ObjectMapper();
+
     private Logger log = Logger.getLogger(this.getClass());
+
+    public ItemDAO() {
+
+        mapper.getSerializationConfig().getDefaultVisibilityChecker()
+                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+                .withGetterVisibility(JsonAutoDetect.Visibility.ANY)
+                .withSetterVisibility(JsonAutoDetect.Visibility.ANY)
+                .withCreatorVisibility(JsonAutoDetect.Visibility.ANY);
+
+    }
 
     public void updateItemDatabase() throws IOException {
 
@@ -36,19 +48,66 @@ public class ItemDAO {
 
     }
 
-    public Item<?> getItem(int id) throws IOException {
+    public Item getItem(int id) throws IOException {
 
         log.info("Retrieving Item (id=" + id + ")");
 
         String response = gw2Client.request("https://api.guildwars2.com/v2/items?id=" + id);
 
         String itemType = mapper.readValue(response, JsonNode.class).get("type").toString();
+        //log.info("Successfully retrieved Item (id=" + id + ")");
+        //TODO: method for each type
+        switch (itemType) {
 
-        Item<?> item = mapItem(itemType, response);
+            case "\"Armor\"":
+                return mapper.readValue(response, Armor.class);
 
-        log.info("Successfully retrieved Item (id=" + id + ")");
+            case "\"Back\"":
+                return mapper.readValue(response, Back.class);
 
-        return item;
+            case "\"Bag\"":
+                return mapper.readValue(response, Bag.class);
+
+            case "\"Consumable\"":
+                return mapper.readValue(response, Consumable.class);
+
+            case "\"Container\"":
+                return mapper.readValue(response, Container.class);
+
+            case "\"CraftingMaterial\"":
+                return mapper.readValue(response, CraftingMaterial.class);
+
+            case "\"Gathering\"":
+                return mapper.readValue(response, Tool.class);
+
+            case "\"Gizmo\"":
+                return mapper.readValue(response, Gizmo.class);
+
+            case "\"MiniPet\"":
+                return mapper.readValue(response, Miniature.class);
+
+            case "\"Tool\"":
+                return mapper.readValue(response, SalvageKit.class);
+
+            case "\"Trait\"":
+                return mapper.readValue(response, Trait.class);
+
+            case "\"Trinket\"":
+                return mapper.readValue(response, Trinket.class);
+
+            case "\"Trophy\"":
+                return mapper.readValue(response, Trophy.class);
+
+            case "\"Upgrade Component\"":
+                return mapper.readValue(response, UpgradeComponent.class);
+
+            case "\"Weapon\"":
+                return mapper.readValue(response, Weapon.class);
+
+            default:
+                return mapper.readValue(response, Item.class);
+            
+        }
 
     }
 
@@ -97,64 +156,60 @@ public class ItemDAO {
     }
 
     //TODO: fix
-    private Item<?> mapItem(String itemType, String response) throws IOException {
+//    private Item mapItem(String itemType, String response) throws IOException {
+//
+//        switch (itemType) {
+//
+//            case "Armor":
+//                return mapper.readValue(response, Armor.class);
+//
+//            case "Back":
+//                return mapper.readValue(response, Back.class);
+//
+//            case "Bag":
+//                return mapper.readValue(response, Bag.class);
+//
+//            case "Consumable":
+//                return mapper.readValue(response, Consumable.class);
+//
+//            case "Container":
+//                return mapper.readValue(response, Container.class);
+//
+//            case "CraftingMaterial":
+//                return mapper.readValue(response, CraftingMaterial.class);
+//
+//            case "Gathering":
+//                return mapper.readValue(response, Tool.class);
+//
+//            case "Gizmo":
+//                return mapper.readValue(response, Gizmo.class);
+//
+//            case "MiniPet":
+//                return mapper.readValue(response, Miniature.class);
+//
+//            case "Tool":
+//                return mapper.readValue(response, SalvageKit.class);
+//
+//            case "Trait":
+//                return mapper.readValue(response, Trait.class);
+//
+//            case "Trinket":
+//                return mapper.readValue(response, Trinket.class);
+//
+//            case "Trophy":
+//                return mapper.readValue(response, Trophy.class);
+//
+//            case "UpgradeComponent":
+//                return mapper.readValue(response, UpgradeComponent.class);
+//
+//            case "Weapon":
+//                return mapper.readValue(response, Weapon.class);
+//
+//            default:
+//                return mapper.readValue(response, Item.class);
+//
+//        }
 
-        Item<?> item;
-
-        switch (itemType) {
-
-            case "Armor":
-                item = mapper.readValue(response, Armor.class);
-
-            case "Back":
-                item = mapper.readValue(response, Back.class);
-
-            case "Bag":
-                item = mapper.readValue(response, Bag.class);
-
-            case "Consumable":
-                item = mapper.readValue(response, Consumable.class);
-
-            case "Container":
-                item = mapper.readValue(response, Container.class);
-
-            case "CraftingMaterial":
-                item  = mapper.readValue(response, CraftingMaterial.class);
-
-            case "Gathering":
-                item = mapper.readValue(response, Tool.class);
-
-            case "Gizmo":
-                item = mapper.readValue(response, Gizmo.class);
-
-            case "MiniPet":
-                item = mapper.readValue(response, Miniature.class);
-
-            case "Tool":
-                item = mapper.readValue(response, SalvageKit.class);
-
-            case "Trait":
-                item = mapper.readValue(response, Trait.class);
-
-            case "Trinket":
-                item = mapper.readValue(response, Trinket.class);
-
-            case "Trophy":
-                item = mapper.readValue(response, Trophy.class);
-
-            case "UpgradeComponent":
-                item = mapper.readValue(response, UpgradeComponent.class);
-
-            case "Weapon":
-                item = mapper.readValue(response, Weapon.class);
-
-            default:
-                item = mapper.readValue(response, Item.class);
-
-        }
-
-        return item;
-
-    }
+    //}
 
 }

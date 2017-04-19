@@ -13,7 +13,7 @@ import java.util.List;
 //@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
 //@JsonSubTypes(@JsonSubTypes.Type(value=CustomizedItem.class, name="CustomizedItem"))
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Item<Type> {
+public class Item {
 
     @JsonProperty("id")
     private int id;
@@ -50,27 +50,7 @@ public class Item<Type> {
 
     private List<Integer> recipes = new ArrayList<Integer>();
 
-    private List<Type> types;
-
     public Item() { }
-
-    public Item(List<Type> types) {
-
-        this.types = types;
-
-    }
-
-    public Object issueType() {
-
-        return types.get(0);
-
-    }
-
-    public void returnType(Type type) {
-
-        types.add(type);
-
-    }
 
     public int getId() {
         return id;

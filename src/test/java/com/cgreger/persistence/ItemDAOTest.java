@@ -30,12 +30,12 @@ public class ItemDAOTest {
 
     @Test
     public void getItem() throws Exception {
-
-        Item item = dao.getItem(80010);
+//80010
+        Item item = dao.getItem(2000);
         log.info(item.getClass().toString());
 
-        assertEquals("Failed to retrieve correct Item.", 80010, item.getId());
-        assertEquals("Failed to retrieve correct Item.", "Ardent Glorious Plate Helm", item.getName());
+        assertEquals("Failed to retrieve correct Item.", 2000, item.getId());
+        assertEquals("Failed to retrieve correct Item.", "Shaman's Rogue Gloves of Vampirism", item.getName());
 
         log.info("\n\n" + item.toString());
 
@@ -91,13 +91,6 @@ public class ItemDAOTest {
 
         assertEquals("Failed to set Recipes for Item (id" + item.getId() + ")",
                 recipes, item.getRecipes());
-
-    }
-
-    @Test
-    public void updateItemDatabase() throws Exception {
-
-        dao.updateItemDatabase();
 
     }
 

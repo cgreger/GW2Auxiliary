@@ -1,10 +1,12 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by katana on 3/1/17.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ingredient {
 
     @JsonProperty("item_id")

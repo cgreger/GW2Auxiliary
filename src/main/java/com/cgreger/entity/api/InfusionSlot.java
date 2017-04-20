@@ -1,18 +1,22 @@
 package com.cgreger.entity.api;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class InfusionSlot {
 
 	@JsonProperty("flags")
 	private List<String> flags;
 
+	@JsonProperty("id")
 	private int itemInSlotId;
 //
-//	public InfusionSlotsItem() {
+//	public InfusionSlotsI() {
 //
 //		itemInSlotId =
 //

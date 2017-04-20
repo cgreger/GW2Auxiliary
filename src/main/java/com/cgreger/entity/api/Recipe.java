@@ -1,5 +1,6 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 /**
  * Created by katana on 3/1/17.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Recipe {
 
     @JsonProperty("id")

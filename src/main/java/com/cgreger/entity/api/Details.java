@@ -1,13 +1,17 @@
 package com.cgreger.entity.api;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by katana on 4/20/17.
  */
+@Generated("com.robohorse.robopojogenerator")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Details {
 
     @JsonProperty("type")
@@ -256,29 +260,29 @@ public class Details {
 
     @Override
     public String toString() {
-        return "Details{" +
-                "specificType='" + specificType + '\'' +
-                ", description='" + description + '\'' +
-                ", upgradableItemTypes=" + upgradableItemTypes +
-                ", applicableInfusions=" + applicableInfusions +
-                ", infixUpgrade=" + infixUpgrade +
-                ", suffix='" + suffix + '\'' +
-                ", bonuses=" + bonuses +
-                ", noSellOrSort=" + noSellOrSort +
-                ", weightClass='" + weightClass + '\'' +
-                ", defense=" + defense +
-                ", durationInMiliSec=" + durationInMiliSec +
-                ", unlockType='" + unlockType + '\'' +
-                ", dyeId=" + dyeId +
-                ", recipeId=" + recipeId +
-                ", effectName='" + effectName + '\'' +
-                ", infusionSlots=" + infusionSlots +
-                ", suffixItemId=" + suffixItemId +
-                ", secondarySuffixItemId=" + secondarySuffixItemId +
-                ", statChoices=" + statChoices +
-                ", numberOfSlots=" + numberOfSlots +
-                ", minipetId=" + minipetId +
-                ", chargesLeft=" + chargesLeft +
-                '}';
+        return "\n\nDetails{" +
+                "\n\tspecificType='" + specificType + '\'' +
+                ",\n\tdescription='" + description + '\'' +
+                ",\n\tupgradableItemTypes=" + upgradableItemTypes +
+                ",\n\tapplicableInfusions=" + applicableInfusions +
+                ",\n\tinfixUpgrade=" + infixUpgrade +
+                ",\n\tsuffix='" + suffix + '\'' +
+                ",\n\tbonuses=" + bonuses +
+                ",\n\tnoSellOrSort=" + noSellOrSort +
+                ",\n\tweightClass='" + weightClass + '\'' +
+                ",\n\tdefense=" + defense +
+                ",\n\tdurationInMiliSec=" + durationInMiliSec +
+                ",\n\tunlockType='" + unlockType + '\'' +
+                ",\n\tdyeId=" + dyeId +
+                ", \n\trecipeId=" + recipeId +
+                ", \n\teffectName='" + effectName + '\'' +
+                ", \n\tinfusionSlots=" + infusionSlots +
+                ", \n\tsuffixItemId=" + suffixItemId +
+                ", \n\tsecondarySuffixItemId=" + secondarySuffixItemId +
+                ", \n\tstatChoices=" + statChoices +
+                ", \n\tnumberOfSlots=" + numberOfSlots +
+                ", \n\tminipetId=" + minipetId +
+                ", \n\tchargesLeft=" + chargesLeft +
+                "\n}";
     }
 }

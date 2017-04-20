@@ -43,8 +43,8 @@ public class Item{
 	@JsonProperty("name")
 	private String name;
 
-	@JsonProperty("details")
-	private Details details;
+	@JsonProperty("armorDetails")
+	private ArmorDetails armorDetails;
 
 	@JsonProperty("id")
 	private int id;
@@ -149,12 +149,12 @@ public class Item{
 		return name;
 	}
 
-	public void setDetails(Details details){
-		this.details = details;
+	public void setArmorDetails(ArmorDetails armorDetails){
+		this.armorDetails = armorDetails;
 	}
 
-	public Details getDetails(){
-		return details;
+	public ArmorDetails getArmorDetails(){
+		return armorDetails;
 	}
 
 	public void setId(int id){

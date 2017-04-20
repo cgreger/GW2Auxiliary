@@ -19,7 +19,7 @@ Crafting in GW2 is almost impossible without first researching item recipes. The
 
 GW2 Auxiliary will make crafting recipes easy to view and track. Keeping to a smaller scope it will feature:
 * An intuitive recipe viewer with hierarchical dropdowns.
-* Easy to view item details.
+* Easy to view item armorDetails.
 * User accounts to track item completion based on the user's current game inventory.
 
 I have many more features I want to add, but this project will be focused on the 3 goals listed above.
@@ -29,7 +29,7 @@ In the future I would like GW2 Auxiliary to serve as a go-to gameplay supplement
 ### Project Technologies/Techniques 
 
 * Security/Authentication
-  * All: Anyone can view item details and item recipes
+  * All: Anyone can view item armorDetails and item recipes
   * User Role: Anyone with a GW2 API Key (generated through the user's [ArenaNet](https://www.arena.net/) account) will be able to create an acocunt & log in, allowing them to track item builds
 * Database (MySQL and Hibernate)
   * Store users

@@ -1,43 +1,36 @@
 package com.cgreger.entity.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.ArrayList;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.annotation.Generated;
 
-/**
- * Created by katana on 2/13/17.
- */
+@Generated("com.robohorse.robopojogenerator")
 public class InfusionSlot {
 
-    @JsonProperty("flags")
-    private List<String> type = new ArrayList<String>(); //TODO: May be able to change to a single string??
-    private int itemInSlotId;
+	@JsonProperty("flags")
+	private List<String> flags;
 
-    public InfusionSlot() { }
+	private int itemInSlotId;
+//
+//	public InfusionSlotsItem() {
+//
+//		itemInSlotId =
+//
+//	}
 
-    public List<String> getType() {
-        return type;
-    }
+	public void setFlags(List<String> flags){
+		this.flags = flags;
+	}
 
-    public void setType(List<String> type) {
-        this.type = type;
-    }
+	public List<String> getFlags(){
+		return flags;
+	}
 
-    public int getItemInSlotId() {
-        return itemInSlotId;
-    }
+	public int getItemInSlotId() {
+		return itemInSlotId;
+	}
 
-    public void setItemInSlotId(int itemInSlotId) {
-        this.itemInSlotId = itemInSlotId;
-    }
-
-    @Override
-    public String toString() {
-        return "InfusionSlot{" +
-                "type=" + type +
-                ", itemInSlotId=" + itemInSlotId +
-                '}';
-    }
-
+	public void setItemInSlotId(int itemInSlotId) {
+		this.itemInSlotId = itemInSlotId;
+	}
 }

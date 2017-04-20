@@ -1,170 +1,184 @@
 package com.cgreger.entity.api;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by cgreger on 2/6/17.
- */
-//TODO: create correct annotations so that entities map out properly. May need to run jackson generator instead...
-//@JsonTypeInfo(use = Id.NAME, include = As.PROPERTY, property = "type")
-@JsonSubTypes(@JsonSubTypes.Type(value=CustomizedItem.class, name="CustomizedItem"))
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Item {
+import com.cgreger.persistence.ItemDAO;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.annotation.Generated;
 
-    @JsonProperty("id")
-    private int id;
+@Generated("com.robohorse.robopojogenerator")
+public class Item{
 
-    @JsonProperty("chat_link")
-    private String chatLink;
+	@JsonProperty("vendor_value")
+	private int vendorValue;
 
-    @JsonProperty("name")
-    public String name;
+	@JsonProperty("level")
+	private int level;
 
-    @JsonProperty("icon")
-    private String iconUrl;
+	@JsonProperty("default_skin")
+	private int defaultSkin;
 
-    @JsonProperty("description")
-    private String description;
+	@JsonProperty("flags")
+	private List<String> flags;
 
-    @JsonProperty("type")
-    private String itemType;
+	@JsonProperty("icon")
+	private String icon;
 
-    @JsonProperty("rarity")
-    private String rarity;
+	@JsonProperty("description")
+	private String description;
 
-    @JsonProperty("level")
-    private int level;
+	@JsonProperty("restrictions")
+	private List<Object> restrictions;
 
-    @JsonProperty("vendor_value")
-    private int vendorValue; //TODO: figure out exact currency conversion
+	@JsonProperty("game_types")
+	private List<String> gameTypes;
 
-    @JsonProperty("flags")
-    private List<String> flags = new ArrayList<String>();
+	@JsonProperty("type")
+	private String type;
 
-    @JsonProperty("restrictions")
-    private List<String> restrictions = new ArrayList<String>();
+	@JsonProperty("chat_link")
+	private String chatLink;
 
-    private List<Integer> recipes = new ArrayList<Integer>();
+	@JsonProperty("name")
+	private String name;
 
-    public Item() { }
+	@JsonProperty("details")
+	private Details details;
 
-    public int getId() {
-        return id;
+	@JsonProperty("id")
+	private int id;
+
+	@JsonProperty("rarity")
+	private String rarity;
+
+    private ArrayList<Integer> recipes;
+
+    public Item() {
+
+        ItemDAO itemDAO = new ItemDAO();
+        itemDAO.getRecipe(this.id);
+
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setVendorValue(int vendorValue){
+		this.vendorValue = vendorValue;
+	}
 
-    public String getChatLink() {
-        return chatLink;
-    }
+	public int getVendorValue(){
+		return vendorValue;
+	}
 
-    public void setChatLink(String chatLink) {
-        this.chatLink = chatLink;
-    }
+	public void setLevel(int level){
+		this.level = level;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public int getLevel(){
+		return level;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setDefaultSkin(int defaultSkin){
+		this.defaultSkin = defaultSkin;
+	}
 
-    public String getIconUrl() {
-        return iconUrl;
-    }
+	public int getDefaultSkin(){
+		return defaultSkin;
+	}
 
-    public void setIconUrl(String iconUrl) {
-        this.iconUrl = iconUrl;
-    }
+	public void setFlags(List<String> flags){
+		this.flags = flags;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public List<String> getFlags(){
+		return flags;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setIcon(String icon){
+		this.icon = icon;
+	}
 
-    public String getItemType() {
-        return itemType;
-    }
+	public String getIcon(){
+		return icon;
+	}
 
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
-    }
+	public void setDescription(String description){
+		this.description = description;
+	}
 
-    public String getRarity() {
-        return rarity;
-    }
+	public String getDescription(){
+		return description;
+	}
 
-    public void setRarity(String rarity) {
-        this.rarity = rarity;
-    }
+	public void setRestrictions(List<Object> restrictions){
+		this.restrictions = restrictions;
+	}
 
-    public int getLevel() {
-        return level;
-    }
+	public List<Object> getRestrictions(){
+		return restrictions;
+	}
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
+	public void setGameTypes(List<String> gameTypes){
+		this.gameTypes = gameTypes;
+	}
 
-    public int getVendorValue() {
-        return vendorValue;
-    }
+	public List<String> getGameTypes(){
+		return gameTypes;
+	}
 
-    public void setVendorValue(int vendorValue) {
-        this.vendorValue = vendorValue;
-    }
+	public void setType(String type){
+		this.type = type;
+	}
 
-    public List<String> getFlags() {
-        return flags;
-    }
+	public String getType(){
+		return type;
+	}
 
-    public void setFlags(List<String> flags) {
-        this.flags = flags;
-    }
+	public void setChatLink(String chatLink){
+		this.chatLink = chatLink;
+	}
 
-    public List<String> getRestrictions() {
-        return restrictions;
-    }
+	public String getChatLink(){
+		return chatLink;
+	}
 
-    public void setRestrictions(List<String> restrictions) {
-        this.restrictions = restrictions;
-    }
+	public void setName(String name){
+		this.name = name;
+	}
 
-    public List<Integer> getRecipes() {
+	public String getName(){
+		return name;
+	}
+
+	public void setDetails(Details details){
+		this.details = details;
+	}
+
+	public Details getDetails(){
+		return details;
+	}
+
+	public void setId(int id){
+		this.id = id;
+	}
+
+	public int getId(){
+		return id;
+	}
+
+	public void setRarity(String rarity){
+		this.rarity = rarity;
+	}
+
+	public String getRarity(){
+		return rarity;
+	}
+
+    public ArrayList<Integer> getRecipes() {
         return recipes;
     }
 
-    public void setRecipes(List<Integer> recipes) {
+    public void setRecipes(ArrayList<Integer> recipes) {
         this.recipes = recipes;
     }
 
-    //TODO: change default generation to add new lines like this one
-    @Override
-    public String toString() {
-        return "Item{\n" +
-                "id=" + id +
-                ", \nchatLink='" + chatLink + '\'' +
-                ", \nname='" + name + '\'' +
-                ", \niconUrl='" + iconUrl + '\'' +
-                ", \ndescription='" + description + '\'' +
-                ", \nitemType='" + itemType + '\'' +
-                ", \nrarity='" + rarity + '\'' +
-                ", \nlevel=" + level +
-                ", \nvendorValue=" + vendorValue +
-                ", \nflags=" + flags +
-                ", \nrestrictions=" + restrictions +
-                ", \nrecipes=" + recipes +
-                "\n}";
-    }
 }

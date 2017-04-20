@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Details{
+public class ArmorDetails {
 
 	@JsonProperty("weight_class")
 	private String weightClass;
@@ -20,10 +20,12 @@ public class Details{
 	private List<Integer> statChoices;
 
 	@JsonProperty("infusion_slots")
-	private List<InfusionSlotsItem> infusionSlots;
+	private List<InfusionSlot> infusionSlots;
 
 	@JsonProperty("type")
 	private String type;
+
+	public ArmorDetails() { }
 
 	public void setWeightClass(String weightClass){
 		this.weightClass = weightClass;
@@ -57,11 +59,11 @@ public class Details{
 		return statChoices;
 	}
 
-	public void setInfusionSlots(List<InfusionSlotsItem> infusionSlots){
+	public void setInfusionSlots(List<InfusionSlot> infusionSlots){
 		this.infusionSlots = infusionSlots;
 	}
 
-	public List<InfusionSlotsItem> getInfusionSlots(){
+	public List<InfusionSlot> getInfusionSlots(){
 		return infusionSlots;
 	}
 

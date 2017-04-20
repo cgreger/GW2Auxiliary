@@ -77,13 +77,22 @@ public class ItemDAO {
 
     }
 
-    public Recipe getRecipe(int id) throws IOException {
+    public Recipe getRecipe(int id) {
 
         log.info("Retrieving Recipe (id" + id + ")");
+        String response = null;
+        Recipe recipe = null;
 
-        String response = gw2Client.request("https://api.guildwars2.com/v2/recipes?id=" + id);
+        try {
 
-        Recipe recipe = mapper.readValue(response, Recipe.class);
+            response= gw2Client.request("https://api.guildwars2.com/v2/recipes?id=" + id);
+            recipe = mapper.readValue(response, Recipe.class);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
 
         return recipe;
     }

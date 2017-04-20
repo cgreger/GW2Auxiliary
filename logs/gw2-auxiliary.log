@@ -80577,3 +80577,296 @@ class com.cgreger.entity.api.Armor
 
 
 Armor{armorType='Armor', weightClass='null', defenseValue='null'}
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}]
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Retrieving Item (id=80010)
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Successfully retrieved Item (id=80010)
+Retrieving Recipe (id100)
+
+
+Recipe{
+id=100, 
+outputItemId=19855, 
+outputItemCount=1, 
+minRating=350, 
+timeToCraftInMili=1000, 
+disciplines=[Leatherworker, Armorsmith, Tailor], 
+flags=[AutoLearned], 
+ingredients=[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}], 
+chatLink='[&CWQAAAA=]'
+}
+[Ingredient{id=72194, countNeeded=1}, Ingredient{id=24294, countNeeded=8}]
+Setting Recipes list for Item (id=0)
+Retrieving Recipes for Item (id=0)
+Retrieving Item (id=80010)
+Successfully retrieved Item (id=80010)
+class com.cgreger.entity.api.Item
+
+
+Item{vendorValue=0, level=80, defaultSkin=5624, flags=[AccountBound, NoSell, DeleteWarning, AccountBindOnUse], icon='https://render.guildwars2.com/file/35BD081715E6C4330AB8706A3C1110000A80F190/1614747.png', description='Central Tyrian Ascended Helm', restrictions=[], gameTypes=[Activity, Dungeon, Pve], type='Armor', chatLink='[&AgGKOAEA]', name='Ardent Glorious Plate Helm', details=Details{specificType='Helm', description='null', upgradableItemTypes=[], applicableInfusions=[], infixUpgrade=null, suffix='null', bonuses=[], noSellOrSort=false, weightClass='Heavy', defense=127, durationInMiliSec=0, unlockType='null', dyeId=0, recipeId=0, effectName='null', infusionSlots=[com.cgreger.entity.api.InfusionSlot@4167d97b], suffixItemId=0, secondarySuffixItemId=0, statChoices=[155, 161, 159, 157, 158, 160, 153, 605, 700, 616, 154, 156, 162, 686, 559, 754, 753, 799, 1026, 1067], numberOfSlots=0, minipetId=0, chargesLeft=0}, id=80010, rarity='Ascended', recipes=null}
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+class com.cgreger.entity.api.Item
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+class com.cgreger.entity.api.Item
+
+
+Item{vendorValue=160, level=70, defaultSkin=91, flags=[SoulBindOnUse], icon='https://render.guildwars2.com/file/5D7809A40C546BCD40420204DFC4A3E6F6B778DD/61252.png', description='', restrictions=[], gameTypes=[Activity, Wvw, Dungeon, Pve], type='Armor', chatLink='[&AgHQBwAA]', name='Shaman's Rogue Gloves of Vampirism', details=Details{specificType='Gloves', description='null', upgradableItemTypes=[], applicableInfusions=[], infixUpgrade=InfixUpgrade{attributes=[Attribute{attributeType='Vitality', modifierValue=33}, Attribute{attributeType='Healing', modifierValue=23}, Attribute{attributeType='ConditionDamage', modifierValue=23}], buff=null}, suffix='null', bonuses=[], noSellOrSort=false, weightClass='Medium', defense=115, durationInMiliSec=0, unlockType='null', dyeId=0, recipeId=0, effectName='null', infusionSlots=[], suffixItemId=24710, secondarySuffixItemId=0, statChoices=[], numberOfSlots=0, minipetId=0, chargesLeft=0}, id=2000, rarity='Rare', recipes=null}
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+class com.cgreger.entity.api.Item
+
+
+
+Item{
+vendorValue=160, 
+level=70, 
+defaultSkin=91, 
+flags=[SoulBindOnUse], 
+icon='https://render.guildwars2.com/file/5D7809A40C546BCD40420204DFC4A3E6F6B778DD/61252.png', 
+description='', 
+restrictions=[], 
+gameTypes=[Activity, Wvw, Dungeon, Pve], 
+type='Armor', 
+chatLink='[&AgHQBwAA]', 
+name='Shaman's Rogue Gloves of Vampirism', 
+details=
+Details{
+specificType='Gloves',
+description='null',
+upgradableItemTypes=[],
+applicableInfusions=[],
+infixUpgrade=InfixUpgrade{attributes=[Attribute{attributeType='Vitality', modifierValue=33}, Attribute{attributeType='Healing', modifierValue=23}, Attribute{attributeType='ConditionDamage', modifierValue=23}], buff=null},
+suffix='null',
+bonuses=[],
+noSellOrSort=false,
+weightClass='Medium',
+defense=115,
+durationInMiliSec=0,
+unlockType='null',
+dyeId=0, 
+recipeId=0, 
+effectName='null', 
+infusionSlots=[], 
+suffixItemId=24710, 
+secondarySuffixItemId=0, 
+statChoices=[], 
+numberOfSlots=0, 
+minipetId=0, 
+chargesLeft=0}, 
+id=2000, 
+rarity='Rare', 
+recipes=null}
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+class com.cgreger.entity.api.Item
+
+
+
+
+Item{
+vendorValue=160, 
+level=70, 
+defaultSkin=91, 
+flags=[SoulBindOnUse], 
+icon='https://render.guildwars2.com/file/5D7809A40C546BCD40420204DFC4A3E6F6B778DD/61252.png', 
+description='', 
+restrictions=[], 
+gameTypes=[Activity, Wvw, Dungeon, Pve], 
+type='Armor', 
+chatLink='[&AgHQBwAA]', 
+name='Shaman's Rogue Gloves of Vampirism', 
+details=
+
+Details{
+	specificType='Gloves',
+description='null',
+upgradableItemTypes=[],
+applicableInfusions=[],
+infixUpgrade=InfixUpgrade{attributes=[Attribute{attributeType='Vitality', modifierValue=33}, Attribute{attributeType='Healing', modifierValue=23}, Attribute{attributeType='ConditionDamage', modifierValue=23}], buff=null},
+suffix='null',
+bonuses=[],
+noSellOrSort=false,
+weightClass='Medium',
+defense=115,
+durationInMiliSec=0,
+unlockType='null',
+dyeId=0, 
+recipeId=0, 
+effectName='null', 
+infusionSlots=[], 
+suffixItemId=24710, 
+secondarySuffixItemId=0, 
+statChoices=[], 
+numberOfSlots=0, 
+minipetId=0, 
+chargesLeft=0}, 
+id=2000, 
+rarity='Rare', 
+recipes=null}
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+class com.cgreger.entity.api.Item
+
+
+
+
+Item{
+	vendorValue=160, 
+	level=70, 
+	defaultSkin=91, 
+	flags=[SoulBindOnUse], 
+	icon='https://render.guildwars2.com/file/5D7809A40C546BCD40420204DFC4A3E6F6B778DD/61252.png', 
+	description='', 
+	restrictions=[], 
+	gameTypes=[Activity, Wvw, Dungeon, Pve], 
+	type='Armor', 
+	chatLink='[&AgHQBwAA]', 
+	name='Shaman's Rogue Gloves of Vampirism', 
+	details=
+
+Details{
+	specificType='Gloves',
+	description='null',
+	upgradableItemTypes=[],
+	applicableInfusions=[],
+	infixUpgrade=InfixUpgrade{attributes=[Attribute{attributeType='Vitality', modifierValue=33}, Attribute{attributeType='Healing', modifierValue=23}, Attribute{attributeType='ConditionDamage', modifierValue=23}], buff=null},
+	suffix='null',
+	bonuses=[],
+	noSellOrSort=false,
+	weightClass='Medium',
+	defense=115,
+	durationInMiliSec=0,
+	unlockType='null',
+	dyeId=0, 
+	recipeId=0, 
+	effectName='null', 
+	infusionSlots=[], 
+	suffixItemId=24710, 
+	secondarySuffixItemId=0, 
+	statChoices=[], 
+	numberOfSlots=0, 
+	minipetId=0, 
+	chargesLeft=0}, 
+	id=2000, 
+	rarity='Rare', 
+	recipes=null}
+Retrieving Item (id=2000)
+Successfully retrieved Item (id=2000)
+class com.cgreger.entity.api.Item
+
+
+
+
+Item{
+	vendorValue=160, 
+	level=70, 
+	defaultSkin=91, 
+	flags=[SoulBindOnUse], 
+	icon='https://render.guildwars2.com/file/5D7809A40C546BCD40420204DFC4A3E6F6B778DD/61252.png', 
+	description='', 
+	restrictions=[], 
+	gameTypes=[Activity, Wvw, Dungeon, Pve], 
+	type='Armor', 
+	chatLink='[&AgHQBwAA]', 
+	name='Shaman's Rogue Gloves of Vampirism', 
+	details=
+
+Details{
+	specificType='Gloves',
+	description='null',
+	upgradableItemTypes=[],
+	applicableInfusions=[],
+	infixUpgrade=InfixUpgrade{attributes=[Attribute{attributeType='Vitality', modifierValue=33}, Attribute{attributeType='Healing', modifierValue=23}, Attribute{attributeType='ConditionDamage', modifierValue=23}], buff=null},
+	suffix='null',
+	bonuses=[],
+	noSellOrSort=false,
+	weightClass='Medium',
+	defense=115,
+	durationInMiliSec=0,
+	unlockType='null',
+	dyeId=0, 
+	recipeId=0, 
+	effectName='null', 
+	infusionSlots=[], 
+	suffixItemId=24710, 
+	secondarySuffixItemId=0, 
+	statChoices=[], 
+	numberOfSlots=0, 
+	minipetId=0, 
+	chargesLeft=0
+}, 
+	id=2000, 
+	rarity='Rare', 
+	recipes=null
+}

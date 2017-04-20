@@ -1,19 +1,8 @@
 package com.cgreger.persistence;
 
 import com.cgreger.entity.api.*;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.*;
-
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.mysql.jdbc.MiniAdmin;
-import jdk.nashorn.internal.parser.JSONParser;
-import jdk.nashorn.internal.runtime.JSType;
 import org.apache.log4j.Logger;
-import org.glassfish.jersey.internal.inject.Custom;
-import org.hibernate.Transaction;
 
 
 import java.io.IOException;
@@ -29,51 +18,51 @@ public class ItemDAO {
 
     private Logger log = Logger.getLogger(this.getClass());
 
-    public ItemDAO() {
+    public ItemDAO() { }
 
-        mapper.getSerializationConfig().getDefaultVisibilityChecker()
-                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
-                .withGetterVisibility(JsonAutoDetect.Visibility.ANY)
-                .withSetterVisibility(JsonAutoDetect.Visibility.ANY)
-                .withCreatorVisibility(JsonAutoDetect.Visibility.ANY);
+    public Item getItem(int id) {
 
-    }
-
-    public void updateItemDatabase() throws IOException {
-
-        log.info("Updating items database");
-
-        String response = gw2Client.request("https://api.guildwars2.com/v2/items?page=0&page_size=200");
-
-
-    }
-
-    public Item getItem(int id) throws IOException {
+        Item item = null;
+        String response = null;
 
         log.info("Retrieving Item (id=" + id + ")");
 
-        String response = gw2Client.request("https://api.guildwars2.com/v2/items?id=" + id);
+        try {
 
-        String itemType = mapper.readValue(response, JsonNode.class).get("type").toString();
+            response = gw2Client.request("https://api.guildwars2.com/v2/items?id=" + id);
+            item = mapper.readValue(response, Item.class);
 
-        Item item = mapItem(itemType, response);
-        //TODO: method for each type
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
         log.info("Successfully retrieved Item (id=" + id + ")");
 
         return item;
     }
 
-    public ArrayList<Integer> getItemRecipes(int id) throws IOException {
+    protected ArrayList<Integer> getItemRecipes(int id) {
 
         log.info("Retrieving Recipes for Item (id=" + id + ")");
+        String response = null;
+        ArrayList<Integer> recipeIds = null;
 
-        String response = gw2Client.request("https://api.guildwars2.com/v2/recipes/search?output=" + id);
+        try {
 
-        ArrayList<Integer> recipes = mapper.readValue(response, ArrayList.class);
+            response = gw2Client.request("https://api.guildwars2.com/v2/recipes/search?output=" + id);
+            recipeIds = mapper.readValue(response, ArrayList.class);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
 
         log.info("Successfully retrieved Recipes for Item (id=" + id + ")");
 
-        return recipes;
+        return recipeIds;
 
     }
 
@@ -97,8 +86,7 @@ public class ItemDAO {
         return recipe;
     }
 
-    //TODO: Anyway to keep this private??
-    protected void setItemRecipes(Item item) throws IOException {
+    public void setItemRecipes(Item item) {
 
         log.info("Setting Recipes list for Item (id=" + item.getId() + ")");
 
@@ -111,63 +99,6 @@ public class ItemDAO {
         } else {
 
             log.error("Failed to set Recipes list for Item (id=" + item.getId() + ")");
-
-        }
-
-    }
-
-    //TODO: fix
-    private Item mapItem(String itemType, String response) throws IOException {
-
-        switch (itemType) {
-
-            case "\"Armor\"":
-                return mapper.readValue(response, Armor.class);
-
-            case "\"Back\"":
-                return mapper.readValue(response, Back.class);
-
-            case "\"Bag\"":
-                return mapper.readValue(response, Bag.class);
-
-            case "\"Consumable\"":
-                return mapper.readValue(response, Consumable.class);
-
-            case "\"Container\"":
-                return mapper.readValue(response, Container.class);
-
-            case "\"CraftingMaterial\"":
-                return mapper.readValue(response, CraftingMaterial.class);
-
-            case "\"Gathering\"":
-                return mapper.readValue(response, Tool.class);
-
-            case "\"Gizmo\"":
-                return mapper.readValue(response, Gizmo.class);
-
-            case "\"MiniPet\"":
-                return mapper.readValue(response, Miniature.class);
-
-            case "\"Tool\"":
-                return mapper.readValue(response, SalvageKit.class);
-
-            case "\"Trait\"":
-                return mapper.readValue(response, Trait.class);
-
-            case "\"Trinket\"":
-                return mapper.readValue(response, Trinket.class);
-
-            case "\"Trophy\"":
-                return mapper.readValue(response, Trophy.class);
-
-            case "\"Upgrade Component\"":
-                return mapper.readValue(response, UpgradeComponent.class);
-
-            case "\"Weapon\"":
-                return mapper.readValue(response, Weapon.class);
-
-                default:
-                        return mapper.readValue(response, Item.class);
 
         }
 

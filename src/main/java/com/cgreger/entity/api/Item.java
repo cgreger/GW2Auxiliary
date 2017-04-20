@@ -4,11 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cgreger.persistence.ItemDAO;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class Item{
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Item {
+
+	@JsonProperty("id")
+	private int id;
+
+	@JsonProperty("name")
+	private String name;
+
+	@JsonProperty("type")
+	private String type;
 
 	@JsonProperty("vendor_value")
 	private int vendorValue;
@@ -29,25 +40,16 @@ public class Item{
 	private String description;
 
 	@JsonProperty("restrictions")
-	private List<Object> restrictions;
+	private List<String> restrictions;
 
 	@JsonProperty("game_types")
 	private List<String> gameTypes;
 
-	@JsonProperty("type")
-	private String type;
-
 	@JsonProperty("chat_link")
 	private String chatLink;
 
-	@JsonProperty("name")
-	private String name;
-
-	@JsonProperty("armorDetails")
-	private ArmorDetails armorDetails;
-
-	@JsonProperty("id")
-	private int id;
+	@JsonProperty("details")
+	private Details details;
 
 	@JsonProperty("rarity")
 	private String rarity;
@@ -56,8 +58,8 @@ public class Item{
 
     public Item() {
 
-        ItemDAO itemDAO = new ItemDAO();
-        itemDAO.getRecipe(this.id);
+       // ItemDAO itemDAO = new ItemDAO();
+        //itemDAO.setItemRecipes(this);
 
     }
 
@@ -109,11 +111,11 @@ public class Item{
 		return description;
 	}
 
-	public void setRestrictions(List<Object> restrictions){
+	public void setRestrictions(List<String> restrictions){
 		this.restrictions = restrictions;
 	}
 
-	public List<Object> getRestrictions(){
+	public List<String> getRestrictions(){
 		return restrictions;
 	}
 
@@ -149,12 +151,12 @@ public class Item{
 		return name;
 	}
 
-	public void setArmorDetails(ArmorDetails armorDetails){
-		this.armorDetails = armorDetails;
+	public void setDetails(Details armorDetails){
+		this.details = armorDetails;
 	}
 
-	public ArmorDetails getArmorDetails(){
-		return armorDetails;
+	public Details getArmorDetails(){
+		return details;
 	}
 
 	public void setId(int id){
@@ -181,4 +183,24 @@ public class Item{
         this.recipes = recipes;
     }
 
+	@Override
+	public String toString() {
+		return "\n\nItem{" +
+				"\n\tvendorValue=" + vendorValue +
+				", \n\tlevel=" + level +
+				", \n\tdefaultSkin=" + defaultSkin +
+				", \n\tflags=" + flags +
+				", \n\ticon='" + icon + '\'' +
+				", \n\tdescription='" + description + '\'' +
+				", \n\trestrictions=" + restrictions +
+				", \n\tgameTypes=" + gameTypes +
+				", \n\ttype='" + type + '\'' +
+				", \n\tchatLink='" + chatLink + '\'' +
+				", \n\tname='" + name + '\'' +
+				", \n\tdetails=" + details +
+				", \n\tid=" + id +
+				", \n\trarity='" + rarity + '\'' +
+				", \n\trecipes=" + recipes +
+				"\n}";
+	}
 }

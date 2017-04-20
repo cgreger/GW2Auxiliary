@@ -31,11 +31,11 @@ public class ItemDAOTest {
     @Test
     public void getItem() throws Exception {
 //80010
-        Item item = dao.getItem(2000);
+        Item item = dao.getItem(50065);
         log.info(item.getClass().toString());
 
-        assertEquals("Failed to retrieve correct Item.", 2000, item.getId());
-        assertEquals("Failed to retrieve correct Item.", "Shaman's Rogue Gloves of Vampirism", item.getName());
+        assertEquals("Failed to retrieve correct Item.", 50065, item.getId());
+        assertEquals("Failed to retrieve correct Item.", "Gift of Blades", item.getName());
 
         log.info("\n\n" + item.toString());
 

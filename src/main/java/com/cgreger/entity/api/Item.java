@@ -54,6 +54,7 @@ public class Item {
 	@JsonProperty("rarity")
 	private String rarity;
 
+	//TODO: make this array of Recipe items convert within dao?
     private ArrayList<Integer> recipes;
 
     public Item() {

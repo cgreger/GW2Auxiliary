@@ -31,6 +31,7 @@ public class ItemDAO {
 
             response = gw2Client.request("https://api.guildwars2.com/v2/items?id=" + id);
             item = mapper.readValue(response, Item.class);
+            setItemRecipes(item);
 
         } catch (IOException e) {
 

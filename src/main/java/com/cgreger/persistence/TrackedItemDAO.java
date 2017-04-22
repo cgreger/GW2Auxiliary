@@ -1,15 +1,18 @@
 package com.cgreger.persistence;
 
 import com.cgreger.entity.api.Item;
+import com.cgreger.entity.api.Recipe;
 import com.cgreger.entity.db.TrackedItem;
 import com.cgreger.entity.db.TrackedItem;
 import com.cgreger.entity.db.User;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +23,7 @@ public class TrackedItemDAO {
 
     private final Logger log = Logger.getLogger(this.getClass());
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
+    private GW2ServiceClient gw2Client = new GW2ServiceClient();
 
     //TODO: Double check class
     //TODO: Test this class
@@ -158,5 +162,55 @@ public class TrackedItemDAO {
         }
 
     }
+
+    //Get user inventory
+    public List<Item> getUserInventory(User user) {
+
+        List<Item> inventory = null;
+
+        return inventory;
+
+
+    }
+
+
+    public List<Integer> getSharedItems(User user) {
+
+        log.info("Retrieving inventory of user (id" + user.getId() + ")");
+        String response = null;
+
+        try {
+
+            response = gw2Client.request("https://api.guildwars2.com/v2/account/inventory?access_token=" + user.getApiKeys().get(0));
+            Item item = mapper.readValue(response, JsonNode.class).get();
+            //mapper.readValue(response, Item.class);
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+        return null;
+
+    }
+
+    public List<Integer> getCharacterItems(User user) {
+
+        return null;
+
+    }
+
+    public List<Integer> getBankItems(User user) {
+
+        return null;
+
+    }
+
+    public List<Integer> getMaterialItems(User user) {
+
+        return null;
+
+    }
+
 
 }

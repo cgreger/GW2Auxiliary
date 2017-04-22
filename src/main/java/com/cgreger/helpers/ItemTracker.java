@@ -1,6 +1,7 @@
 package com.cgreger.helpers;
 
 import com.cgreger.entity.api.Item;
+import com.cgreger.entity.db.User;
 
 import java.util.ArrayList;
 
@@ -9,14 +10,22 @@ import java.util.ArrayList;
  */
 public class ItemTracker {
 
-    //TODO: methods to track item percentages correctly
+    public double calculateItemCompletion(User user, Item item) {
 
-    public double calculateItemCompletion() {
+        int completionPercent = 0;
 
 
+
+        return completionPercent;
 
     }
 
-    public ArrayList<Item>
+    public ArrayList<Item> getNeededItems(User user, Item item) {
+
+        ArrayList<Item> items = null;
+
+        return items;
+
+    }
 
 }

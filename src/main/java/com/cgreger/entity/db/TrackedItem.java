@@ -11,6 +11,9 @@ import java.util.Calendar;
 @Table(name="tracked_item")
 public class TrackedItem {
 
+    //TODO: TEST
+    //TODO: Finish
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

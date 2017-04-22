@@ -7,7 +7,9 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by katana on 2/13/17.
@@ -47,14 +49,14 @@ public class ItemDAO {
     }
 
     //GET MULTIPLE ITEMS
-    public List<Item> getItems(List<Integer> itemIds) {
+    public Map<Item, Integer> getItems(Map<Integer, Integer> itemIds) {
 
-        List<Item> items = new ArrayList<Item>();
+        Map<Item, Integer> items = new HashMap<Item, Integer>();
         JsonNode itemNodes = null;
         String response = null;
         String request = "https://api.guildwars2.com/v2/items?ids=";
 
-        for (int itemId : itemIds) {
+        for (int itemId : itemIds.keySet()) {
 
             request += itemId + ",";
 
@@ -71,7 +73,8 @@ public class ItemDAO {
                 log.info(itemNode.toString());
 
                 Item item = mapper.readValue(itemNode.toString(), Item.class);
-                items.add(item);
+                int itemCount = itemIds.get(item.getId());
+                items.put(item, itemCount);
 
             }
 

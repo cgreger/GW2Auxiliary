@@ -15,7 +15,9 @@ import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static java.lang.Integer.parseInt;
 
@@ -168,9 +170,15 @@ public class TrackedItemDAO {
     }
 
     //Get user inventory
-    public List<Item> getUserInventory(User user) {
+    public Map<Item, Integer> getUserInventory(User user) {
 
-        List<Item> inventory = null;
+        Map<Integer, Integer> inventoryIds = new HashMap<Integer, Integer>();
+        Map<Item, Integer> inventory = new HashMap<Item, Integer>();
+
+        inventoryIds.putAll(getSharedItems(user));
+        inventoryIds.putAll(getCharacterItems(user));
+        inventoryIds.putAll(getBankItems(user));
+        inventoryIds.putAll(getMaterialItems(user));
 
         log.info("Retrieving inventory of user (id" + user.getId() + ")");
 
@@ -180,45 +188,42 @@ public class TrackedItemDAO {
     }
 
 
-    public List<Integer> getSharedItems(User user) {
+    public Map<Integer, Integer> getSharedItems(User user) {
 
-        List<Integer> sharedItems = new ArrayList<Integer>();
+        Map<Integer, Integer> sharedItems = new HashMap<Integer, Integer>();
 
         String response = null;
 
         try {
 
             response = gw2Client.request("https://api.guildwars2.com/v2/account/inventory?access_token=" + user.getApiKeys().get(0));
-            JsonNode bagNodes = mapper.readValue(response, JsonNode.class);
+            JsonNode itemNodes = mapper.readValue(response, JsonNode.class);
 
-            for(JsonNode bag : bagNodes) {
+            for (JsonNode item : itemNodes) {
 
-                JsonNode itemNodes = mapper.readValue(bag.toString(), JsonNode.class);
-                 for (JsonNode item : itemNodes) {
+                if (!item.isNull()) {
 
-                     int itemId = Integer.parseInt(item.get("id").toString());
-                     sharedItems.add(itemId);
+                    int itemId = Integer.parseInt(item.get("id").toString());
+                    int itemCount = Integer.parseInt(item.get("count").toString());
+                    sharedItems.put(itemId, itemCount);
 
-                 }
-
+                }
 
             }
-
-            //mapper.readValue(response, Item.class);
 
         } catch (IOException e) {
 
             e.printStackTrace();
 
         }
-        return null;
+        return sharedItems;
 
     }
 
     //TODO: TEST THIS ASAP
-    public List<Integer> getCharacterItems(User user) {
+    public Map<Integer, Integer> getCharacterItems(User user) {
 
-        List<Integer> characterItems = new ArrayList<Integer>();
+        Map<Integer, Integer> characterItems = new HashMap<Integer, Integer>();
 
         String response = null;
 
@@ -230,37 +235,97 @@ public class TrackedItemDAO {
             for(JsonNode bag : bagNodes) {
 
                 JsonNode itemNodes = mapper.readValue(bag.toString(), JsonNode.class);
+
                 for (JsonNode item : itemNodes) {
 
-                    int itemId = Integer.parseInt(item.get("id").toString());
-                    characterItems.add(itemId);
+                    if (!item.isNull()) {
+
+                        int itemId = Integer.parseInt(item.get("id").toString());
+                        int itemCount = Integer.parseInt(item.get("count").toString());
+                        characterItems.put(itemId, itemCount);
+
+                    }
 
                 }
 
 
             }
 
-            //mapper.readValue(response, Item.class);
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+        return characterItems;
+
+
+    }
+
+    public Map<Integer, Integer> getBankItems(User user) {
+
+        Map<Integer,Integer> bankItems = new HashMap<Integer, Integer>();
+
+        String response = null;
+
+        try {
+
+            //TODO: check this response
+            response = gw2Client.request("https://api.guildwars2.com/v2/bank?access_token=" + user.getApiKeys().get(0));
+            JsonNode itemNodes = mapper.readValue(response, JsonNode.class).get("bags");
+
+            for(JsonNode item : itemNodes) {
+
+                if (!item.isNull()) {
+
+                    int itemId = Integer.parseInt(item.get("id").toString());
+                    int itemCount = Integer.parseInt(item.get("count").toString());
+                    bankItems.put(itemId, itemCount);
+
+                }
+
+
+            }
 
         } catch (IOException e) {
 
             e.printStackTrace();
 
         }
-        return null;
-
-
-    }
-
-    public List<Integer> getBankItems(User user) {
-
-        return null;
+        return bankItems;
 
     }
 
-    public List<Integer> getMaterialItems(User user) {
+    public Map<Integer, Integer> getMaterialItems(User user) {
 
-        return null;
+        Map<Integer, Integer> materialItems = new HashMap<Integer, Integer>();
+
+        String response = null;
+
+        try {
+
+            //TODO: check this response
+            response = gw2Client.request("https://api.guildwars2.com/v2/materials/?access_token=" + user.getApiKeys().get(0));
+            JsonNode itemNodes = mapper.readValue(response, JsonNode.class).get("bags");
+
+            for(JsonNode item : itemNodes) {
+
+                if (!item.isNull()) {
+
+                    int itemId = Integer.parseInt(item.get("id").toString());
+                    int itemCount = Integer.parseInt(item.get("count").toString());
+                    materialItems.put(itemId, itemCount);
+
+                }
+
+
+            }
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+        return materialItems;
 
     }
 

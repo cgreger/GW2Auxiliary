@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by katana on 2/13/17.
@@ -45,6 +46,45 @@ public class ItemDAO {
         return item;
     }
 
+    //GET MULTIPLE ITEMS
+    public List<Item> getItems(List<Integer> itemIds) {
+
+        List<Item> items = new ArrayList<Item>();
+        JsonNode itemNodes = null;
+        String response = null;
+        String request = "https://api.guildwars2.com/v2/items?ids=";
+
+        for (int itemId : itemIds) {
+
+            request += itemId + ",";
+
+        }
+
+        response = gw2Client.request(request);
+
+        try {
+
+            itemNodes = mapper.readValue(response, JsonNode.class);
+
+            for(JsonNode itemNode : itemNodes) {
+
+                log.info(itemNode.toString());
+
+                Item item = mapper.readValue(itemNode.toString(), Item.class);
+                items.add(item);
+
+            }
+
+        } catch (IOException e) {
+
+            e.printStackTrace();
+
+        }
+
+        return items;
+
+    }
+
     //READ RECIPESLIST BY GW2ID
     protected ArrayList<Integer> getItemRecipes(int id) {
 
@@ -68,6 +108,8 @@ public class ItemDAO {
         return recipeIds;
 
     }
+
+
 
     //READ RECIPE BY GW2ID
     public Recipe getRecipe(int id) {

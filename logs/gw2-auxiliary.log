@@ -80986,3 +80986,120 @@ Item{
 	rarity='Ascended', 
 	recipes=[8455, 8459, 8460]
 }
+{"name":"Vial of Chak Acid","description":"Used to open Crystallized Supply Caches. <c=@flavor>Caches can contain armor, weapons, and recipes.</c>","type":"Trophy","level":0,"rarity":"Rare","vendor_value":0,"game_types":["PvpLobby","Wvw","Dungeon","Pve"],"flags":["AccountBound","NoSalvage","NoSell","AccountBindOnUse"],"restrictions":[],"id":70892,"chat_link":"[&AgHsFAEA]","icon":"https://render.guildwars2.com/file/B60BE97A3899A1D36CE81CB3C896CACACCA79237/1203046.png"}
+{"name":"Vial of Chak Acid","description":"Used to open Crystallized Supply Caches. <c=@flavor>Caches can contain armor, weapons, and recipes.</c>","type":"Trophy","level":0,"rarity":"Rare","vendor_value":0,"game_types":["PvpLobby","Wvw","Dungeon","Pve"],"flags":["AccountBound","NoSalvage","NoSell","AccountBindOnUse"],"restrictions":[],"id":70892,"chat_link":"[&AgHsFAEA]","icon":"https://render.guildwars2.com/file/B60BE97A3899A1D36CE81CB3C896CACACCA79237/1203046.png"}
+{"name":"Vial of Chak Acid","description":"Used to open Crystallized Supply Caches. <c=@flavor>Caches can contain armor, weapons, and recipes.</c>","type":"Trophy","level":0,"rarity":"Rare","vendor_value":0,"game_types":["PvpLobby","Wvw","Dungeon","Pve"],"flags":["AccountBound","NoSalvage","NoSell","AccountBindOnUse"],"restrictions":[],"id":70892,"chat_link":"[&AgHsFAEA]","icon":"https://render.guildwars2.com/file/B60BE97A3899A1D36CE81CB3C896CACACCA79237/1203046.png"}
+Vial of Chak Acid!!!!!!!!!!!!!!!!!1
+{"name":"Vial of Chak Acid","description":"Used to open Crystallized Supply Caches. <c=@flavor>Caches can contain armor, weapons, and recipes.</c>","type":"Trophy","level":0,"rarity":"Rare","vendor_value":0,"game_types":["PvpLobby","Wvw","Dungeon","Pve"],"flags":["AccountBound","NoSalvage","NoSell","AccountBindOnUse"],"restrictions":[],"id":70892,"chat_link":"[&AgHsFAEA]","icon":"https://render.guildwars2.com/file/B60BE97A3899A1D36CE81CB3C896CACACCA79237/1203046.png"}
+Vial of Chak Acid!!!!!!!!!!!!!!!!!1
+{"name":"MONSTER ONLY Moa Unarmed Pet","type":"Weapon","level":0,"rarity":"Fine","vendor_value":0,"default_skin":3265,"game_types":["Activity","Wvw","Dungeon","Pve"],"flags":["NoSell","SoulbindOnAcquire","SoulBindOnUse"],"restrictions":[],"id":1,"chat_link":"[&AgEBAAAA]","icon":"https://render.guildwars2.com/file/4AECE5EA59CA057F4C53E1EDFE95E0E3E61DE37F/60980.png","details":{"type":"Staff","damage_type":"Physical","min_power":146,"max_power":165,"defense":0,"infusion_slots":[],"infix_upgrade":{"id":112,"attributes":[]},"secondary_suffix_item_id":""}}
+MONSTER ONLY Moa Unarmed Pet!!!!!!!!!!!!!!!!!1
+{"name":"Carrion Sneakthief Sandals of the Pack","description":"","type":"Armor","level":79,"rarity":"Exotic","vendor_value":260,"default_skin":35,"game_types":["Activity","Wvw","Dungeon","Pve"],"flags":["SoulBindOnUse"],"restrictions":[],"id":255,"chat_link":"[&AgH/AAAA]","icon":"https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png","details":{"type":"Boots","weight_class":"Medium","defense":155,"infusion_slots":[],"infix_upgrade":{"id":160,"attributes":[{"attribute":"Power","modifier":31},{"attribute":"Vitality","modifier":31},{"attribute":"ConditionDamage","modifier":44}]},"suffix_item_id":24702,"secondary_suffix_item_id":""}}
+Carrion Sneakthief Sandals of the Pack!!!!!!!!!!!!!!!!!1
+
+
+Item{
+	vendorValue=0, 
+	level=0, 
+	defaultSkin=0, 
+	flags=[AccountBound, NoSalvage, NoSell, AccountBindOnUse], 
+	icon='https://render.guildwars2.com/file/B60BE97A3899A1D36CE81CB3C896CACACCA79237/1203046.png', 
+	description='Used to open Crystallized Supply Caches. <c=@flavor>Caches can contain armor, weapons, and recipes.</c>', 
+	restrictions=[], 
+	gameTypes=[PvpLobby, Wvw, Dungeon, Pve], 
+	type='Trophy', 
+	chatLink='[&AgHsFAEA]', 
+	name='Vial of Chak Acid', 
+	details=null, 
+	id=70892, 
+	rarity='Rare', 
+	recipes=null
+}
+
+
+Item{
+	vendorValue=0, 
+	level=0, 
+	defaultSkin=3265, 
+	flags=[NoSell, SoulbindOnAcquire, SoulBindOnUse], 
+	icon='https://render.guildwars2.com/file/4AECE5EA59CA057F4C53E1EDFE95E0E3E61DE37F/60980.png', 
+	description='null', 
+	restrictions=[], 
+	gameTypes=[Activity, Wvw, Dungeon, Pve], 
+	type='Weapon', 
+	chatLink='[&AgEBAAAA]', 
+	name='MONSTER ONLY Moa Unarmed Pet', 
+	details=
+
+Details{
+	specificType='Staff',
+	description='null',
+	upgradableItemTypes=[],
+	applicableInfusions=[],
+	infixUpgrade=InfixUpgrade{attributes=[], buff=null},
+	suffix='null',
+	bonuses=[],
+	noSellOrSort=false,
+	weightClass='null',
+	defense=0,
+	durationInMiliSec=0,
+	unlockType='null',
+	dyeId=0, 
+	recipeId=0, 
+	effectName='null', 
+	infusionSlots=[], 
+	suffixItemId=0, 
+	secondarySuffixItemId=0, 
+	statChoices=[], 
+	numberOfSlots=0, 
+	minipetId=0, 
+	chargesLeft=0
+}, 
+	id=1, 
+	rarity='Fine', 
+	recipes=null
+}
+
+
+Item{
+	vendorValue=260, 
+	level=79, 
+	defaultSkin=35, 
+	flags=[SoulBindOnUse], 
+	icon='https://render.guildwars2.com/file/B7D77D6B1735D07F4AB93DE2DED06A1FEBB7F3EE/561550.png', 
+	description='', 
+	restrictions=[], 
+	gameTypes=[Activity, Wvw, Dungeon, Pve], 
+	type='Armor', 
+	chatLink='[&AgH/AAAA]', 
+	name='Carrion Sneakthief Sandals of the Pack', 
+	details=
+
+Details{
+	specificType='Boots',
+	description='null',
+	upgradableItemTypes=[],
+	applicableInfusions=[],
+	infixUpgrade=InfixUpgrade{attributes=[Attribute{attributeType='Power', modifierValue=31}, Attribute{attributeType='Vitality', modifierValue=31}, Attribute{attributeType='ConditionDamage', modifierValue=44}], buff=null},
+	suffix='null',
+	bonuses=[],
+	noSellOrSort=false,
+	weightClass='Medium',
+	defense=155,
+	durationInMiliSec=0,
+	unlockType='null',
+	dyeId=0, 
+	recipeId=0, 
+	effectName='null', 
+	infusionSlots=[], 
+	suffixItemId=24702, 
+	secondarySuffixItemId=0, 
+	statChoices=[], 
+	numberOfSlots=0, 
+	minipetId=0, 
+	chargesLeft=0
+}, 
+	id=255, 
+	rarity='Exotic', 
+	recipes=null
+}

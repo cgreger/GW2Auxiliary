@@ -15,12 +15,8 @@ public class InfusionSlot {
 
 	@JsonProperty("id")
 	private int itemInSlotId;
-//
-//	public InfusionSlotsI() {
-//
-//		itemInSlotId =
-//
-//	}
+
+	public InfusionSlot() { }
 
 	public void setFlags(List<String> flags){
 		this.flags = flags;
@@ -36,5 +32,13 @@ public class InfusionSlot {
 
 	public void setItemInSlotId(int itemInSlotId) {
 		this.itemInSlotId = itemInSlotId;
+	}
+
+	@Override
+	public String toString() {
+		return "\nInfusionSlot{" +
+				"\n\tflags=" + flags +
+				", \n\titemInSlotId=" + itemInSlotId +
+				"\n}";
 	}
 }

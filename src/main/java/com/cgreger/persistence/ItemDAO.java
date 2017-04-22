@@ -20,6 +20,7 @@ public class ItemDAO {
 
     public ItemDAO() { }
 
+    //READ ITEMS BY GW2ID
     public Item getItem(int id) {
 
         Item item = null;
@@ -44,6 +45,7 @@ public class ItemDAO {
         return item;
     }
 
+    //READ RECIPESLIST BY GW2ID
     protected ArrayList<Integer> getItemRecipes(int id) {
 
         log.info("Retrieving Recipes for Item (id=" + id + ")");
@@ -67,6 +69,7 @@ public class ItemDAO {
 
     }
 
+    //READ RECIPE BY GW2ID
     public Recipe getRecipe(int id) {
 
         log.info("Retrieving Recipe (id" + id + ")");
@@ -87,6 +90,7 @@ public class ItemDAO {
         return recipe;
     }
 
+    //UPDATE ITEM RECIPES LIST
     public void setItemRecipes(Item item) {
 
         log.info("Setting Recipes list for Item (id=" + item.getId() + ")");
@@ -104,5 +108,7 @@ public class ItemDAO {
         }
 
     }
+
+    //TODO: DELETE ITEM RECIPES LIST FROM ITEM
 
 }

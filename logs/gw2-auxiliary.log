@@ -80958,3 +80958,31 @@ Item{
 	rarity='Ascended', 
 	recipes=[8455, 8459, 8460]
 }
+Retrieving Item (id=50065)
+Setting Recipes list for Item (id=50065)
+Retrieving Recipes for Item (id=50065)
+Successfully retrieved Recipes for Item (id=50065)
+Setting Recipes list for Item (id=50065)
+Successfully retrieved Item (id=50065)
+class com.cgreger.entity.api.Item
+
+
+
+
+Item{
+	vendorValue=320, 
+	level=0, 
+	defaultSkin=0, 
+	flags=[AccountBound, NoSalvage, AccountBindOnUse], 
+	icon='https://render.guildwars2.com/file/02F941EE376D490DDD5428294F2EF05EDB07E405/740277.png', 
+	description='A gift of blades used to create Tempered Spinal Blades.', 
+	restrictions=[], 
+	gameTypes=[Activity, Wvw, Dungeon, Pve], 
+	type='Trophy', 
+	chatLink='[&AgGRwwAA]', 
+	name='Gift of Blades', 
+	details=null, 
+	id=50065, 
+	rarity='Ascended', 
+	recipes=[8455, 8459, 8460]
+}

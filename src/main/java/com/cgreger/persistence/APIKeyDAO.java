@@ -29,6 +29,7 @@ public class APIKeyDAO {
 
     }
 
+    // READ BY ID
     public APIKey getAPIKey(int apiKeyId) {
 
         Session session = factory.openSession();
@@ -125,7 +126,7 @@ public class APIKeyDAO {
 
             }
 
-            log.error("Failed to update APIKey (associated w/ email " + assocEmail + ") email.\n", e);
+            log.error("Failed to update APIKey (associated w/ email " + assocEmail + ")\n", e);
 
         } finally {
 

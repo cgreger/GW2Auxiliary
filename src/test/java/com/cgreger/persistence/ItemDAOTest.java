@@ -17,9 +17,7 @@ public class ItemDAOTest {
 
     Logger log = Logger.getLogger(this.getClass());
     ItemDAO dao;
-
-    //TODO: maybe parse the details of the response to map sub classes?
-    //TODO: check the type before response is mapped, then map to that class.
+    //TODO: finish tests
 
     @Before
     public void setUp() throws  Exception {
@@ -30,7 +28,7 @@ public class ItemDAOTest {
 
     @Test
     public void getItem() throws Exception {
-//80010
+
         Item item = dao.getItem(50065);
         log.info(item.getClass().toString());
 

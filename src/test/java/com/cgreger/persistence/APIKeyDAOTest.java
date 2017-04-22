@@ -23,6 +23,8 @@ public class APIKeyDAOTest {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
     private final Logger log = Logger.getLogger(this.getClass());
 
+    //TODO: Finish these tests
+
     @BeforeClass
     public static void runOnceBeforeClass() throws Exception {
 

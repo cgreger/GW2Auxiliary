@@ -174,13 +174,18 @@ public class TrackedItemDAO {
 
         Map<Integer, Integer> inventoryIds = new HashMap<Integer, Integer>();
         Map<Item, Integer> inventory = new HashMap<Item, Integer>();
+        ItemDAO itemDAO = new ItemDAO();
+
+        log.info("Retrieving inventory of user (id" + user.getId() + ")");
 
         inventoryIds.putAll(getSharedItems(user));
         inventoryIds.putAll(getCharacterItems(user));
         inventoryIds.putAll(getBankItems(user));
         inventoryIds.putAll(getMaterialItems(user));
 
-        log.info("Retrieving inventory of user (id" + user.getId() + ")");
+        inventory = itemDAO.getItems(inventoryIds);
+
+        log.info("Successfully retrieved inventory of user (id" + user.getId() + ")");
 
         return inventory;
 

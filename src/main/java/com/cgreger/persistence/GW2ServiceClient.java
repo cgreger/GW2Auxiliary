@@ -11,10 +11,10 @@ import javax.ws.rs.core.MediaType;
  */
 public class GW2ServiceClient {
 
-    Logger log = Logger.getLogger(this.getClass());
-    Client client;
-    WebTarget target;
-    String response = null;
+    private Logger log = Logger.getLogger(this.getClass());
+    private Client client;
+    private WebTarget target;
+    private String response = null;
 
 
     public GW2ServiceClient() { }
@@ -25,7 +25,6 @@ public class GW2ServiceClient {
 
             client = ClientBuilder.newClient();
             this.target = client.target(requestUrl);
-
             response = this.target.request(MediaType.APPLICATION_JSON).get(String.class);
 
         } catch (NotFoundException nfe) {

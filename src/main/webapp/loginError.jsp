@@ -6,7 +6,7 @@
     <div class="content">
 
         <h2>Problem logging in: Your username or password is incorrect.</h2>
-        <a href="/login.jsp">Back to login page</a>
+        <a href="${pageContext.request.contextPath}/login">Back to login page</a>
 
     </div>
 </body>

@@ -36,6 +36,7 @@ public class TrackedItem {
 
         this.user = user;
         this.gw2ItemId = gw2ItemId;
+        this.dateAdded = Calendar.getInstance();
 
     }
 

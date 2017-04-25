@@ -2,6 +2,7 @@ package com.cgreger.persistence;
 
 import com.cgreger.entity.db.APIKey;
 import com.cgreger.entity.db.User;
+import com.cgreger.entity.db.UserRole;
 import org.hibernate.*;
 import org.junit.*;
 import java.util.List;
@@ -68,14 +69,17 @@ public class UserDAOTest {
 
         User user = new User("testuser@gmail.com", "passwordhash", "salthash");
         APIKey apiKey = new APIKey(user, "apikey");
+        UserRole userRole = new UserRole(user, "registered-user", user.getEmail());
 
         user.getApiKeys().add(apiKey);
+        user.getUserRoles().add(userRole);
 
         dao.addUser(user);
 
         assertEquals("Add User test failed: New id not created correctly.", 6, user.getId());
         assertEquals("Add User test failed: Id created but information added incorrect.",
                 "testuser@gmail.com", user.getEmail());
+        assertEquals("Add User test failed: User role not added correctly.", "registered-user", user.getUserRoles().get(0).getRole());
 
     }
 
@@ -144,5 +148,7 @@ public class UserDAOTest {
         assertEquals("Failed to delete User (id3).", null, dao.getUserById(3));
 
     }
+
+
 
 }

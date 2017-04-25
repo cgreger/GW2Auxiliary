@@ -5,9 +5,9 @@
 
         <form action="j_security_check" method="POST">
             <table>
-                <tr><td>Account Email: <input type="TEXT" name="j_username" /></td></tr>
-                <tr><td>Password: <input type="PASSWORD" name="j_password" /></td></tr>
-                <tr><td><input type="SUBMIT" value="Log In" /></td></tr>
+                <tr><td>Account Email: <input type="text" name="j_username" value="${email}"/></td></tr>
+                <tr><td>Password: <input type="password" name="j_password" /></td></tr>
+                <tr><td><input type="submit" value="Log In" /></td></tr>
             </table>
         </form>
 

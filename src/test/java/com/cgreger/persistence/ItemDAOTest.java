@@ -39,24 +39,24 @@ public class ItemDAOTest {
 
     }
 
-    @Test
-    public void getItems() throws Exception {
-
-        ArrayList<Integer> itemIds = new ArrayList<Integer>();
-
-        itemIds.add(70892);
-        itemIds.add(1);
-        itemIds.add(255);
-
-        List<Item> items = dao.getItems(itemIds);
-
-        for (Item item : items) {
-
-            log.info(item.toString());
-
-        }
-
-    }
+//    @Test
+//    public void getItems() throws Exception {
+//
+//        ArrayList<Integer> itemIds = new ArrayList<Integer>();
+//
+//        itemIds.add(70892);
+//        itemIds.add(1);
+//        itemIds.add(255);
+//
+//        List<Item> items = dao.getItems(itemIds);
+//
+//        for (Item item : items) {
+//
+//            log.info(item.toString());
+//
+//        }
+//
+//    }
 
     @Test
     public void getItemRecipes() throws Exception {

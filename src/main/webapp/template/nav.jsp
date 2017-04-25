@@ -6,14 +6,14 @@
 
     <div class="login-links">
         <a href="${pageContext.request.contextPath}/login">Log In</a>
-        <a href="#">Create Account</a>
+        <a href="${pageContext.request.contextPath}/create-account">Create Account</a>
         <%@include file="searchBar.jsp"%>
     </div>
 
 <% } else { %>
 
     <div class="user-links">
-        <h2>Hello, ${user.getEmail()}!</h2>
+        <h2>Hello, ${user.getEmail()}!</h2> | <a href="${pageContext.request.contextPath}/logout">Log Out</a>
         <%@include file="searchBar.jsp"%>
         <a href="${pageContext.request.contextPath}/itemTracker.jsp">Item Tracker</a>
     </div>

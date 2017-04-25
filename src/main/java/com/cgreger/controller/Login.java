@@ -20,6 +20,13 @@ import java.io.IOException;
 
 public class Login extends HttpServlet {
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        doGet(request, response);
+
+    }
+
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -29,7 +36,7 @@ public class Login extends HttpServlet {
 
         request.getSession().setAttribute("user", user);
 
-        response.sendRedirect("/index");
+        response.sendRedirect("index");
 
     }
 

@@ -1,7 +1,6 @@
 package com.cgreger.entity.db;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -27,7 +26,6 @@ public class User {
     @Column(name = "salt")
     private String salt;
 
-    @NotNull
     @Column(name="join_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP") //, nullable = false)
     private Calendar joinDate;
 
@@ -37,6 +35,9 @@ public class User {
     @OneToMany(targetEntity = TrackedItem.class, mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<TrackedItem> trackedItems = new ArrayList<TrackedItem>();
 
+    @OneToMany(targetEntity = UserRole.class, mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<UserRole> userRoles = new ArrayList<UserRole>();
+
     public User() { }
 
     public User(String email, String password, String salt) {
@@ -44,6 +45,7 @@ public class User {
         this.email = email;
         this.password = password;
         this.salt = salt;
+        this.joinDate = Calendar.getInstance();
 
     }
 
@@ -103,16 +105,13 @@ public class User {
         this.trackedItems = trackedItems;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", joinDate=" + joinDate +
-                ", apiKeys=" + apiKeys +
-                ", trackedItems=" + trackedItems +
-                '}';
+    public List<UserRole> getUserRoles() {
+        return userRoles;
     }
+
+    public void setUserRoles(List<UserRole> userRoles) {
+        this.userRoles = userRoles;
+    }
+
+
 }

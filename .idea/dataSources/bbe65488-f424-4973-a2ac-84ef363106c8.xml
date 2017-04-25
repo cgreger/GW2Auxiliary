@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="gw2_auxiliary@localhost">
+<dataSource name="TEST_gw2_auxiliary@localhost">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
     <root id="1"/>
-    <schema id="2" parent="1" name="gw2_auxiliary">
+    <schema id="2" parent="1" name="TEST_gw2_auxiliary">
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="information_schema"/>
-    <schema id="4" parent="1" name="mysql"/>
-    <schema id="5" parent="1" name="performance_schema"/>
-    <schema id="6" parent="1" name="sample"/>
-    <schema id="7" parent="1" name="sys"/>
-    <schema id="8" parent="1" name="TEST_gw2_auxiliary"/>
-    <schema id="9" parent="1" name="gw2_test_items"/>
-    <schema id="10" parent="1" name="phpmyadmin"/>
+    <schema id="3" parent="1" name="gw2_auxiliary"/>
+    <schema id="4" parent="1" name="gw2_test_items"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="phpmyadmin"/>
+    <schema id="9" parent="1" name="sample"/>
+    <schema id="10" parent="1" name="sys"/>
     <schema id="11" parent="1" name="ToDo"/>
     <table id="12" parent="2" name="gw2_api_key"/>
     <table id="13" parent="2" name="tracked_item"/>
     <table id="14" parent="2" name="user"/>
     <table id="15" parent="2" name="user_role"/>
-    <column id="16" parent="12" name="api_key">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="17" parent="12" name="id">
+    <column id="16" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="12" name="api_key">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="18" parent="12" name="user_id">
       <Position>3</Position>
@@ -43,13 +43,15 @@
     </key>
     <foreign-key id="21" parent="12" name="FK_cw3mhhjo09s4qhfcpmirhxss2">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>gw2_auxiliary</RefSchemaName>
+      <RefSchemaName>TEST_gw2_auxiliary</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="22" parent="13" name="gw2_item_id">
-      <Position>3</Position>
+    <column id="22" parent="13" name="id">
+      <Position>1</Position>
       <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="23" parent="13" name="date_added">
       <Position>2</Position>
@@ -57,11 +59,9 @@
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="24" parent="13" name="id">
-      <Position>1</Position>
+    <column id="24" parent="13" name="gw2_item_id">
+      <Position>3</Position>
       <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
     </column>
     <column id="25" parent="13" name="user_id">
       <Position>4</Position>
@@ -77,7 +77,7 @@
     </key>
     <foreign-key id="28" parent="13" name="FK_o0oetqy91bky8awcibd6shsex">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>gw2_auxiliary</RefSchemaName>
+      <RefSchemaName>TEST_gw2_auxiliary</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
@@ -91,16 +91,15 @@
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="31" parent="14" name="password">
-      <Position>4</Position>
-      <DataType>varchar(600)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="32" parent="14" name="join_date">
+    <column id="31" parent="14" name="join_date">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="32" parent="14" name="password">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
     </column>
     <column id="33" parent="14" name="salt">
       <Position>5</Position>
@@ -110,24 +109,24 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="15" name="user_id">
-      <Position>4</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="36" parent="15" name="role">
-      <Position>3</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="37" parent="15" name="id">
+    <column id="35" parent="15" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="38" parent="15" name="email">
+    <column id="36" parent="15" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="37" parent="15" name="role">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="38" parent="15" name="user_id">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
     <index id="39" parent="15" name="FK_apcc8lxk2xnug8377fatvbn04">
       <ColNames>user_id</ColNames>
@@ -138,7 +137,7 @@
     </key>
     <foreign-key id="41" parent="15" name="FK_apcc8lxk2xnug8377fatvbn04">
       <ColNames>user_id</ColNames>
-      <RefSchemaName>gw2_auxiliary</RefSchemaName>
+      <RefSchemaName>TEST_gw2_auxiliary</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>

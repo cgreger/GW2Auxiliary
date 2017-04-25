@@ -20,15 +20,13 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-
-        <!-- creates the tables from the entities automatically -->
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
         <!-- List the annotated entity class/es -->
         <mapping class="com.cgreger.entity.db.User"/>
         <mapping class="com.cgreger.entity.db.APIKey"/>
         <mapping class="com.cgreger.entity.db.TrackedItem"/>
-
+        <mapping class="com.cgreger.entity.db.UserRole"/>
     </session-factory>
 
 </hibernate-configuration>

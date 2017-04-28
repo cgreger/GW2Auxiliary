@@ -39,6 +39,14 @@ public class CreateAccount extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        doGet(request, response);
+
+    }
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
         String email = request.getParameter("email").trim();
         String password =  request.getParameter("password");
         String repeatPassword = request.getParameter("repeatPassword");
@@ -67,6 +75,7 @@ public class CreateAccount extends HttpServlet {
             goToCreateAccount(request, response, email, apiKey);
 
         }
+
 
     }
 
@@ -100,8 +109,8 @@ public class CreateAccount extends HttpServlet {
 
         request.setAttribute("email", email);
 
-        //RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login");
-        response.sendRedirect("login");
+        RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/login");
+        dispatcher.forward(request, response);
 
     }
 

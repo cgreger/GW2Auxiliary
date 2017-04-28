@@ -1,6 +1,8 @@
 package com.cgreger.controller;
 
 import com.cgreger.entity.api.Item;
+import com.cgreger.entity.db.DBItem;
+import com.cgreger.persistence.DBItemDAO;
 import com.cgreger.persistence.ItemDAO;
 
 import java.io.*;
@@ -17,16 +19,17 @@ import javax.servlet.annotation.*;
 
 public class DisplayItemPage extends HttpServlet {
 
+    private DBItemDAO dbItemDAO = new DBItemDAO();
+
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/itemPage.jsp";
-
-        ItemDAO itemDAO = new ItemDAO();
-
-        Item item = itemDAO.getItem(80010);
+        String itemName = request.getParameter("itemName");
+        DBItem item = dbItemDAO.getDBItemByName(itemName);
 
         request.setAttribute("item", item);
+
+        String url = "/itemPage.jsp";
 
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);

@@ -1,8 +1,14 @@
 package com.cgreger.persistence;
 
 import com.cgreger.entity.api.*;
+import com.cgreger.entity.db.DBItem;
+import com.cgreger.entity.db.User;
 import com.fasterxml.jackson.databind.*;
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 
 import java.io.IOException;
@@ -22,6 +28,17 @@ public class ItemDAO {
     private Logger log = Logger.getLogger(this.getClass());
 
     public ItemDAO() { }
+
+    public Item getItemByName(String name) {
+
+        DBItemDAO dbItemDAO = new DBItemDAO();
+        DBItem dbItem = dbItemDAO.getDBItemByName(name);
+
+        Item item = getItem(dbItem.getGw2Id());
+
+        return item;
+
+    }
 
     //READ ITEMS BY GW2ID
     public Item getItem(int id) {
@@ -153,6 +170,13 @@ public class ItemDAO {
         }
 
     }
+
+//    public List<Item> searchItemsByName(String name) {
+//
+//        List<Item> items = new ArrayList<Item>();
+//
+//
+//    }
 
     //TODO: DELETE ITEM RECIPES LIST FROM ITEM
 

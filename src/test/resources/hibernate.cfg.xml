@@ -6,6 +6,10 @@
 
 <hibernate-configuration>
 
+<!-- CONFIG FOR TEST DATABASE -->
+    <!-- CONFIG FOR TEST DATABASE -->
+        <!-- CONFIG FOR TEST DATABASE -->
+
     <session-factory>
 
         <!-- Database connection settings -->
@@ -27,6 +31,11 @@
         <mapping class="com.cgreger.entity.db.APIKey"/>
         <mapping class="com.cgreger.entity.db.TrackedItem"/>
         <mapping class="com.cgreger.entity.db.UserRole"/>
+        <mapping class="com.cgreger.entity.db.DBItem"/>
     </session-factory>
+
+        <!-- CONFIG FOR TEST DATABASE -->
+    <!-- CONFIG FOR TEST DATABASE -->
+<!-- CONFIG FOR TEST DATABASE -->
 
 </hibernate-configuration>

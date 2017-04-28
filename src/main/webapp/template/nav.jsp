@@ -13,9 +13,20 @@
 <% } else { %>
 
     <div class="user-links">
-        <h2>Hello, ${user.getEmail()}!</h2> | <a href="${pageContext.request.contextPath}/logout">Log Out</a>
+        Hello, ${user.getEmail()}! | <a href="${pageContext.request.contextPath}/logout">Log Out</a>
         <%@include file="searchBar.jsp"%>
         <a href="${pageContext.request.contextPath}/itemTracker.jsp">Item Tracker</a>
+        <%if (session.getAttribute("isAdmin").equals(true)) { %>
+             | Admin |
+            <!--TODO: make sure you can only hit this once-->
+        <form action="${pageContext.request.contextPath}/update-item-database" method="post">
+            <input type="submit" value="Update Item Database" />
+        </form>
+
+
+
+
+        <% } %>
     </div>
 
 <% } %>

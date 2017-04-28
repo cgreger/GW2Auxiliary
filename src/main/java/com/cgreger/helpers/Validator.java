@@ -63,6 +63,7 @@ public class Validator {
         try {
 
             String response = gw2ServiceClient.request("https://api.guildwars2.com/v2/tokeninfo?access_token=" + apiKey);
+
             try {
 
                 JsonNode permissions = mapper.readValue(response, JsonNode.class).get("permissions");

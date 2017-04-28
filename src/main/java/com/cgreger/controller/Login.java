@@ -1,6 +1,7 @@
 package com.cgreger.controller;
 
 import com.cgreger.entity.db.User;
+import com.cgreger.persistence.DBItemDAO;
 import com.cgreger.persistence.UserDAO;
 
 import javax.servlet.RequestDispatcher;
@@ -35,6 +36,13 @@ public class Login extends HttpServlet {
         User user = userDao.getUserByEmail(request.getUserPrincipal().getName());
 
         request.getSession().setAttribute("user", user);
+
+        if (request.isUserInRole("administrator")) {
+
+            request.getSession().setAttribute("isAdmin", true);
+            request.getSession().setAttribute("dbItemDAO", new DBItemDAO());
+
+        }
 
         response.sendRedirect("index");
 

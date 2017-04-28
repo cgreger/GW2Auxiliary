@@ -30,7 +30,7 @@ public class DisplayCreateAccount extends HttpServlet {
         String url = "/createAccount.jsp";
 
         RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(url);
+                request.getServletContext().getRequestDispatcher(url);
 
         dispatcher.forward(request, response);
 

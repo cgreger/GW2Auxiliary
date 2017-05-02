@@ -9,6 +9,7 @@ import org.apache.lucene.document.Field;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.*;
 import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.queryparser.complexPhrase.ComplexPhraseQueryParser;
 import org.apache.lucene.search.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
@@ -45,7 +46,7 @@ public class DBItemDAOTest {
 
             session.createSQLQuery("INSERT INTO TEST_gw2_auxiliary.item " +
                     "(gw2_id, name, type) VALUES" +
-                    //"(1, 'MONSTER ONLY Moa Unarmed Pet', 'Weapon')," +
+                    "(1, 'MONSTER ONLY Moa Unarmed Pet', 'Weapon')," +
                     "(2, 'Assassin Pill', 'Consumable')," +
                     "(6, '((208738))', 'Weapon')," +
                     "(11, 'Undead Unarmed', 'Weapon')," +
@@ -153,14 +154,14 @@ public class DBItemDAOTest {
 
         iwriter.close();
 
-        String querystr = "wepon";
-        Query fuzzyQuery = new FuzzyQuery(new Term("item_name", querystr), 2);
-        //Query q = new QueryParser("item_name", analyzer).parse(querystr);
+        String querystr = "bak~ string~";
+        //Query fuzzyQuery = new FuzzyQuery(new Term("item_name", querystr), 2);
+        Query q = new ComplexPhraseQueryParser("item_name", analyzer).parse(querystr);
 
         int hitsPerPage = 10;
         IndexReader reader = DirectoryReader.open(directory);
         IndexSearcher searcher = new IndexSearcher(reader);
-        TopDocs docs = searcher.search(fuzzyQuery, hitsPerPage);
+        TopDocs docs = searcher.search(q, hitsPerPage);
         ScoreDoc[] hits = docs.scoreDocs;
 
         log.info("Found " + hits.length + " hits.");

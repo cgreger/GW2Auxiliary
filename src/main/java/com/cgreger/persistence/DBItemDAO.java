@@ -7,11 +7,28 @@ import com.cgreger.entity.db.User;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.log4j.Logger;
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.document.TextField;
+import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.search.*;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.FSDirectory;
 import org.hibernate.*;
+import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
 
 import javax.ws.rs.BadRequestException;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,13 +154,89 @@ public class DBItemDAO {
 
     }
 
+    public boolean updateItemIndex() {
+
+        boolean isSuccessful = false;
+        double startTime = System.currentTimeMillis();
+        double endTime;
+        int updateDurationInMin;
+
+        Session session = factory.openSession();
+        Analyzer analyzer = null;
+        Directory directory = null;
+        IndexWriterConfig config = null;
+        IndexWriter iwriter = null;
+        Document doc = null;
+
+        try {
+
+            log.info("Updating Item index");
+
+            List<DBItem> dbItems = session.createCriteria(DBItem.class).list();
+
+            analyzer = new StandardAnalyzer();
+            directory = FSDirectory.open(Paths.get("/home/katana/EnterpriseRepos/GW2Auxiliary/lucene/indexes/dbitemindex"));
+            config = new IndexWriterConfig(analyzer);
+            iwriter = new IndexWriter(directory, config);
+            doc = new Document();
+
+            for (DBItem dbItem : dbItems) {
+
+                doc.add(new Field("item_name", dbItem.getName(), TextField.TYPE_STORED));
+                doc.add(new Field("item_type", dbItem.getType(), TextField.TYPE_STORED));
+
+                log.info(doc.getFields().get(doc.getFields().size() - 2));
+                log.info(doc.getFields().get(doc.getFields().size() - 1));
+
+            }
+
+            iwriter.addDocument(doc);
+
+            log.info("Successfully updated Item index");
+
+            isSuccessful = true;
+
+        } catch (HibernateException e) {
+
+            log.error("Failed to update Item index", e);
+            isSuccessful = false;
+
+        } catch (IOException ioe) {
+
+            log.error("Failed to update Item index", ioe);
+            isSuccessful = false;
+
+        } finally {
+
+            session.close();
+
+            try {
+
+                iwriter.close();
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
+
+        endTime = System.currentTimeMillis();
+        updateDurationInMin = (int)(((endTime - startTime) / 1000 )/ 60);
+        log.info("Update Index Duration: " + updateDurationInMin + " min");
+
+        return isSuccessful;
+
+    }
+
     //TODO: UPDATE DBITEM Database
     public boolean updateItemDatabase(int maxPages) {
 
         boolean isSuccessful = false;
         String response = null;
         JsonNode items;
-        double startTime = System.currentTimeMillis();;
+        double startTime = System.currentTimeMillis();
         double endTime;
         int updateDurationInMin;
 
@@ -151,7 +244,6 @@ public class DBItemDAO {
         this.truncateItemDatabase();
 
         log.info("Updating Item database");
-
         try {
 
             for (int pageNumber = 0; pageNumber <= maxPages; pageNumber++) {
@@ -186,11 +278,36 @@ public class DBItemDAO {
 
         endTime = System.currentTimeMillis();
         updateDurationInMin = (int)(((endTime - startTime) / 1000 )/ 60);
-        log.info("Update Duration: " + updateDurationInMin + " min");
+        log.info("Update DB Duration: " + updateDurationInMin + " min");
+
         return isSuccessful;
 
     }
 
+    public void testIndexes() throws IOException, ParseException {
+
+        Analyzer analyzer = new StandardAnalyzer();
+        Directory directory = FSDirectory.open(Paths.get("/home/katana/EnterpriseRepos/GW2Auxiliary/lucene/indexes/dbitemindex"));
+        DirectoryReader ireader = DirectoryReader.open(directory);
+        IndexSearcher isearcher = new IndexSearcher(ireader);
+
+        // Parse a simple query that searches for "text":
+        QueryParser parser = new QueryParser("item_name", analyzer);
+        org.apache.lucene.search.Query query = parser.parse("shirt");
+        ScoreDoc[] hits = isearcher.search(query, 1000).scoreDocs;
+
+        // Iterate through the results:
+        for (int i = 0; i < hits.length; i++) {
+            Document hitDoc = isearcher.doc(hits[i].doc);
+
+            log.info(hitDoc.getValues("item_name"));
+            log.info(hits.length);
+        }
+
+        ireader.close();
+        directory.close();
+
+    }
 
     //Truncate Item Database
     public boolean truncateItemDatabase() {

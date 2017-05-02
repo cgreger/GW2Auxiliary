@@ -140,25 +140,17 @@ public class UserDAO {
     public List<User> getAllUsers() {
 
         Session session = factory.openSession();
-        Transaction tr = null;
         List<User> users = new ArrayList<User>();
 
         try {
 
             log.info("Getting and creating List of all users.");
 
-            tr = session.beginTransaction();
             users = session.createCriteria(User.class).list();
 
             log.info("Successfully created List of all Users.");
 
         } catch (HibernateException e) {
-
-            if (tr != null) {
-
-                tr.rollback();
-
-            }
 
             log.error("Failed to create List of all Users.\n", e);
 

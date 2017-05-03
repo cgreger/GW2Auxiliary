@@ -15,7 +15,6 @@ public class ItemIndexer {
 
         System.exit(0);
 
-
     }
 
 }

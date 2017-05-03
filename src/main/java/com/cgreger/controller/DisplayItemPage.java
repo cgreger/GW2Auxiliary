@@ -19,13 +19,13 @@ import javax.servlet.annotation.*;
 
 public class DisplayItemPage extends HttpServlet {
 
-    private DBItemDAO dbItemDAO = new DBItemDAO();
+    private ItemDAO itemDAO = new ItemDAO();
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String itemName = request.getParameter("itemName");
-        DBItem item = dbItemDAO.getDBItemByName(itemName);
+        Item item = itemDAO.getItemByName(itemName);
 
         request.setAttribute("item", item);
 

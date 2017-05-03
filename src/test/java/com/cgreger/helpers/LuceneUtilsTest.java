@@ -1,38 +1,22 @@
-package com.cgreger.persistence;
+package com.cgreger.helpers;
 
-import com.cgreger.entity.db.DBItem;
+import com.cgreger.persistence.SessionFactoryProvider;
 import org.apache.log4j.Logger;
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.*;
-import org.apache.lucene.queryparser.classic.ParseException;
-import org.apache.lucene.queryparser.classic.QueryParser;
-import org.apache.lucene.queryparser.complexPhrase.ComplexPhraseQueryParser;
-import org.apache.lucene.search.*;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.util.Version;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
 import static org.junit.Assert.*;
 
-public class DBItemDAOTest {
+/**
+ * Created by katana on 5/2/17.
+ */
+public class LuceneUtilsTest {
 
-    private DBItemDAO dbItemDAO = new DBItemDAO();
+    private LuceneUtils lutils = new LuceneUtils("/home/katana/EnterpriseRepos/GW2Auxiliary/lucene/indexes/testindex");
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
     private Logger log = Logger.getLogger(this.getClass());
 
@@ -95,39 +79,19 @@ public class DBItemDAOTest {
 
     }
 
+    //TODO: add assertions
     @Test
-    public void getDBItemByName() throws Exception {
+    public void indexItems() throws Exception {
 
-        DBItem dbItem = dbItemDAO.getDBItemByName("Mighty Worn Chain Greaves");
-        assertEquals("Failed to retrieve correct DBItem by name", "Mighty Worn Chain Greaves", dbItem.getName());
+        lutils.indexItems();
 
     }
 
     @Test
-    public void addDBItem() throws Exception {
+    public void fuzzyQuery() throws Exception {
 
-        DBItem dbItem = new DBItem(400, "Test Item", "Test Type");
-        dbItemDAO.addDBItem(dbItem);
-
-        //TODO: Check database for item
-
-    }
-
-    @Test
-    public void updateItemDatabase() throws Exception {
-
-        assertTrue(dbItemDAO.updateItemDatabase(0));
-
-    }
-
-    @Test
-    public void truncateItemDatabase() throws Exception {
-
-        dbItemDAO.addDBItem(new DBItem(404, "Delete Me", "Trash"));
-
-        dbItemDAO.truncateItemDatabase();
-
-        //TODO: Check that table is empty
+        lutils.indexItems();
+        lutils.fuzzyQuery("bak string");
 
     }
 

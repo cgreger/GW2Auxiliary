@@ -59,3 +59,4 @@ fabric.properties
 .idea/dataSources/bc7f6f8a-feda-4974-963a-921a1db61523/_staging_/
 .idea/dataSources/da930a7b-2276-46f7-9cb4-cd4533770f96/_src_/
 .idea/dataSources/da930a7b-2276-46f7-9cb4-cd4533770f96/_staging_/
+/src/main/webapp/META-INF/

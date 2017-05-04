@@ -208,31 +208,6 @@ public class DBItemDAO {
 
     }
 
-    public void testIndexes() throws IOException, ParseException {
-
-        Analyzer analyzer = new StandardAnalyzer();
-        Directory directory = FSDirectory.open(Paths.get("/home/katana/EnterpriseRepos/GW2Auxiliary/lucene/indexes/dbitemindex"));
-        DirectoryReader ireader = DirectoryReader.open(directory);
-        IndexSearcher isearcher = new IndexSearcher(ireader);
-
-        // Parse a simple query that searches for "text":
-        QueryParser parser = new QueryParser("item_name", analyzer);
-        org.apache.lucene.search.Query query = parser.parse("shirt");
-        ScoreDoc[] hits = isearcher.search(query, 1000).scoreDocs;
-
-        // Iterate through the results:
-        for (int i = 0; i < hits.length; i++) {
-            Document hitDoc = isearcher.doc(hits[i].doc);
-
-            log.info(hitDoc.getValues("item_name"));
-            log.info(hits.length);
-        }
-
-        ireader.close();
-        directory.close();
-
-    }
-
     //Truncate Item Database
     public boolean truncateItemDatabase() {
         Session session = factory.openSession();

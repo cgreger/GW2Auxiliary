@@ -9,6 +9,8 @@ public class ItemDatabaseUpdater implements Runnable {
     public void run() {
 
         DBItemDAO dbItemDAO = new DBItemDAO();
+
+        //TODO: add maxpages to properties file
         dbItemDAO.updateItemDatabase(300);
 
     }

@@ -2,32 +2,27 @@
     <div class="logo">
         <a href="${pageContext.request.contextPath}/index.jsp"><img src="${pageContext.request.contextPath}/images/gw2-auxiliary-logo.png"></a>
     </div>
-<%if (session.getAttribute("user") == null) { %>
+<c:choose>
+    <c:when test="${sessionScope.user == null}">
+        <div class="login-links">
+            <a href="${pageContext.request.contextPath}/login">Log In</a>
+            <a href="${pageContext.request.contextPath}/create-account">Create Account</a>
+            <%@include file="searchBar.jsp"%>
+        </div>
+    </c:when>
+    <c:otherwise>
 
-    <div class="login-links">
-        <a href="${pageContext.request.contextPath}/login">Log In</a>
-        <a href="${pageContext.request.contextPath}/create-account">Create Account</a>
-        <%@include file="searchBar.jsp"%>
-    </div>
-
-<% } else { %>
-
-    <div class="user-links">
-        Hello, ${user.getEmail()}! | <a href="${pageContext.request.contextPath}/logout">Log Out</a>
-        <%@include file="searchBar.jsp"%>
-        <a href="${pageContext.request.contextPath}/itemTracker.jsp">Item Tracker</a>
-        <%if (session.getAttribute("isAdmin").equals(true)) { %>
-             | Admin |
-            <!--TODO: make sure you can only hit this once-->
-        <form action="${pageContext.request.contextPath}/update-item-database" method="post">
-            <input type="submit" value="Update Item Database" />
-        </form>
-
-
-
-
-        <% } %>
-    </div>
-
-<% } %>
+        <div class="user-links">
+            Hello, ${sessionScope.user.getEmail()}! | <a href="${pageContext.request.contextPath}/logout">Log Out</a>
+            <%@include file="searchBar.jsp"%>
+            <a href="${pageContext.request.contextPath}/itemTracker.jsp">Item Tracker</a>
+            <c:choose>
+                <c:when test="${sessionScope.isAdmin.equals(true)}">
+                    <p>TODO: Admin identifier here</p>
+                    <a href="${pageContext.request.contextPath}/admin">Admin Tools</a>
+                </c:when>
+            </c:choose>
+        </div>
+    </c:otherwise>
+</c:choose>
 </div>

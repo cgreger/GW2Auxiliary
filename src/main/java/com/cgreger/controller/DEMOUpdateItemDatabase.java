@@ -1,5 +1,6 @@
 package com.cgreger.controller;
 
+import com.cgreger.threads.DEMOItemDatabaseUpdater;
 import com.cgreger.threads.ItemDatabaseUpdater;
 
 import javax.servlet.RequestDispatcher;
@@ -12,25 +13,28 @@ import java.io.IOException;
 
 @WebServlet(
 
-        name = "UpdateItemDatabase",
-        urlPatterns = {"/update-item-database"}
+        name = "DEMOUpdateItemDatabase",
+        urlPatterns = {"/demo-update-item-database"}
 
 )
 
-public class UpdateItemDatabase extends HttpServlet {
-
+public class DEMOUpdateItemDatabase extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ItemDatabaseUpdater itemDatabaseUpdater = new ItemDatabaseUpdater();
+        DEMOItemDatabaseUpdater demoItemDatabaseUpdater = new DEMOItemDatabaseUpdater();
 
-        Thread itemDatabaseUpdaterThread = new Thread(itemDatabaseUpdater);
+        Thread demoItemDatabaseUpdaterThread = new Thread(demoItemDatabaseUpdater);
 
-        itemDatabaseUpdaterThread.start();
-
+        demoItemDatabaseUpdaterThread.start();
+        try {
+            demoItemDatabaseUpdaterThread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //Do not respond until the update is finished.
-        if (itemDatabaseUpdaterThread.getState() == Thread.State.TERMINATED) {
+        if (demoItemDatabaseUpdaterThread.getState() == Thread.State.TERMINATED) {
 
             String url = "/admin";
 

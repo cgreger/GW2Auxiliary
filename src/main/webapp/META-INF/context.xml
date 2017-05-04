@@ -1,8 +1,0 @@
-<Context docBase="gw2auxiliary" path="/GW2Auxiliary" reloadable="true">
-    <Realm className="org.apache.catalina.realm.JDBCRealm"
-           driverName="com.mysql.jdbc.Driver"
-           connectionURL="jdbc:mysql://localhost:3306/gw2_auxiliary?user=tomcat&amp;password=tCL712n*e1"
-           userTable="user" userNameCol="email" userCredCol="password"
-           userRoleTable="user_role" roleNameCol="role" >
-    </Realm>
-</Context>

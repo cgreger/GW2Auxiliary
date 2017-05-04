@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    //TODO: Optimize search, try to access the database less and use gw2 id instead of name
+
     var dropdown = $("#search_dropdown");
     var dropdown_content = $("#results_dropdown");
 

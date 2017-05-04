@@ -24,6 +24,7 @@ public class ProcessSearch extends HttpServlet {
 
         String query = request.getParameter("query");
 
+
         String results = lutils.fuzzyQuery(query);
 
         response.setContentType("application/json");

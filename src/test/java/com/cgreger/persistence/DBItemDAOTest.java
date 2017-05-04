@@ -106,7 +106,7 @@ public class DBItemDAOTest {
     @Test
     public void addDBItem() throws Exception {
 
-        DBItem dbItem = new DBItem(400, "Test Item", "Test Type");
+        DBItem dbItem = new DBItem(400, "Test Item", "Test Type", "ICON");
         dbItemDAO.addDBItem(dbItem);
 
         //TODO: Check database for item
@@ -123,7 +123,7 @@ public class DBItemDAOTest {
     @Test
     public void truncateItemDatabase() throws Exception {
 
-        dbItemDAO.addDBItem(new DBItem(404, "Delete Me", "Trash"));
+        dbItemDAO.addDBItem(new DBItem(404, "Delete Me", "Trash", "ICON"));
 
         dbItemDAO.truncateItemDatabase();
 

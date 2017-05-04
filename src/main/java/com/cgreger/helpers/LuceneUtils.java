@@ -93,12 +93,14 @@ public class LuceneUtils {
                 doc.add(new Field("gw2_id", Integer.toString(dbItem.getGw2Id()), TextField.TYPE_STORED));
                 doc.add(new Field("item_name", dbItem.getName(), TextField.TYPE_STORED));
                 doc.add(new Field("item_type", dbItem.getType(), TextField.TYPE_STORED));
+                doc.add(new Field("item_icon", dbItem.getIcon(), TextField.TYPE_STORED));
                 iwriter.addDocument(doc);
 
                 log.info("Indexed Item -");
-                log.info("Id: " + doc.getFields().get(doc.getFields().size() - 3));
-                log.info("Name: " + doc.getFields().get(doc.getFields().size() - 2));
-                log.info("Type: " + doc.getFields().get(doc.getFields().size() - 1) + "\n");
+                log.info("Id: " + doc.getFields().get(doc.getFields().size() - 4));
+                log.info("Name: " + doc.getFields().get(doc.getFields().size() - 3));
+                log.info("Type: " + doc.getFields().get(doc.getFields().size() - 2));
+                log.info("Icon: " + doc.getFields().get(doc.getFields().size() - 1) + "\n");
 
             }
 
@@ -142,9 +144,9 @@ public class LuceneUtils {
 
     }
 
-    public JsonNode fuzzyQuery(String query) {
+    public String fuzzyQuery(String query) {
 
-        JsonNode jsonHits = null;
+        String results = null;
         Analyzer analyzer = new StandardAnalyzer();
         Directory directory = null;
         IndexReader reader = null;
@@ -165,7 +167,7 @@ public class LuceneUtils {
 
             log.info("Found " + hits.length + " hits.");
 
-            jsonHits = convertHitsToJSON(searcher, hits);
+            results = convertHitsToJSON(searcher, hits);
 
         } catch (IOException e) {
 
@@ -189,7 +191,7 @@ public class LuceneUtils {
 
         }
 
-        return jsonHits;
+        return results;
 
     }
 
@@ -214,8 +216,9 @@ public class LuceneUtils {
 
     }
 
-    private JsonNode convertHitsToJSON(IndexSearcher searcher, ScoreDoc[] hits) throws IOException {
+    private String convertHitsToJSON(IndexSearcher searcher, ScoreDoc[] hits) throws IOException {
 
+        String results = null;
         ArrayNode rootNode = mapper.createArrayNode();
 
         for (int i = 0; i < hits.length; ++i) {
@@ -235,7 +238,9 @@ public class LuceneUtils {
         //mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rootNode)) gives "pretty" json string
         log.info(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rootNode));
 
-        return rootNode;
+        results = mapper.writeValueAsString(rootNode);
+
+        return results;
 
     }
 

@@ -24,7 +24,8 @@ public class DisplayItemPage extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String itemName = request.getParameter("itemName");
+        String itemName = request.getParameter("item_name");
+
         Item item = itemDAO.getItemByName(itemName);
 
         request.setAttribute("item", item);

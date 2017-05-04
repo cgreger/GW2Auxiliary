@@ -20,13 +20,17 @@ public class DBItem {
     @Column(name = "type")
     private String type;
 
+    @Column(name= "icon")
+    private String icon;
+
     public DBItem() { }
 
-    public DBItem(int gw2Id, String name, String type) {
+    public DBItem(int gw2Id, String name, String type, String icon) {
 
         this.gw2Id = gw2Id;
         this.name = name;
         this.type = type;
+        this.icon = icon;
 
     }
 
@@ -62,6 +66,14 @@ public class DBItem {
         this.type = type;
     }
 
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
     @Override
     public String toString() {
         return "DBItem{" +
@@ -69,6 +81,7 @@ public class DBItem {
                 ", gw2Id=" + gw2Id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
+                ", icon='" + icon + '\'' +
                 '}';
     }
 }

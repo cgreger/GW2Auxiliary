@@ -132,7 +132,9 @@ public class DBItemDAO {
             log.info("\n\nSuccessfully added new DBItem: \n\t"
                             + dbItem.getGw2Id()
                             + "\n\t" + dbItem.getName()
-                            + "\n\t" + dbItem.getType() + "\n");
+                            + "\n\t" + dbItem.getType()
+                            + "\n\t" + dbItem.getIcon()
+                            + "\n");
 
         } catch (HibernateException e) {
 
@@ -177,7 +179,10 @@ public class DBItemDAO {
 
                 for (JsonNode item : items) {
 
-                    DBItem dbItem = new DBItem(Integer.parseInt(item.get("id").toString()), item.get("name").toString().replace("\"", ""), item.get("type").toString().replace("\"", ""));
+                    DBItem dbItem = new DBItem(Integer.parseInt(item.get("id").toString()),
+                                               item.get("name").toString().replace("\"", ""),
+                                               item.get("type").toString().replace("\"", ""),
+                                               item.get("icon").toString().replace("\"", ""));
                     this.addDBItem(dbItem);
 
                 }
@@ -249,6 +254,14 @@ public class DBItemDAO {
         }
 
         return isSuccessful;
+
+    }
+
+    public static void main(String args[]) {
+
+        DBItemDAO dbItemDAO = new DBItemDAO();
+
+        dbItemDAO.updateItemDatabase(300);
 
     }
 

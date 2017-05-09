@@ -76,7 +76,7 @@ public class UserDAOTest {
 
         dao.addUser(user);
 
-        assertEquals("Add User test failed: New id not created correctly.", 6, user.getId());
+        assertEquals("Add User test failed: New id not created correctly.", 11, user.getId());
         assertEquals("Add User test failed: Id created but information added incorrect.",
                 "testuser@gmail.com", user.getEmail());
         assertEquals("Add User test failed: User role not added correctly.", "registered-user", user.getUserRoles().get(0).getRole());

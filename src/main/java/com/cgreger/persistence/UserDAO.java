@@ -105,7 +105,7 @@ public class UserDAO {
             criteria = criteria.add(Restrictions.eq("email", email));
             List<User> results = (List<User>) criteria.list();
 
-            if (results.size() == 1) {
+            if (results.size() >= 1) {
 
                 log.info("Successfully retrieved User (email=" + email + ")");
                 user = results.get(0);

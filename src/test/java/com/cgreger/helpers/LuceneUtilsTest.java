@@ -31,34 +31,34 @@ public class LuceneUtilsTest {
             tr = session.beginTransaction();
 
             session.createSQLQuery("INSERT INTO TEST_gw2_auxiliary.item " +
-                    "(gw2_id, name, type) VALUES" +
-                    "(1, 'MONSTER ONLY Moa Unarmed Pet', 'Weapon')," +
-                    "(2, 'Assassin Pill', 'Consumable')," +
-                    "(6, '((208738))', 'Weapon')," +
-                    "(11, 'Undead Unarmed', 'Weapon')," +
-                    "(15, 'Abomination Hammer', 'Weapon')," +
-                    "(23, 'RC Controller', 'Weapon')," +
-                    "(24, 'Sealed Package of Snowballs', 'Consumable')," +
-                    "(32, 'PvP Heavy Gloves of the Warrior', 'Armor')," +
-                    "(46, 'Gladiator Weapon', 'Weapon')," +
-                    "(50, 'Flame Legion Hammer', 'Weapon')," +
-                    "(56, 'Strong Back Brace', 'Back')," +
-                    "(57, 'Hearty Back Brace', 'Back')," +
-                    "(58, 'Enduring Back Brace', 'Back')," +
-                    "(59, 'Berserkers Spineguard of Ruby', 'Back')," +
-                    "(60, 'Clerics Spineguard of Sapphire', 'Back')," +
-                    "(61, 'Rampagers Spineguard of Coral', 'Back')," +
-                    "(62, 'Shirt', 'Armor')," +
-                    "(63, 'Leggings', 'Armor')," +
-                    "(64, 'Boots', 'Armor')," +
-                    "(68, 'Mighty Country Coat', 'Armor')," +
-                    "(69, 'Mighty Country Coat', 'Armor')," +
-                    "(70, 'Mighty Studded Coat', 'Armor')," +
-                    "(71, 'Mighty Worn Chain Greaves', 'Armor')," +
-                    "(72, 'Berserker''s Sneakthief Mask of the Afflicted', 'Armor')," +
-                    "(73, 'Berserker''s Sneakthief Mask of Dwayna', 'Armor')," +
-                    "(74, 'Mighty Worn Chain Greaves', 'Armor')," +
-                    "(75, 'Berserker''s Sneakthief Mask of Strength', 'Armor')")
+                    "(gw2_id, name, type, icon) VALUES" +
+                    "(1, 'MONSTER ONLY Moa Unarmed Pet', 'Weapon', 'ICON')," +
+                    "(2, 'Assassin Pill', 'Consumable', 'ICON')," +
+                    "(6, '((208738))', 'Weapon', 'ICON')," +
+                    "(11, 'Undead Unarmed', 'Weapon', 'ICON')," +
+                    "(15, 'Abomination Hammer', 'Weapon, 'ICON'')," +
+                    "(23, 'RC Controller', 'Weapon', 'ICON')," +
+                    "(24, 'Sealed Package of Snowballs', 'Consumable', 'ICON')," +
+                    "(32, 'PvP Heavy Gloves of the Warrior', 'Armor', 'ICON')," +
+                    "(46, 'Gladiator Weapon', 'Weapon', 'ICON')," +
+                    "(50, 'Flame Legion Hammer', 'Weapon', 'ICON')," +
+                    "(56, 'Strong Back Brace', 'Back', 'ICON')," +
+                    "(57, 'Hearty Back Brace', 'Back', 'ICON')," +
+                    "(58, 'Enduring Back Brace', 'Back', 'ICON')," +
+                    "(59, 'Berserkers Spineguard of Ruby', 'Back', 'ICON')," +
+                    "(60, 'Clerics Spineguard of Sapphire', 'Back', 'ICON')," +
+                    "(61, 'Rampagers Spineguard of Coral', 'Back', 'ICON')," +
+                    "(62, 'Shirt', 'Armor', 'ICON')," +
+                    "(63, 'Leggings', 'Armor', 'ICON')," +
+                    "(64, 'Boots', 'Armor'), 'ICON'," +
+                    "(68, 'Mighty Country Coat', 'Armor', 'ICON')," +
+                    "(69, 'Mighty Country Coat', 'Armor', 'ICON')," +
+                    "(70, 'Mighty Studded Coat', 'Armor', 'ICON')," +
+                    "(71, 'Mighty Worn Chain Greaves', 'Armor', 'ICON')," +
+                    "(72, 'Berserker''s Sneakthief Mask of the Afflicted', 'Armor', 'ICON')," +
+                    "(73, 'Berserker''s Sneakthief Mask of Dwayna', 'Armor', 'ICON')," +
+                    "(74, 'Mighty Worn Chain Greaves', 'Armor', 'ICON')," +
+                    "(75, 'Berserker''s Sneakthief Mask of Strength', 'Armor', 'ICON')")
                     .executeUpdate();
 
 

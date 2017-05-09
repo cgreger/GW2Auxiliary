@@ -4,9 +4,9 @@ $(document).ready(function() {
 
         $("#update-database").on("click", function() {
 
-            if ($("#complete").length) {
+            if ($(".complete").length) {
 
-                $("#complete").remove();
+                $(".complete").remove();
 
             }
 
@@ -17,9 +17,9 @@ $(document).ready(function() {
 
 
                 $("#update-database").prop("disabled", false);
-                var complete = $("<p>").text("Update Complete!").attr("id", "complete");
+                var complete = $("<p>").text("Update Complete!").attr("class", "complete");
 
-                $(".container").append(complete);
+                $(".admin").append(complete);
 
 
             }});

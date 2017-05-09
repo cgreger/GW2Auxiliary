@@ -3,7 +3,7 @@
 <%@include file="template/header.jsp"%>
 <%@include file="template/nav.jsp"%>
 
-<div class="container">
+<div class="admin container">
 
     <script src="${pageContext.request.contextPath}/js/admin.js"></script>
     <input type="button" class="btn btn-default" id="update-database" value="Update Database">

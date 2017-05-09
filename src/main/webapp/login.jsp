@@ -1,7 +1,8 @@
 <%@include file="template/head.jsp"%>
 <body>
+<%@include file="template/header.jsp"%>
 <%@include file="template/nav.jsp"%>
-    <div class="content">
+    <div class="container">
 
         <form action="j_security_check" method="POST">
             <table>

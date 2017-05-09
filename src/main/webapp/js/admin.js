@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log("Yo");
+
     if ($("#update-database").prop("disabled") == false) {
 
         $("#update-database").on("click", function() {
@@ -19,7 +19,7 @@ $(document).ready(function() {
                 $("#update-database").prop("disabled", false);
                 var complete = $("<p>").text("Update Complete!").attr("id", "complete");
 
-                $(".content").append(complete);
+                $(".container").append(complete);
 
 
             }});

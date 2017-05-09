@@ -89,6 +89,8 @@ public class LuceneUtils {
 
             for (DBItem dbItem : dbItems) {
 
+                //TODO: Add rarity!!
+
                 Document doc = new Document();
                 doc.add(new Field("gw2_id", Integer.toString(dbItem.getGw2Id()), TextField.TYPE_STORED));
                 doc.add(new Field("item_name", dbItem.getName(), TextField.TYPE_STORED));

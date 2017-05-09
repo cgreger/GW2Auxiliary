@@ -1,6 +1,7 @@
 <%@include file="template/head.jsp"%>
-<body>
 
+<body>
+<%@include file="template/header.jsp"%>
 <%@include file="template/nav.jsp"%>
 
 <div class="content">

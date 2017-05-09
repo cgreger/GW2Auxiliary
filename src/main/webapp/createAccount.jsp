@@ -1,9 +1,9 @@
 <%@include file="template/head.jsp"%>
 <body>
-
+<%@include file="template/header.jsp"%>
 <%@include file="template/nav.jsp"%>
 <!--TODO: make this page inaccessible while logged in-->
-<div class="content">
+<div class="container">
     <form action="try-create-account" method="POST">
         <table>
             <tr><td>Account Email: <input type="text" name="email" value="${email}"/></td></tr>

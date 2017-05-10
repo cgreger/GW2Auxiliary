@@ -18,7 +18,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by katana on 2/13/17.
+ * Item DAO used to
+ * Read and map items using the
+ * Guildwars 2 api.
+ *
+ * Also used to retrieve and map item recipes
+ *
+ * @author Chelsea Greger
  */
 public class ItemDAO {
 
@@ -29,6 +35,13 @@ public class ItemDAO {
 
     public ItemDAO() { }
 
+    /**
+     * Request an item by name (uses DBItem data for faster
+     * results)
+     *
+     * @param name  name of the requested item
+     * @return      Item requested if exists, null if doesn't exist
+     */
     public Item getItemByName(String name) {
 
         DBItemDAO dbItemDAO = new DBItemDAO();
@@ -40,7 +53,12 @@ public class ItemDAO {
 
     }
 
-    //READ ITEMS BY GW2ID
+    /**
+     * Requests an item by its Guildwars 2 ID
+     *
+     * @param id    the Guildwars 2 item id of the requested item
+     * @return      Item requested if exists, null if doesn't exist
+     */
     public Item getItem(int id) {
 
         Item item = null;
@@ -65,7 +83,14 @@ public class ItemDAO {
         return item;
     }
 
-    //GET MULTIPLE ITEMS
+    /**
+     * Retrieves all items based on keys in a map
+     * (utilized by ItemTracker to convert user inventory ids into
+     * actual Item objects
+     *
+     * @param itemIds   Requested map of items and quantities of inventory items
+     * @return          Map of Item objects and quanties, null map if fails
+     */
     public Map<Item, Integer> getItems(Map<Integer, Integer> itemIds) {
 
         Map<Item, Integer> items = new HashMap<Item, Integer>();
@@ -105,7 +130,12 @@ public class ItemDAO {
 
     }
 
-    //READ RECIPESLIST BY GW2ID
+    /**
+     * Retrieves ids of all recipes of a requested Guildwars 2 item ID
+     *
+     * @param id    Guildwars 2 item ID
+     * @return      Arraylist of recipe ids belonging to the requested item
+     */
     protected ArrayList<Integer> getItemRecipes(int id) {
 
         log.info("Retrieving Recipes for Item (id=" + id + ")");
@@ -130,8 +160,13 @@ public class ItemDAO {
     }
 
 
-
-    //READ RECIPE BY GW2ID
+    /**
+     * Retrieve a recipe by it's Guildwars 2 id
+     *
+     * @param id    Guildwars 2 recipe id
+     * @return      Recipe object of recipe requested,
+     *              null if doesn't exist
+     */
     public Recipe getRecipe(int id) {
 
         log.info("Retrieving Recipe (id" + id + ")");
@@ -152,7 +187,11 @@ public class ItemDAO {
         return recipe;
     }
 
-    //UPDATE ITEM RECIPES LIST
+    /**
+     * Sets an Item object's recipe list
+     *
+     * @param item  the Item object to link the recipes to
+     */
     public void setItemRecipes(Item item) {
 
         log.info("Setting Recipes list for Item (id=" + item.getId() + ")");
@@ -170,14 +209,5 @@ public class ItemDAO {
         }
 
     }
-
-//    public List<Item> searchItemsByName(String name) {
-//
-//        List<Item> items = new ArrayList<Item>();
-//
-//
-//    }
-
-    //TODO: DELETE ITEM RECIPES LIST FROM ITEM
 
 }

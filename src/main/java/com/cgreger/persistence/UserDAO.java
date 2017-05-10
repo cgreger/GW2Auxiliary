@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by cgreger on 2/7/17.
+ * User DAO used to
+ * Create, Read, Update, and Destroy
+ * User records in the database.
+ *
+ * @author Chelsea Greger
  */
 public class UserDAO {
 
@@ -17,9 +21,10 @@ public class UserDAO {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     /**
+     * Adds a new User record to the database
      *
-     * @param user
-     * @return
+     * @param user  the User object to add to the database
+     * @return      the id of the newly created User record
      */
     public int addUser(User user) {
 
@@ -59,9 +64,11 @@ public class UserDAO {
     }
 
     /**
+     * Retrieves a User object from the database
+     * by it's ID
      *
-     * @param userId
-     * @return
+     * @param userId    ID of the User to retrieve
+     * @return          User object of ID requested, null if doesn't exist
      */
     public User getUserById(int userId) {
 
@@ -99,9 +106,12 @@ public class UserDAO {
     }
 
     /**
+     * Retrieves a User from the database
+     * by their email
      *
-     * @param email
-     * @return
+     * @param email     email of the associated User
+     * @return          the User object associated with
+     *                  the requested email
      */
     public User getUserByEmail(String email) {
 
@@ -149,8 +159,10 @@ public class UserDAO {
     }
 
     /**
+     * Retrieves all Users from the database
      *
-     * @return
+     * @return  List of all the Users in the database,
+     *          null list if there aren't any
      */
     public List<User> getAllUsers() {
 
@@ -180,8 +192,10 @@ public class UserDAO {
     }
 
     /**
+     * Updates a user in the database with
+     * a given User object
      *
-     * @param user
+     * @param user  User object to update current User record
      */
     public void updateUser(User user) {
 
@@ -217,8 +231,10 @@ public class UserDAO {
     }
 
     /**
+     * Deletes a User from the database
      *
-     * @param userId
+     * @param userId    User ID of the User record to delete
+     *                  from the database
      */
     public void deleteUser(int userId) {
 

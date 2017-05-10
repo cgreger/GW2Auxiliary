@@ -22,7 +22,13 @@ import java.util.Map;
 import static java.lang.Integer.parseInt;
 
 /**
- * Created by katana on 2/9/17.
+ * TrackedItem DAO used to
+ * Create, Read, Update, and Destroy
+ * TrackedItem records in the database.
+ *
+ * Also used to retrieve and map user inventory
+ *
+ * @author Chelsea Greger
  */
 public class TrackedItemDAO {
 
@@ -34,7 +40,13 @@ public class TrackedItemDAO {
     //TODO: Double check class
     //TODO: Test this class
 
-    //CREATE
+    /**
+     * Adds a TrackedItem linked to a user to the database
+     *
+     * @param user          user that is adding the item to their tracker
+     * @param trackedItem   item that the user is adding to their tracker
+     * @return              the id of the newly tracked item
+     */
     public int addTrackedItem(User user, TrackedItem trackedItem) {
 
         log.info("Adding TrackedItem for User (id=" + user.getId() + ")");
@@ -44,7 +56,12 @@ public class TrackedItemDAO {
 
     }
 
-    //READ BY ID
+    /**
+     * Reads a TrackedItem by id from the database
+     *
+     * @param trackedItemId the item that needs to be retrieved
+     * @return              TrackedItem if successful, null if unsuccessful
+     */
     public TrackedItem getTrackedItem(int trackedItemId) {
 
         Session session = factory.openSession();
@@ -80,7 +97,11 @@ public class TrackedItemDAO {
 
     }
 
-    // READ ALL
+    /**
+     * Reads all TrackedItems from the database
+     *
+     * @return          List of all TrackedItems in the database
+     */
     public List<TrackedItem> getAllTrackedItems() {
 
         Session session = factory.openSession();
@@ -116,7 +137,12 @@ public class TrackedItemDAO {
 
     }
 
-    // UPDATE TrackedItem
+    /**
+     * Updates a specific TrackedItem in the database
+     * with a new TrackedItem object
+     *
+     * @param trackedItem
+     */
     public void updateTrackedItem(TrackedItem trackedItem) {
 
         Session session = factory.openSession();
@@ -151,7 +177,13 @@ public class TrackedItemDAO {
 
     }
 
-    // DELETE
+    /**
+     * Deletes a TrackedItem linked to a user
+     * from the database
+     *
+     * @param user          the user to delete the tracked item from
+     * @param trackedItem   the item to delete
+     */
     public void deleteTrackedItem(User user, TrackedItem trackedItem) {
 
         log.info("Removing TrackedItem for User (id=" + user.getId() + ")");
@@ -169,7 +201,14 @@ public class TrackedItemDAO {
 
     }
 
-    //Get user inventory
+    /**
+     * Compiles all items from all types of
+     * inventories of a Guildwars 2 user account
+     *
+     * @param user  the user that links to this inventory
+     * @return      map of the inventory items, with a value of
+     *              the quantity of the item in their inventory
+     */
     public Map<Item, Integer> getUserInventory(User user) {
 
         Map<Integer, Integer> inventoryIds = new HashMap<Integer, Integer>();
@@ -193,6 +232,14 @@ public class TrackedItemDAO {
     }
 
 
+    /**
+     * Retrieves all shared inventory type items
+     * from a users Guildwars 2 Account
+     *
+     * @param user  the user that links to this shared inventory
+     * @return      map of the shared inventory items, with a value
+     *              of the quantity of the item in their inventory
+     */
     public Map<Integer, Integer> getSharedItems(User user) {
 
         Map<Integer, Integer> sharedItems = new HashMap<Integer, Integer>();
@@ -225,7 +272,14 @@ public class TrackedItemDAO {
 
     }
 
-    //TODO: TEST THIS ASAP
+    /**
+     * Retrieves all character inventory type items
+     * from a users Guildwars 2 Account
+     *
+     * @param user  the user that links to this character inventory
+     * @return      map of the character inventory items, with a value
+     *              of the quantity of the item in their inventory
+     */
     public Map<Integer, Integer> getCharacterItems(User user) {
 
         Map<Integer, Integer> characterItems = new HashMap<Integer, Integer>();
@@ -266,6 +320,14 @@ public class TrackedItemDAO {
 
     }
 
+    /**
+     * Retrieves all bank inventory type items
+     * from a users Guildwars 2 Account
+     *
+     * @param user  the user that links to this bank inventory
+     * @return      map of the bank inventory items, with a value
+     *              of the quantity of the item in their inventory
+     */
     public Map<Integer, Integer> getBankItems(User user) {
 
         Map<Integer,Integer> bankItems = new HashMap<Integer, Integer>();
@@ -300,6 +362,14 @@ public class TrackedItemDAO {
 
     }
 
+    /**
+     * Retrieves all material inventory type items
+     * from a users Guildwars 2 Account
+     *
+     * @param user  the user that links to this material inventory
+     * @return      map of the material inventory items, with a value
+     *              of the quantity of the item in their inventory
+     */
     public Map<Integer, Integer> getMaterialItems(User user) {
 
         Map<Integer, Integer> materialItems = new HashMap<Integer, Integer>();

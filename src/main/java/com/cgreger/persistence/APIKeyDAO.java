@@ -12,7 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * API Key DAO used to
+ * Create, Read, Update, and Destroy
+ * API Key records in the database.
  *
+ * @author Chelsea Greger
  */
 public class APIKeyDAO {
 
@@ -20,10 +24,11 @@ public class APIKeyDAO {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
     /**
+     * Link an API Key with a user in the database
      *
-     * @param user
-     * @param apiKey
-     * @return
+     * @param user      User to link API Key to
+     * @param apiKey    API Key to link to user
+     * @return          the ID of the newly created record
      */
     public int addAPIKey(User user, APIKey apiKey) {
 
@@ -35,9 +40,10 @@ public class APIKeyDAO {
     }
 
     /**
+     * Retrieve an API Key from the database by it's ID
      *
-     * @param apiKeyId
-     * @return
+     * @param apiKeyId  ID of the requested API Key
+     * @return          APIKey object of the requested API Key
      */
     public APIKey getAPIKey(int apiKeyId) {
 
@@ -75,8 +81,10 @@ public class APIKeyDAO {
     }
 
     /**
+     * Retrieves all API Keys from the database
      *
-     * @return
+     * @return List of all the api keys from the database,
+     *         empty list if their aren't any
      */
     public List<APIKey> getAllAPIKeys() {
 
@@ -114,8 +122,10 @@ public class APIKeyDAO {
     }
 
     /**
+     * Updates an API Key database record
+     * with a given API Key object
      *
-     * @param apiKey
+     * @param apiKey    APIKey object to update current APIKey to
      */
     public void updateAPIKey(APIKey apiKey) {
 
@@ -152,9 +162,11 @@ public class APIKeyDAO {
     }
 
     /**
+     * Deletes an APIKey from a user's list of
+     * API Keys
      *
-     * @param user
-     * @param apiKey
+     * @param user      User that owns APIKey to delete
+     * @param apiKey    The APIKey object to delete
      */
     public void deleteAPIKey(User user, APIKey apiKey) {
 

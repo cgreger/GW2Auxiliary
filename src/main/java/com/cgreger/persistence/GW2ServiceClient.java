@@ -7,7 +7,8 @@ import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Created by katana on 2/27/17.
+ *
+ * @author Chelsea Greger
  */
 public class GW2ServiceClient {
 

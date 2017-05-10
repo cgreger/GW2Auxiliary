@@ -33,7 +33,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * DBItem DAO used to
+ * Create, Read, Update, and Destroy
+ * DBItem records in the database.
  *
+ * Also used to update the DBItem object database
+ *
+ * @author Chelsea Greger
  */
 public class DBItemDAO {
 
@@ -44,9 +50,11 @@ public class DBItemDAO {
     private Logger log = Logger.getLogger(this.getClass());
 
     /**
+     * Retrieves a database Item by it's name
+     * (LuceneUtils ultimately replaces this method)
      *
-     * @param name
-     * @return
+     * @param name  name of the item
+     * @return      DBItem object for the requested name
      */
     public DBItem getDBItemByName(String name) {
 
@@ -87,9 +95,10 @@ public class DBItemDAO {
     }
 
     /**
+     * Adds a new database item to the Item database
      *
-     * @param dbItem
-     * @return
+     * @param dbItem    DB Item to add to the database
+     * @return          the id of the newly added DBItem record
      */
     public int addDBItem(DBItem dbItem) {
 
@@ -134,9 +143,18 @@ public class DBItemDAO {
     }
 
     /**
+     * Updates the Item database by sending
+     * requests for 200 items per request,
+     * reads the items, and creates a new database
+     * record for each item.
      *
-     * @param maxPages
-     * @return
+     * Duration currently about 1 hr
+     *
+     * @param maxPages      the number of pages of items you want the
+     *                      request to be. Should be a little over the
+     *                      current max to ensure complete update of the
+     *                      database
+     * @return              true for successful update, false for unsuccessful update
      */
     public boolean updateItemDatabase(int maxPages) {
 
@@ -195,10 +213,13 @@ public class DBItemDAO {
     }
 
     /**
+     * Cleans all records from the item database.
+     * Used to ensure an accurate item database
      *
-     * @return
+     * @return  true if the truncate was successful, false if truncate unsuccessful
      */
     public boolean truncateItemDatabase() {
+
         Session session = factory.openSession();
         Transaction tr = null;
         Query query;
@@ -241,16 +262,5 @@ public class DBItemDAO {
 
     }
 
-    /**
-     *
-     * @param args
-     */
-    public static void main(String args[]) {
-
-        DBItemDAO dbItemDAO = new DBItemDAO();
-
-        dbItemDAO.updateItemDatabase(300);
-
-    }
 
 }

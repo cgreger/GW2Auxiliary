@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Created by katana on 3/1/17.
+ *
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Recipe {

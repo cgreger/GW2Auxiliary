@@ -27,6 +27,11 @@ import org.apache.log4j.Logger;
 
 )
 
+/**
+ * Servlet to manage user account creation
+ *
+ * @author Chelsea Greger
+ */
 public class CreateAccount extends HttpServlet {
 
     private User newUser;
@@ -35,6 +40,14 @@ public class CreateAccount extends HttpServlet {
     private Validator validator = new Validator();
     private Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Relays request and response to doGet()
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -43,6 +56,14 @@ public class CreateAccount extends HttpServlet {
 
     }
 
+    /**
+     * Cleans form input and passes input to validator method
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -79,6 +100,15 @@ public class CreateAccount extends HttpServlet {
 
     }
 
+    /**
+     * Validates form input by using the Helpers.Validator class
+     *
+     * @param email             New user email
+     * @param password          New user password
+     * @param repeatPassword    New user repeat password
+     * @param apiKey            New user Guildwars 2 API key (generated through arena.net account)
+     * @return  false for invalid input, true for valid input
+     */
     public boolean validateForm(String email, String password, String repeatPassword, String apiKey) {
 
         boolean isValid = false;
@@ -94,6 +124,17 @@ public class CreateAccount extends HttpServlet {
         return isValid;
     }
 
+    /**
+     *  Returns the user to the sign up form
+     *  when input is invalid
+     *
+     * @param request
+     * @param response
+     * @param email              new user's previously entered email
+     * @param apiKey             new user's previously entered api key
+     * @throws ServletException
+     * @throws IOException
+     */
     public void goToCreateAccount(HttpServletRequest request, HttpServletResponse response, String email, String apiKey)
             throws ServletException, IOException {
 
@@ -104,6 +145,16 @@ public class CreateAccount extends HttpServlet {
 
     }
 
+    /**
+     * Redirects user to login page when account is
+     * successfully created
+     *
+     * @param request
+     * @param response
+     * @param email                 new user's email
+     * @throws ServletException
+     * @throws IOException
+     */
     public void goToLogin(HttpServletRequest request, HttpServletResponse response, String email)
             throws ServletException, IOException {
 

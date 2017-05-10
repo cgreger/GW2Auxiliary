@@ -17,10 +17,24 @@ import javax.servlet.annotation.*;
 
 )
 
+/**
+ * Servlet to display a requested item
+ *
+ * @author Chelsea Greger
+ */
 public class DisplayItemPage extends HttpServlet {
 
     private ItemDAO itemDAO = new ItemDAO();
 
+    /**
+     * Accesses the itemName parameter to display the
+     * specific item's details and recipe
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

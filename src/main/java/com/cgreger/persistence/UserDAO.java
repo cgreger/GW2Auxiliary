@@ -16,7 +16,11 @@ public class UserDAO {
     private final Logger log = Logger.getLogger(this.getClass());
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
-    // CREATE
+    /**
+     *
+     * @param user
+     * @return
+     */
     public int addUser(User user) {
 
         Session session = factory.openSession();
@@ -54,7 +58,11 @@ public class UserDAO {
 
     }
 
-    // READ BY ID
+    /**
+     *
+     * @param userId
+     * @return
+     */
     public User getUserById(int userId) {
 
         Session session = factory.openSession();
@@ -90,7 +98,11 @@ public class UserDAO {
 
     }
 
-    // READ BY EMAIL
+    /**
+     *
+     * @param email
+     * @return
+     */
     public User getUserByEmail(String email) {
 
         Session session = factory.openSession();
@@ -136,7 +148,10 @@ public class UserDAO {
 
     }
 
-    // READ ALL
+    /**
+     *
+     * @return
+     */
     public List<User> getAllUsers() {
 
         Session session = factory.openSession();
@@ -164,7 +179,10 @@ public class UserDAO {
 
     }
 
-    // UPDATE USER
+    /**
+     *
+     * @param user
+     */
     public void updateUser(User user) {
 
         Session session = factory.openSession();
@@ -198,8 +216,10 @@ public class UserDAO {
 
     }
 
-
-    // DELETE
+    /**
+     *
+     * @param userId
+     */
     public void deleteUser(int userId) {
 
         Session session = factory.openSession();

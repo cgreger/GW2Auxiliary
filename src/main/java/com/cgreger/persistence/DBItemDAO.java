@@ -32,6 +32,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class DBItemDAO {
 
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
@@ -40,6 +43,11 @@ public class DBItemDAO {
 
     private Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public DBItem getDBItemByName(String name) {
 
         Session session = factory.openSession();
@@ -78,42 +86,11 @@ public class DBItemDAO {
 
     }
 
-//    //get DBItem by id
-//    public User getDBItemById(int userId) {
-//
-//        Session session = factory.openSession();
-//        Transaction tr = null;
-//        User user = null;
-//
-//        try {
-//
-//            log.info("Getting User (id" + userId + ").");
-//
-//            tr = session.beginTransaction();
-//            user = (User) session.get(User.class, userId);
-//
-//            log.info("Successfully retrieved User (id" + userId + ")");
-//
-//        } catch (HibernateException e) {
-//
-//            if (tr != null) {
-//
-//                tr.rollback();
-//
-//            }
-//
-//            log.error("Failed to retrieve User (id" + userId + ")\n", e);
-//
-//        } finally {
-//
-//            session.close();
-//
-//        }
-//
-//        return user;
-//
-//    }
-
+    /**
+     *
+     * @param dbItem
+     * @return
+     */
     public int addDBItem(DBItem dbItem) {
 
         Session session = factory.openSession();
@@ -156,7 +133,11 @@ public class DBItemDAO {
 
     }
 
-    //TODO: UPDATE DBITEM Database
+    /**
+     *
+     * @param maxPages
+     * @return
+     */
     public boolean updateItemDatabase(int maxPages) {
 
         boolean isSuccessful = false;
@@ -213,7 +194,10 @@ public class DBItemDAO {
 
     }
 
-    //Truncate Item Database
+    /**
+     *
+     * @return
+     */
     public boolean truncateItemDatabase() {
         Session session = factory.openSession();
         Transaction tr = null;
@@ -257,6 +241,10 @@ public class DBItemDAO {
 
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String args[]) {
 
         DBItemDAO dbItemDAO = new DBItemDAO();

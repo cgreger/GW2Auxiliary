@@ -35,6 +35,9 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *
+ */
 public class LuceneUtils {
 
     private Logger log = Logger.getLogger(this.getClass());
@@ -57,6 +60,10 @@ public class LuceneUtils {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean indexItems() {
 
         this.cleanItemIndex();
@@ -146,6 +153,11 @@ public class LuceneUtils {
 
     }
 
+    /**
+     *
+     * @param query
+     * @return
+     */
     public String fuzzyQuery(String query) {
 
         String results = null;
@@ -197,6 +209,11 @@ public class LuceneUtils {
 
     }
 
+    /**
+     *
+     * @param query
+     * @return
+     */
     private String buildFuzzyQuery(String query) {
 
         query = query.replaceAll("[^a-zA-Z0-9\\s]", "");
@@ -218,6 +235,13 @@ public class LuceneUtils {
 
     }
 
+    /**
+     *
+     * @param searcher
+     * @param hits
+     * @return
+     * @throws IOException
+     */
     private String convertHitsToJSON(IndexSearcher searcher, ScoreDoc[] hits) throws IOException {
 
         String results = null;
@@ -246,6 +270,10 @@ public class LuceneUtils {
 
     }
 
+    /**
+     *
+     * @return
+     */
     private boolean cleanItemIndex() {
 
         boolean isSuccessful = false;

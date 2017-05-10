@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * Created by cgreger on 2/6/17.
+ *
  */
 @Entity
 @Table(name = "user")

@@ -11,7 +11,7 @@ import javax.ws.rs.ForbiddenException;
 import java.io.IOException;
 
 /**
- * Created by katana on 4/24/17.
+ *
  */
 public class Validator {
 
@@ -19,6 +19,11 @@ public class Validator {
     private ObjectMapper mapper = new ObjectMapper();
     private Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     *
+     * @param email
+     * @return
+     */
     public boolean validateEmail(String email) {
 
         Boolean isValid = false;
@@ -40,6 +45,12 @@ public class Validator {
 
     }
 
+    /**
+     *
+     * @param password
+     * @param repeatPassword
+     * @return
+     */
     public boolean validatePassword(String password, String repeatPassword) {
 
         Boolean isValid = false;
@@ -55,7 +66,11 @@ public class Validator {
 
     }
 
-    // VALIDATE APIKEY
+    /**
+     *
+     * @param apiKey
+     * @return
+     */
     public boolean validateAPIKey(String apiKey) {
 
         Boolean isValid = false;

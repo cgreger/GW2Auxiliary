@@ -18,8 +18,21 @@ import java.io.IOException;
 
 )
 
+/**
+ * Servlet used to log out a user from the applicaiton
+ *
+ * @author Chelsea Greger
+ */
 public class Logout extends HttpServlet {
 
+    /**
+     * Relays request and response to doGet()
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -27,6 +40,15 @@ public class Logout extends HttpServlet {
 
     }
 
+    /**
+     * Invalidates the current user's session,
+     * resulting in the users logged out status
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

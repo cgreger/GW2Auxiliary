@@ -19,8 +19,21 @@ import java.io.IOException;
 
 )
 
+/**
+ *  Servlet used to log a user into the application
+ *
+ *  @author Chelsea Greger
+ */
 public class Login extends HttpServlet {
 
+    /**
+     * Relays request and response to doGet()
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -28,6 +41,15 @@ public class Login extends HttpServlet {
 
     }
 
+    /**
+     * Finds the user by email, determins their role,
+     * and redirects to index as a logged in user
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

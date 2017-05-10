@@ -3,9 +3,8 @@ package com.cgreger.entity.db;
 import javax.persistence.*;
 
 /**
- * Created by cgreger on 2/8/17.
+ *
  */
-
 @Entity
 @Table(name = "gw2_api_key")
 public class APIKey {

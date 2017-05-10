@@ -15,15 +15,28 @@ import javax.servlet.annotation.*;
 
 )
 
+/**
+ * Servlet that processes a search query using helpers.LuceneUtils.fuzzyQuery()
+ *
+ * @author Chelsea Greger
+ */
 public class ProcessSearch extends HttpServlet {
 
     LuceneUtils lutils = new LuceneUtils();
 
+    /**
+     * Processes the requested query, then returns search result
+     * as written json
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String query = request.getParameter("query");
-
 
         String results = lutils.fuzzyQuery(query);
 
@@ -33,6 +46,14 @@ public class ProcessSearch extends HttpServlet {
 
     }
 
+    /**
+     * Relays request and response to doGet()
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

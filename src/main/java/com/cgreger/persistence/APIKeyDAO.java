@@ -12,14 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by cgreger on 2/9/17.
+ *
  */
 public class APIKeyDAO {
 
     private final Logger log = Logger.getLogger(this.getClass());
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
 
-    // CREATE
+    /**
+     *
+     * @param user
+     * @param apiKey
+     * @return
+     */
     public int addAPIKey(User user, APIKey apiKey) {
 
         log.info("Adding APIKey for User (id=" + user.getId() + ")");
@@ -29,7 +34,11 @@ public class APIKeyDAO {
 
     }
 
-    // READ BY ID
+    /**
+     *
+     * @param apiKeyId
+     * @return
+     */
     public APIKey getAPIKey(int apiKeyId) {
 
         Session session = factory.openSession();
@@ -65,7 +74,10 @@ public class APIKeyDAO {
 
     }
 
-    // READ ALL
+    /**
+     *
+     * @return
+     */
     public List<APIKey> getAllAPIKeys() {
 
         Session session = factory.openSession();
@@ -101,7 +113,10 @@ public class APIKeyDAO {
 
     }
 
-    // UPDATE APIKey
+    /**
+     *
+     * @param apiKey
+     */
     public void updateAPIKey(APIKey apiKey) {
 
         Session session = factory.openSession();
@@ -136,7 +151,11 @@ public class APIKeyDAO {
 
     }
 
-    // DELETE
+    /**
+     *
+     * @param user
+     * @param apiKey
+     */
     public void deleteAPIKey(User user, APIKey apiKey) {
 
         log.info("Removing APIKey for User (id=" + user.getId() + ")");

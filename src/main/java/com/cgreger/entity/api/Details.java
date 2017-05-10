@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by katana on 4/20/17.
+ *
  */
 @Generated("com.robohorse.robopojogenerator")
 @JsonIgnoreProperties(ignoreUnknown = true)

@@ -2,7 +2,9 @@ package com.cgreger.entity.db;
 
 import javax.persistence.*;
 
-
+/**
+ *
+ */
 @Entity
 @Table(name = "user_role")
 public class UserRole {

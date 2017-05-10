@@ -15,8 +15,21 @@ import javax.servlet.annotation.*;
 
 )
 
+/**
+ * Servlet used to display the main index of the application
+ *
+ * @author Chelsea Greger
+ */
 public class DisplayIndex extends HttpServlet {
 
+    /**
+     * Forwards user to index.jsp
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -29,6 +42,14 @@ public class DisplayIndex extends HttpServlet {
 
     }
 
+    /**
+     * Relays request and response to doGet()
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws  ServletException, IOException {
 

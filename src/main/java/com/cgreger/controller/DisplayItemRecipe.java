@@ -24,12 +24,22 @@ import javax.servlet.annotation.*;
 
 )
 
+/**
+ *
+ */
 public class DisplayItemRecipe extends HttpServlet {
 
     private ItemDAO itemDAO = new ItemDAO();
     private ObjectMapper mapper = new ObjectMapper();
     private Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

@@ -18,8 +18,22 @@ import java.io.IOException;
 
 )
 
+/**
+ * Servlet used to display administrator tools
+ * such as updating the database
+ *
+ * @author Chelsea Greger
+ */
 public class DisplayAdminTools extends HttpServlet {
 
+    /**
+     * Forwards user to admin.jsp
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

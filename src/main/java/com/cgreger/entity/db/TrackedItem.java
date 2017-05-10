@@ -3,10 +3,10 @@ package com.cgreger.entity.db;
 import javax.persistence.*;
 import java.util.Calendar;
 
-/**
- * Created by cgreger on 2/8/17.
- */
 
+/**
+ *
+ */
 @Entity
 @Table(name="tracked_item")
 public class TrackedItem {

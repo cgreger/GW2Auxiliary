@@ -18,6 +18,13 @@ import java.io.IOException;
 
 )
 
+/**
+ *
+ * Class to show demo of item database updater button
+ *
+ * @author Chelsea Greger
+ *
+ */
 public class DEMOUpdateItemDatabase extends HttpServlet {
 
     @Override

@@ -15,8 +15,19 @@ import javax.servlet.annotation.*;
 
 )
 
+/**
+ * Servlet used to display the sign up page
+ */
 public class DisplayCreateAccount extends HttpServlet {
 
+    /**
+     * Relays request and response to doGet()
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws  ServletException, IOException {
 
@@ -24,6 +35,14 @@ public class DisplayCreateAccount extends HttpServlet {
 
     }
 
+    /**
+     * Forwards user to createAccount.jsp
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

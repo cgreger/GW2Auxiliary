@@ -3,7 +3,9 @@ package com.cgreger.entity.db;
 import javax.persistence.*;
 
 /**
+ * User Role Hibernate database object
  *
+ * @author Chelsea Greger
  */
 @Entity
 @Table(name = "user_role")

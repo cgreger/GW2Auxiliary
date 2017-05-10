@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
+ * Recipe object defined by GW2 API
  *
+ * @author Chelsea Greger
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Recipe {

@@ -5,7 +5,9 @@ import java.util.Calendar;
 
 
 /**
+ * Tracked Item Hibernate database object
  *
+ * @author Chelsea Greger
  */
 @Entity
 @Table(name="tracked_item")

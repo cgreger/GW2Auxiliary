@@ -8,7 +8,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 /**
+ * Item object defined by GW2 API
  *
+ * @author Chelsea Greger
  */
 @Generated("com.robohorse.robopojogenerator")
 @JsonIgnoreProperties(ignoreUnknown = true)

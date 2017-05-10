@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Created by katana on 3/1/17.
+ * Ingredient object defined by GW2 API
+ *
+ * @author Chelsea Greger
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Ingredient {

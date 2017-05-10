@@ -3,7 +3,9 @@ package com.cgreger.entity.db;
 import javax.persistence.*;
 
 /**
+ * APIKey Hibernate database object
  *
+ * @author Chelsea Greger
  */
 @Entity
 @Table(name = "gw2_api_key")

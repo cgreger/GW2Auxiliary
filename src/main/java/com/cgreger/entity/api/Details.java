@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Item Details object defined by GW2 API
  *
+ * @author Chelsea Greger
  */
 @Generated("com.robohorse.robopojogenerator")
 @JsonIgnoreProperties(ignoreUnknown = true)

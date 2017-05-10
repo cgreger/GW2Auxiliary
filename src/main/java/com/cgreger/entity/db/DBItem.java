@@ -2,6 +2,11 @@ package com.cgreger.entity.db;
 
 import javax.persistence.*;
 
+/**
+ * Database Item Hibernate database object
+ *
+ * @author Chelsea Greger
+ */
 @Entity
 @Table(name = "item")
 public class DBItem {

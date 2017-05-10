@@ -18,11 +18,18 @@ import java.io.IOException;
 )
 
 /**
+ * Servlet used to update the Item database
+ * using threads.ItemDatabaseUpdater thread
  *
+ * @author Chelsea Greger
  */
 public class UpdateItemDatabase extends HttpServlet {
 
     /**
+     * Response not forwarded until the thread
+     * is finished running the update
+     *
+     * Meant to be used with an AJAX call
      *
      * @param request
      * @param response

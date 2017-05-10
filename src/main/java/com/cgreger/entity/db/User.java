@@ -6,7 +6,9 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
+ * User Hibernate database object
  *
+ * @author Chelsea Greger
  */
 @Entity
 @Table(name = "user")

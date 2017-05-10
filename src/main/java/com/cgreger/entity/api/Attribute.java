@@ -3,7 +3,9 @@ package com.cgreger.entity.api;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * Attribute object defined by GW2 API
  *
+ * @author Chelsea Greger
  */
 public class Attribute {
 

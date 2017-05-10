@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by katana on 2/13/17.
+ * Infix Upgrade object defined by GW2 API
+ *
+ * @author Chelsea Greger
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class InfixUpgrade {

@@ -6,14 +6,18 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 /**
+ * Session Factory Provider that
+ * creates a configured Hibernate Session Factory
+ * to use along with the database
  *
+ * @author Chelsea Greger
  */
 public class SessionFactoryProvider {
 
     private static SessionFactory sessionFactory;
 
     /**
-     *
+     * Creates the Session Factory using hibernate config
      */
     public static void createSessionFactory() {
 
@@ -26,8 +30,10 @@ public class SessionFactoryProvider {
     }
 
     /**
+     * Retrieves the SessionFactory if one already exists,
+     * or creates a new one if one does not currently exist
      *
-     * @return
+     * @return  Current instance of the SessionFactory object
      */
     public static SessionFactory getSessionFactory() {
 

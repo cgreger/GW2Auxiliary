@@ -36,7 +36,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * A utility class for Apache Lucene Core
  *
+ * @author Chelsea Greger
  */
 public class LuceneUtils {
 
@@ -44,7 +46,6 @@ public class LuceneUtils {
     private static SessionFactory factory = SessionFactoryProvider.getSessionFactory();
     private ObjectMapper mapper = new ObjectMapper();
     private String itemIndexDirectory;
-
 
     public LuceneUtils() {
 
@@ -61,8 +62,11 @@ public class LuceneUtils {
     }
 
     /**
+     * Indexes database items so that
+     * Lucene is able to query the database
+     * quickly
      *
-     * @return
+     * @return true if indexing was successful, false if it was unsuccessful
      */
     public boolean indexItems() {
 
@@ -154,9 +158,17 @@ public class LuceneUtils {
     }
 
     /**
+     * Performs a Lucene Fuzzy Search on
+     * the Item index to
+     * return relevant search results
+     * based on the given query.
      *
-     * @param query
-     * @return
+     * Fuzzy queries enable the search
+     * engine to account for spelling errors,
+     * typos, and phonetic spelling
+     *
+     * @param query     query to be searched
+     * @return          JSON search results
      */
     public String fuzzyQuery(String query) {
 
@@ -210,9 +222,13 @@ public class LuceneUtils {
     }
 
     /**
+     * A fuzzy query is performed on each
+     * token within the original search query
+     * for more accuracy
      *
-     * @param query
-     * @return
+     * @param query     given search query
+     * @return          the fuzzy query to be used
+     *                  in the Lucene search
      */
     private String buildFuzzyQuery(String query) {
 
@@ -236,14 +252,18 @@ public class LuceneUtils {
     }
 
     /**
+     * Converts the search results an item query
+     * to JSON for easy parsing in client side
+     * code
      *
-     * @param searcher
-     * @param hits
-     * @return
+     * @param searcher      Lucene index document searcher that retrieves hit data
+     * @param hits          The index document id's that were returned in the search
+     *                      results
+     * @return              JSON search results
      * @throws IOException
      */
     private String convertHitsToJSON(IndexSearcher searcher, ScoreDoc[] hits) throws IOException {
-
+        //TODO Refactor this exception
         String results = null;
         ArrayNode rootNode = mapper.createArrayNode();
 
@@ -271,8 +291,11 @@ public class LuceneUtils {
     }
 
     /**
+     * Cleans the Item index directory
+     * to ensure that index is accurate
+     * without duplicates
      *
-     * @return
+     * @return  true if directory clean was successful, false if not
      */
     private boolean cleanItemIndex() {
 

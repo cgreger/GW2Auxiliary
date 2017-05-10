@@ -7,6 +7,8 @@ import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 
 /**
+ * A Service Client to easily
+ * request data from the Guildwars 2 API
  *
  * @author Chelsea Greger
  */
@@ -20,6 +22,14 @@ public class GW2ServiceClient {
 
     public GW2ServiceClient() { }
 
+    /**
+     * Sends the given request to the Guildwars 2 API.
+     * If the response throws a NotFoundException, the API
+     * is not currently running.
+     *
+     * @param requestUrl the complete request url
+     * @return           the json response from the API
+     */
     public String request(String requestUrl) {
 
         try {

@@ -46,14 +46,14 @@ In the future I would like GW2 Auxiliary to serve as a go-to gameplay supplement
 * Unit Testing
   * JUnit tests to achieve 80% code coverage
 * Independent Research Topic
-  * Apache Lucene (Still researching to make sure it's useful for my project...)
+  * Apache Lucene
 
 ### Design
 
 * [Screen Design](DesignDocuments/Screens.md)
-* [Application Flow](DesignDocuments/applicationFlow.md)
+<!-- * [Application Flow](DesignDocuments/applicationFlow.md) -->
 * [Database Design](DesignDocuments/DatabaseDesign.md)
 
-### [Project Plan](ProjectPlan.md)
+<!-- ### [Project Plan](ProjectPlan.md) -->
 
-### [Time Log](TimeLog.md)
+<!-- ### [Time Log](TimeLog.md) -->

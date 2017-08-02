@@ -2,6 +2,7 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+.gitignore
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/dictionaries
@@ -63,3 +64,7 @@ fabric.properties
 
 # Logs
 logs/*
+
+# Github stuff
+ProjectPlan.md
+TimeLog.md
